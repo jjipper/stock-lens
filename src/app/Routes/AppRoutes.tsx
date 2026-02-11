@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { ProtectedRoute } from './ProtectedRoute';
-import Header from '../../Layout/Header/Header';
-import Main from '../../Main/Main';
-import Issue from '../../Issue/Issue';
-import Stock from '../../Stock/Stock';
-import NotFound from '../../NotFound/NotFound';
+import MainPage from '../../pages/MainPage/MainPage';
+import IssuePage from '../../pages/IssuePage/IssuePage';
+import NotFound from '../../pages/NotFound/NotFound';
+import Header from '../../widgets/Header/Header';
+import Stock from '../../features/Stock/Stock';
 
 export const AppRoutes = () => {
   return (
@@ -12,9 +12,9 @@ export const AppRoutes = () => {
       <Header />
       <div className="content-wrapper">
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<MainPage />} />
           <Route path="/issue">
-            <Route path=":id" element={<Issue />} />
+            <Route path=":id" element={<IssuePage />} />
           </Route>
           <Route path="/stock">
             <Route path=":ticker" element={<Stock />} />

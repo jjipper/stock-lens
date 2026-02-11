@@ -1,14 +1,18 @@
 // import { useEffect, useRef, useState } from 'react';
 import type { FunctionComponent } from 'react';
+import SectionHeader from '../../shared/ui/SectionHeader';
 import './IssueSection.module.scss';
 
-// interface DetailProps {
-//   id: string;
-// }
+interface DetailProps {
+  title: string;
+  lastUpdate: string;
+}
 
-const IssueSection: FunctionComponent = () => {
+const IssueSection: FunctionComponent<DetailProps> = () => {
   return (
     <>
+      <SectionHeader title={'냐냐'} lastUpdate={'냐냐'} />
+
       <div className="section-header">
         <h4>실시간 인기 이슈 TOP</h4>
         <p>최근 업데이트 : 방금 전</p>
