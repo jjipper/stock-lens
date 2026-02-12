@@ -1,5 +1,5 @@
 import { Wrapper, Subtitle, Title, Description } from './ui/IntroSectionStyled';
-import { MovingIcon } from '../Icons/Icons';
+import { MovingIcon } from '../../shared/Icons/Icons';
 
 export default function IntroSection() {
   return (
