@@ -1,19 +1,15 @@
-// import { useEffect, useRef, useState } from 'react';
-import type { FunctionComponent } from 'react';
-import './IntroSection.module.scss';
+import { Wrapper, Subtitle, Title, Description } from './ui/IntroSectionStyled';
+import MovingIcon from '@mui/icons-material/Moving';
 
-// interface DetailProps {
-//   id: string;
-// }
-
-const IntroSection: FunctionComponent = () => {
+export default function IntroSection() {
   return (
-    <>
-      <h2>오늘의 시장</h2>
-      <h3>지금 뜨는 이슈를 확인하세요</h3>
-      <p>복잡한 차트 대신, 이슈로 주식을 이해하는 가장 쉬운 방법</p>
-    </>
+    <Wrapper>
+      <Subtitle>
+        <MovingIcon sx={{ fontSize: 16 }} />
+        <span>Today's Market</span>
+      </Subtitle>
+      <Title>Check out the trending issues today</Title>
+      <Description>Instead of complicated charts, the easiest way to understand stocks through issues</Description>
+    </Wrapper>
   );
 };
-
-export default IntroSection;
