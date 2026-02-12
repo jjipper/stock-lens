@@ -1,18 +1,11 @@
-// import { useEffect, useRef, useState } from 'react';
 import type { FunctionComponent } from 'react';
+import SectionHeader from '../../shared/SectionHeader/SectionHeader';
 import './HotStockSection.module.scss';
-
-// interface DetailProps {
-//   id: string;
-// }
 
 const HotStockSection: FunctionComponent = () => {
   return (
     <>
-      <div className="section-header">
-        <h4>실시간 인기 이슈 TOP</h4>
-        <p>최근 업데이트 : 방금 전</p>
-      </div>
+      <SectionHeader title="Today's Popular Stocks" />
       <ul>
         <li>
           <h6>
