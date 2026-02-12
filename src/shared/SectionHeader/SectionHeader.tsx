@@ -5,12 +5,12 @@ const SectionHeader = ({
   updateTime,
 }: {
   title: string;
-  updateTime: string;
+  updateTime?: string;
 }) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
-      <SubTitle>Last update: {updateTime}</SubTitle>
+      {updateTime && <SubTitle>Last update: {updateTime}</SubTitle>}
     </Wrapper>
   );
 };
