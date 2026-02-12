@@ -28,19 +28,19 @@
   --battery-icon: #25c771;
   --battery-bg: #e6faf1;
 
-  --ai-icon: #fe9a00;
-  --ai-bg: #fff4e2;
+  --ai-icon: #ff66df;
+  --ai-bg: #fff0fc;
 
   --chart-icon: #ff4d4f;
   --chart-bg: #ffeaea;
 
-  --money-icon: #ffc107;
-  --money-bg: #fff9e2;
+  --money-icon: #fe9a00;
+  --money-bg: #fff4e2;
 
   --effect-high: #e12226;
   --effect-high-bg: #ffebeb;
   --effect-middle: #f6a205;
   --effect-middle-bg: #fff4e2;
-  --effect-low: #e8c71f;
-  --effect-low-bg: #fbf8dc;
+  --effect-low: #60a75a;
+  --effect-low-bg: #e8f9e7;
 }
