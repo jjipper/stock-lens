@@ -1,10 +1,10 @@
-import styles from './Header.module.scss';
+import { Wrapper, Logo } from './ui/HeaderStyled';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <h1 className={styles.logo}>Stock News Timeline</h1>
-    </header>
+    <Wrapper>
+      <Logo>Stock News Timeline</Logo>
+    </Wrapper>
   );
 };
 
