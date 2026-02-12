@@ -1,7 +1,7 @@
 :root {
-  --primary: #EF5350;
-  --primary-hover: #E53935;
-  --secondary: #FFCA28;
+  --primary: #2f6fff;
+  --primary-light: #2462f4;
+  --primary-dark: rgb(13, 78, 218);
 
   --white: #FFFFFF;
   --black: #000000;
