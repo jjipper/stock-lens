@@ -18,14 +18,14 @@ const Card = styled.li`
     font-weight: 400;
     color: var(--gray-500);
     margin-top: 6px;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
   }
 
   .EffectWrapper {
     display: flex;
     align-items: center;
-    gap: 6px;
-    margin-top: 8px;
+    gap: 8px;
+    margin-top: 6px;
   }
 `;
 
