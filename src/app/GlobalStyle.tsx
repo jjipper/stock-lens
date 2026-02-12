@@ -24,7 +24,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .content-wrapper {
-    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 24px;
   }
 
 `;
