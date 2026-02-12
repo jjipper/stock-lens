@@ -8,16 +8,17 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
   a {
     text-decoration: none;
     color: inherit;
+  }
+  ul, ol, li {
+    list-style: none;
   }
 
   body {
     background: var(--bg-color);
   }
-
   body, * {
     font-family: 'Pretendard', sans-serif;
     color: var(--gray-900);
