@@ -6,32 +6,36 @@ import { Card, CardContent } from './ui/IssueCardStyled';
 
 interface IssueCardProps {
   type: 'memory' | 'battery' | 'ai' | 'chart' | 'money';
+  title: string;
+  description: string;
   stocks: { name: string; ticker: string; percentage: number }[];
+  newsCount: number;
+  mention: boolean;
+  effect: 'high' | 'middle' | 'low';
 }
 
-export default function IssueCard({ type }: IssueCardProps) {
+export default function IssueCard({
+  type,
+  title,
+  description,
+  stocks,
+  effect,
+  newsCount,
+  mention,
+}: IssueCardProps) {
   return (
     <Card>
       <TypeIcon type={type} />
 
       <CardContent>
-        <h5 className="title">AI 반도체 수요 급증, 국내 공급망 주목</h5>
-        <p className="description">
-          NVIDIA 실적 호조에 따른 국내 HBM 및 패키징 업체 수혜 전망
-        </p>
+        <h5 className="title">{title}</h5>
+        <p className="description">{description}</p>
 
-        <StockChips
-          stocks={[
-            { name: 'SK하이닉스', ticker: 'SKH', percentage: 4.12 },
-            { name: '리노공업', ticker: 'RNO', percentage: 2.34 },
-            { name: '솔브레인', ticker: 'SOL', percentage: -3.21 },
-          ]}
-          showTicker={false}
-        />
+        <StockChips showTicker={false} stocks={stocks} />
 
         <div className="EffectWrapper">
-          <NewsTag count={12} mention={true} />
-          <EffectTag effect="high" />
+          <NewsTag newsCount={newsCount} mention={mention} />
+          <EffectTag effect={effect} />
         </div>
       </CardContent>
     </Card>
