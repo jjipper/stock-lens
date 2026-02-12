@@ -1,12 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
-import '../styles/fonts.css';
-import '../styles/colors.css';
+import '../shared/styles/fonts.css';
+import '../shared/styles/colors.css';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   body {
@@ -15,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
 
   body, * {
     font-family: 'Pretendard', sans-serif;
+    color: var(--gray-900);
   }
 
   .content-wrapper {
@@ -22,5 +28,3 @@ const GlobalStyles = createGlobalStyle`
   }
 
 `;
-
-export default GlobalStyles;
