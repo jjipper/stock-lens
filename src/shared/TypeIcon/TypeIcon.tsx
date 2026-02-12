@@ -1,9 +1,11 @@
-import styled from 'styled-components';
-import MemoryIcon from '@mui/icons-material/Memory';
-import BatterySaverIcon from '@mui/icons-material/BatterySaver';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import { IconWrapper } from './ui/styled';
+import {
+MemoryIcon,
+BatterySaverIcon,
+AutoAwesomeIcon,
+ShowChartIcon,
+AttachMoneyIcon,
+} from '../Icons/Icons';
 
 interface TypeIconProps {
   type: 'memory' | 'battery' | 'ai' | 'chart' | 'money';
