@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Wrapper, Message, Button } from './NotFoundStyled';
+import { Wrapper, Message } from './ui/NotFoundStyled';
+import { Button } from '../../shared/Button/Button';
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -9,8 +10,8 @@ const NotFound = () => {
 
   return (
     <Wrapper>
-      <Message>존재하지 않는 페이지입니다.</Message>
-      <Button onClick={goToMain}>Go To Main</Button>
+      <Message>The page does not exist</Message>
+      <Button size='md' onClick={goToMain}>Go To Main</Button>
     </Wrapper>
   );
 };

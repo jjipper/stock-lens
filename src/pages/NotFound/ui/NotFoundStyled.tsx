@@ -15,12 +15,7 @@ const Wrapper = styled.div`
 
 const Message = styled.p`
   font-size: 14px;
+  color: var(--gray-500);
 `;
 
-const Button = styled.button`
-  color: blue;
-  font-size: 1em;
-  border-radius: 3px;
-`;
-
-export { Wrapper, Message, Button };
+export { Wrapper, Message };
