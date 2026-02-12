@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 const Tag = styled.div`
   width: max-content;
-  background: var(--gray-50);
-  padding: 5px 8px;
-  border-radius: 20px;
+  padding: 5px 0;
   display: flex;
   align-items: center;
   gap: 4px;
