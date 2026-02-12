@@ -8,13 +8,13 @@ const Wrapper = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
   align-items: center;
   justify-content: center;
 `;
 
 const Message = styled.p`
-  font-size: 14px;
+  font-size: 20px;
   color: var(--gray-500);
 `;
 

@@ -11,7 +11,7 @@ const NotFound = () => {
   return (
     <Wrapper>
       <Message>The page does not exist</Message>
-      <Button size='md' onClick={goToMain}>Go To Main</Button>
+      <Button variant='primary' size='lg' onClick={goToMain}>Go To Main</Button>
     </Wrapper>
   );
 };
