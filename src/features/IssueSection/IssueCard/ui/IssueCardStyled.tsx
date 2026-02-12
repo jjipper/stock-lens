@@ -7,6 +7,13 @@ const Card = styled.li`
   gap: 16px;
   padding: 20px 24px;
   border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border: 1px solid var(--gray-300);
+  }
 
   .title {
     font-size: 14px;

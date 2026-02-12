@@ -9,7 +9,7 @@ const IssueSectionWrapper = styled.div`
 const IssueListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 `;
 
 export { IssueSectionWrapper, IssueListWrapper };
