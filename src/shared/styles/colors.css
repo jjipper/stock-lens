@@ -1,0 +1,15 @@
+:root {
+  --gray-100: #f9fafc;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #e2e8f0;
+  --gray-500: #94a3b8;
+  --gray-600: #64748b;
+  --gray-700: #475569;
+  --gray-800: #334155;
+  --gray-900: #1e293b;
+  --bg-color: #f9fafc;
+  --primary: #0ea5e9;
+  --secondary: #f87171;
+  --red: #ef4444;
+}
