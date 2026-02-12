@@ -3,7 +3,11 @@
   --primary-hover: #2462f4;
   --primary-dark: rgb(13, 78, 218);
 
-  --white: #FFFFFF;
+--red-500: #ff4d4f;
+  --red-600: #ff4043;
+  --blue-500: #2f6fff;
+  --blue-600: #2462f4;
+  --white: #ffffff;
   --black: #000000;
   
   --gray-100: #F5F5F5;
