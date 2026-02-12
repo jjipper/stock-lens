@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   gap: 6px;
   padding: 28px 24px;
   border-radius: 12px;
-  background: linear-gradient(to left, var(--secondary), var(--secondary-hover));
+  background: linear-gradient(120deg, var(--primary), var(--primary-dark));
 `;
 
 const Subtitle = styled.div`
