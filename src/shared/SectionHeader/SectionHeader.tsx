@@ -1,4 +1,4 @@
-import { Wrapper, Title, SubTitle} from './ui/SectionHeaderStyled';
+import { Wrapper, Title, SubTitle } from './ui/SectionHeaderStyled';
 
 const SectionHeader = ({
   title,
@@ -10,7 +10,7 @@ const SectionHeader = ({
   return (
     <Wrapper>
       <Title>{title}</Title>
-      <SubTitle>last update: {updateTime}</SubTitle>
+      <SubTitle>Last update: {updateTime}</SubTitle>
     </Wrapper>
   );
 };
