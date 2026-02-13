@@ -1,10 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Wrapper, Logo } from './ui/styled';
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   function goToMain() {
-    navigate('/');
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
+    return;
   }
 
   return (
