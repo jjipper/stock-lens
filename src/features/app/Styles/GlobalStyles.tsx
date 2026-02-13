@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import '../shared/styles/fonts.css';
-import '../shared/styles/colors.css';
+import 'features/shared/styles/fonts.css';
+import 'features/shared/styles/colors.css';
 
 export const GlobalStyles = createGlobalStyle`
   * {

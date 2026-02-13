@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { ProtectedRoute } from './ProtectedRoute';
-import MainPage from '../../pages/MainPage/MainPage';
-import IssuePage from '../../pages/IssuePage/IssuePage';
-import NotFound from '../../pages/NotFound/NotFound';
-import Header from '../../widgets/Header/Header';
-import Stock from '../../features/Stock/Stock';
+import MainPage from 'features/pages/MainPage/MainPage';
+import IssuePage from 'features/pages/IssuePage/IssuePage';
+import NotFoundPage from 'features/pages/NotFoundPage/NotFoundPage';
+import Header from 'features/widgets/Header/Header';
+import StockPage from 'features/pages/StockPage/StockPage';
 
 export const AppRoutes = () => {
   return (
@@ -17,9 +17,9 @@ export const AppRoutes = () => {
             <Route path=":id" element={<IssuePage />} />
           </Route>
           <Route path="/stock">
-            <Route path=":ticker" element={<Stock />} />
+            <Route path=":ticker" element={<StockPage />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
 
           {/* <Route
           path="/admin"
