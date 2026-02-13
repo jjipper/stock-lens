@@ -1,8 +1,8 @@
 import type { FunctionComponent } from 'react';
-import SectionWrapper from 'features/shared/components/SectionWrapper/SectionWrapper';
-import SectionHeader from 'features/shared/components/SectionHeader/SectionHeader';
-import StockList from 'features/shared/components/StockList/StockList';
-import StockCard from 'features/shared/components/StockCard/StockCard';
+import { SectionWrapper } from 'features/shared/layout/SectionWrapper/SectionWrapper';
+import { SectionHeader } from 'features/shared/layout/SectionHeader/SectionHeader';
+import { StockList } from 'features/Stocks/StockList/StockList';
+import { StockCard } from 'features/Stocks/StockCard/StockCard';
 
 const MyStockSection: FunctionComponent = () => {
   return (
@@ -35,4 +35,4 @@ const MyStockSection: FunctionComponent = () => {
   );
 };
 
-export default MyStockSection;
+export { MyStockSection };

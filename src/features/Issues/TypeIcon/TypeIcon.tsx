@@ -1,4 +1,4 @@
-import { IconWrapper } from './ui/styled';
+import { IconWrapper } from './TypeIcon.styles';
 import {
   MemoryIcon,
   BatterySaverIcon,
@@ -30,4 +30,4 @@ const TypeIcon = ({ type, fontSize = 20 }: TypeIconProps) => {
   );
 };
 
-export default TypeIcon;
+export { TypeIcon };

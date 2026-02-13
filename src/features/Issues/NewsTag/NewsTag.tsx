@@ -1,4 +1,4 @@
-import { Tag } from './ui/styled';
+import { Tag } from './NewsTag.styles';
 import { TrendingUpIcon } from 'features/shared/ui/Icons/Icons';
 
 interface NewsTagProps {
@@ -18,4 +18,4 @@ const NewsTag = ({ newsCount, mention }: NewsTagProps) => {
   );
 };
 
-export default NewsTag;
+export { NewsTag };

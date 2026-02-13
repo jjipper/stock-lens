@@ -1,14 +1,10 @@
-import { Card } from './ui/styled';
-import { TrendingUpIcon, TrendingDownIcon } from '../../ui/Icons/Icons';
+import { Card } from './StockCard.styles';
+import type { StockCardProps } from './StockCard.types';
+import {
+  TrendingUpIcon,
+  TrendingDownIcon,
+} from 'features/shared/ui/Icons/Icons';
 import { useNavigate } from 'react-router-dom';
-
-interface StockCardProps {
-  name: string;
-  ticker: string | number;
-  mainIssue?: string;
-  price: number;
-  percentage: number;
-}
 
 export const StockCard = ({
   name,
@@ -47,5 +43,3 @@ export const StockCard = ({
     </Card>
   );
 };
-
-export default StockCard;

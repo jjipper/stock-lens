@@ -11,4 +11,4 @@ const SectionWrapper = ({ children }: { children: ReactNode }) => {
   return <Wrapper>{children}</Wrapper>;
 };
 
-export default SectionWrapper;
+export { SectionWrapper };

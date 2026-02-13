@@ -10,5 +10,3 @@ const List = styled.div`
 export const StockList = ({ children }: { children: ReactNode }) => {
   return <List>{children}</List>;
 };
-
-export default StockList;

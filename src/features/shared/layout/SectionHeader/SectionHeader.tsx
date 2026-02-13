@@ -1,4 +1,4 @@
-import { Wrapper, Title, SubTitle } from './ui/styled';
+import { Wrapper, Title, SubTitle } from './SectionHeader.styles';
 
 const SectionHeader = ({
   title,
@@ -15,4 +15,4 @@ const SectionHeader = ({
   );
 };
 
-export default SectionHeader;
+export { SectionHeader };

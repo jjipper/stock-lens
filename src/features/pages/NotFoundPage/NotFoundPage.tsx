@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Wrapper, Message } from './ui/styled';
+import { Wrapper, Message } from './NotFoundPage.styles';
 import { Button } from 'features/shared/ui/Button/Button';
 
 const NotFoundPage = () => {

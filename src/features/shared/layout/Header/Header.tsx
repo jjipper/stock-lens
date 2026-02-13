@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Wrapper, Logo } from './ui/styled';
+import { Wrapper, Logo } from './Header.styles';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -19,4 +19,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export { Header };

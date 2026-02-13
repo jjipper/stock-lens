@@ -1,4 +1,4 @@
-import { Tag } from './ui/styled';
+import { Tag } from './EffectTag.styles';
 
 interface EffectTagProps {
   effect: 'high' | 'middle' | 'low';
@@ -12,4 +12,4 @@ const EffectTag = ({ effect }: EffectTagProps) => {
   );
 };
 
-export default EffectTag;
+export { EffectTag };

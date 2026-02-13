@@ -1,4 +1,4 @@
-import { Chips, Chip } from './ui/styled';
+import { Chips, Chip } from './StockChips.styles';
 
 interface StockChipsProps {
   stocks: { name: string; ticker: string; percentage: number }[];
@@ -30,4 +30,4 @@ const StockChips = ({ stocks, showTicker }: StockChipsProps) => {
   );
 };
 
-export default StockChips;
+export { StockChips };

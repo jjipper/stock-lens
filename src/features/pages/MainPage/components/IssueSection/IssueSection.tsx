@@ -1,7 +1,7 @@
-import SectionWrapper from 'features/shared/components/SectionWrapper/SectionWrapper';
-import SectionHeader from 'features/shared/components/SectionHeader/SectionHeader';
-import IssueCard from './IssueCard/IssueCard';
-import { IssueListWrapper } from './ui/styled';
+import { SectionWrapper } from 'features/shared/layout/SectionWrapper/SectionWrapper';
+import { SectionHeader } from 'features/shared/layout/SectionHeader/SectionHeader';
+import { IssueCard } from 'features/Issues/IssueCard/IssueCard';
+import { IssueListWrapper } from './IssueSection.styles';
 
 const IssueSection = () => {
   return (
@@ -55,4 +55,4 @@ const IssueSection = () => {
   );
 };
 
-export default IssueSection;
+export { IssueSection };

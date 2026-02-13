@@ -1,21 +1,12 @@
-import TypeIcon from 'features/shared/components/TypeIcon/TypeIcon';
-import StockChips from 'features/shared/components/StockChips/StockChips';
-import NewsTag from 'features/shared/components/NewsTag/NewsTag';
-import EffectTag from 'features/shared/components/EffectTag/EffectTag';
-import { Card, CardContent } from './ui/styled';
+import { TypeIcon } from '../TypeIcon/TypeIcon';
+import { StockChips } from '../StockChips/StockChips';
+import { NewsTag } from '../NewsTag/NewsTag';
+import { EffectTag } from '../EffectTag/EffectTag';
+import { Card, CardContent } from './IssueCard.styles';
+import type { IssueCardProps } from './IssueCard.types';
 import { useNavigate } from 'react-router-dom';
 
-interface IssueCardProps {
-  type: 'memory' | 'battery' | 'ai' | 'chart' | 'money';
-  title: string;
-  description: string;
-  stocks: { name: string; ticker: string; percentage: number }[];
-  newsCount: number;
-  mention: boolean;
-  effect: 'high' | 'middle' | 'low';
-}
-
-export default function IssueCard({
+function IssueCard({
   type,
   title,
   description,
@@ -47,3 +38,5 @@ export default function IssueCard({
     </Card>
   );
 }
+
+export { IssueCard };
