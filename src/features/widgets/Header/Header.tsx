@@ -1,4 +1,4 @@
-import { Wrapper, Logo } from './ui/HeaderStyled';
+import { Wrapper, Logo } from './ui/styled';
 
 const Header = () => {
   return (
