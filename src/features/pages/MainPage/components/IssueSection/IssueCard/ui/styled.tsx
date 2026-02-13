@@ -5,7 +5,7 @@ const Card = styled.li`
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 14px 14px 12px;
+  padding: 14px 14px 10px;
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -22,10 +22,10 @@ const Card = styled.li`
   }
   .description {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
     color: var(--gray-500);
     margin-top: 6px;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
   }
 
   .EffectWrapper {

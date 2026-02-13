@@ -6,11 +6,11 @@ const Tag = styled.div`
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 20px;
 
   .tag-text {
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 600;
   }
 

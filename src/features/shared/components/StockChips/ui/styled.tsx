@@ -10,7 +10,6 @@ const Chip = styled.li`
   gap: 4px;
   align-items: center;
   background: var(--gray-50);
-  border: 1px solid var(--gray-200);
   border-radius: 20px;
   padding: 4px 8px;
   cursor: pointer;
