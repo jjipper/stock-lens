@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { Wrapper, Message } from './ui/NotFoundStyled';
-import { Button } from '../../shared/Button/Button';
+import { Wrapper, Message } from './ui/styled';
+import { Button } from 'features/shared/ui/Button/Button';
 
-const NotFound = () => {
+const NotFoundPage = () => {
   const navigate = useNavigate();
   function goToMain() {
     navigate('/');
@@ -16,4 +16,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;
