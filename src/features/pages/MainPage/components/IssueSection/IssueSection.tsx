@@ -1,10 +1,11 @@
+import SectionWrapper from 'features/shared/components/SectionWrapper/SectionWrapper';
 import SectionHeader from 'features/shared/components/SectionHeader/SectionHeader';
-import { IssueSectionWrapper, IssueListWrapper } from './ui/styled';
 import IssueCard from './IssueCard/IssueCard';
+import { IssueListWrapper } from './ui/styled';
 
 const IssueSection = () => {
   return (
-    <IssueSectionWrapper>
+    <SectionWrapper>
       <SectionHeader title={'Top Trending Issues'} updateTime={'Just now'} />
 
       <IssueListWrapper>
@@ -50,7 +51,7 @@ const IssueSection = () => {
           effect="low"
         />
       </IssueListWrapper>
-    </IssueSectionWrapper>
+    </SectionWrapper>
   );
 };
 
