@@ -13,11 +13,11 @@ export const AppRoutes = () => {
       <div className="content-wrapper">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/issue">
-            <Route path=":id" element={<IssuePage />} />
+          <Route path="/issue" element={<IssuePage />}>
+            {/* <Route path=":id" element={<IssuePage />} /> */}
           </Route>
-          <Route path="/stock">
-            <Route path=":ticker" element={<StockPage />} />
+          <Route path="/stock" element={<StockPage />}>
+            {/* <Route path=":ticker" element={<StockPage />} /> */}
           </Route>
           <Route path="*" element={<NotFoundPage />} />
 
