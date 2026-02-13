@@ -7,10 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      app: fileURLToPath(new URL('./src/features/app', import.meta.url)),
-      pages: fileURLToPath(new URL('./src/features/pages', import.meta.url)),
-      shared: fileURLToPath(new URL('./src/features/shared', import.meta.url)),
-      widgets: fileURLToPath(new URL('./src/features/widgets', import.meta.url)),
+      features: fileURLToPath(new URL('./src/features', import.meta.url)),
     },
   },
 });
