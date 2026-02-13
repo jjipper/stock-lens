@@ -1,5 +1,6 @@
 import { Card } from './ui/styled';
 import { TrendingUpIcon, TrendingDownIcon } from '../../ui/Icons/Icons';
+import { useNavigate } from 'react-router-dom';
 
 interface StockCardProps {
   name: string;
@@ -16,8 +17,13 @@ export const StockCard = ({
   price,
   percentage,
 }: StockCardProps) => {
+  const navigate = useNavigate();
+  function goToStockDetail() {
+    navigate('/stock');
+  }
+
   return (
-    <Card>
+    <Card onClick={goToStockDetail}>
       <dl className="stock-info">
         <dt>
           <span className="name">{name}</span>

@@ -3,6 +3,7 @@ import StockChips from 'features/shared/components/StockChips/StockChips';
 import NewsTag from 'features/shared/components/NewsTag/NewsTag';
 import EffectTag from 'features/shared/components/EffectTag/EffectTag';
 import { Card, CardContent } from './ui/styled';
+import { useNavigate } from 'react-router-dom';
 
 interface IssueCardProps {
   type: 'memory' | 'battery' | 'ai' | 'chart' | 'money';
@@ -23,8 +24,13 @@ export default function IssueCard({
   newsCount,
   mention,
 }: IssueCardProps) {
+  const navigate = useNavigate();
+  function goToIssueDetail() {
+    navigate('/issue');
+  }
+
   return (
-    <Card>
+    <Card onClick={goToIssueDetail}>
       <TypeIcon type={type} />
 
       <CardContent>
