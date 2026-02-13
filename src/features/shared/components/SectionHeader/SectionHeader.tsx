@@ -1,4 +1,4 @@
-import { Wrapper, Title, SubTitle } from './ui/SectionHeaderStyled';
+import { Wrapper, Title, SubTitle } from './ui/styled';
 
 const SectionHeader = ({
   title,
