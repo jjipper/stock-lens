@@ -11,6 +11,7 @@ const Wrapper = styled.header`
 
 const Logo = styled.h1`
   font-size: 18px;
+  cursor: pointer;
 `;
 
 export { Wrapper, Logo };
