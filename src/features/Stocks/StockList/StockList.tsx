@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const List = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 12px;
+  grid-gap: 16px;
 `;
 
 export const StockList = ({ children }: { children: ReactNode }) => {

@@ -4,15 +4,15 @@ import type { ButtonProps } from './Button.types';
 const sizeStyles = {
   sm: {
     padding: '6px 12px',
-    fontSize: '12px',
+    fontSize: '14px',
   },
   md: {
     padding: '8px 14px',
-    fontSize: '14px',
+    fontSize: '16px',
   },
   lg: {
     padding: '10px 18px',
-    fontSize: '16px',
+    fontSize: '18px',
   },
 };
 

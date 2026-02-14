@@ -8,11 +8,11 @@ const Tag = styled.div`
   gap: 4px;
 
   * {
-    color: var(--gray-600);
+    color: var(--gray-500);
   }
 
   .tag-text {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 400;
   }
 `;

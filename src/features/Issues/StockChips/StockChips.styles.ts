@@ -11,7 +11,7 @@ const Chip = styled.li`
   align-items: center;
   background: var(--gray-50);
   border-radius: 20px;
-  padding: 4px 8px;
+  padding: 6px 12px;
   cursor: pointer;
   transition: background 0.3s ease;
 
@@ -21,7 +21,7 @@ const Chip = styled.li`
 
   .name-ticker,
   .percentage {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 500;
   }
 

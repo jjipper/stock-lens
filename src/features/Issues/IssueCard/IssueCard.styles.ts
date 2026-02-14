@@ -4,8 +4,8 @@ const Card = styled.li`
   background: var(--white);
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 14px 14px 10px;
+  gap: 18px;
+  padding: 18px 20px 14px;
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -16,23 +16,23 @@ const Card = styled.li`
   }
 
   .title {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--gray-900);
   }
   .description {
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--gray-500);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-700);
     margin-top: 6px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .EffectWrapper {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 6px;
+    margin-top: 8px;
   }
 `;
 

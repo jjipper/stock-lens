@@ -20,7 +20,7 @@ const IconType = {
   money: AttachMoneyIcon,
 };
 
-const TypeIcon = ({ type, fontSize = 20 }: TypeIconProps) => {
+const TypeIcon = ({ type, fontSize = 28 }: TypeIconProps) => {
   const IconComponent = IconType[type];
 
   return (

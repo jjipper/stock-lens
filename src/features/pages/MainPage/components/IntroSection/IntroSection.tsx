@@ -5,7 +5,7 @@ export function IntroSection() {
   return (
     <Wrapper>
       <Subtitle>
-        <MovingIcon sx={{ fontSize: 16 }} />
+        <MovingIcon sx={{ fontSize: 24 }} />
         <span>Today's Market</span>
       </Subtitle>
       <Title>Check out the trending issues today</Title>

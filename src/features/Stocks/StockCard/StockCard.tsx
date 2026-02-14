@@ -32,10 +32,10 @@ export const StockCard = ({
         <span className={`percentage ${percentage > 0 ? 'up' : 'down'}`}>
           {percentage > 0 ? (
             <>
-              <TrendingUpIcon sx={{ fontSize: 12 }} />+
+              <TrendingUpIcon sx={{ fontSize: 16 }} />+
             </>
           ) : (
-            <TrendingDownIcon sx={{ fontSize: 12 }} />
+            <TrendingDownIcon sx={{ fontSize: 16 }} />
           )}
           {percentage}%
         </span>

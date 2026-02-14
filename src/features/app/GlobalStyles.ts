@@ -21,6 +21,8 @@ export const GlobalStyles = createGlobalStyle`
   }
   body, * {
     font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
     color: var(--gray-900);
   }
 
@@ -28,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 24px;
+    padding: 20px 24px 60px;
   }
 
 `;

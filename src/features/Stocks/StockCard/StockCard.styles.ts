@@ -6,7 +6,7 @@ const Card = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 14px 12px;
+  padding: 16px 20px 12px;
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -27,20 +27,20 @@ const Card = styled.div`
       gap: 4px;
 
       .name {
-        font-size: 14px;
+        font-size: 20px;
         font-weight: 600;
         color: var(--gray-900);
       }
 
       .ticker {
-        font-size: 10px;
+        font-size: 14px;
         color: var(--gray-400);
       }
     }
 
     .main-issue {
-      font-size: 12px;
-      font-weight: 300;
+      font-size: 16px;
+      font-weight: 400;
       color: var(--gray-700);
     }
   }
@@ -48,21 +48,22 @@ const Card = styled.div`
   .stock-price {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
     text-align: right;
 
     .price {
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 600;
+      color: var(--gray-800);
     }
 
     .percentage {
-      font-size: 10px;
+      font-size: 16px;
       font-weight: 500;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 2px;
+      gap: 4px;
 
       &.up {
         color: var(--red-500);

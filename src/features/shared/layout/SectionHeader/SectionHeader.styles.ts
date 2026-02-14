@@ -8,11 +8,11 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h4`
-  font-size: 16px;
+  font-size: 22px;
 `;
 
 const SubTitle = styled.p`
-  font-size: 10px;
+  font-size: 14px;
   color: var(--gray-400);
 `;
 
