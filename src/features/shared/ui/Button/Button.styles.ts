@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { ButtonProps } from './Button.types';
+import type { ButtonProps } from 'features/types/types';
 
 const sizeStyles = {
   sm: {

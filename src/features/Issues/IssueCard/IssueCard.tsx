@@ -3,7 +3,7 @@ import { StockChips } from '../StockChips/StockChips';
 import { NewsTag } from '../NewsTag/NewsTag';
 import { EffectTag } from '../EffectTag/EffectTag';
 import { Card, CardContent } from './IssueCard.styles';
-import type { IssueCardProps } from './IssueCard.types';
+import type { IssueCardProps } from 'features/types/types';
 import { useNavigate } from 'react-router-dom';
 
 function IssueCard({

@@ -1,5 +1,5 @@
 import { Card } from './StockCard.styles';
-import type { StockCardProps } from './StockCard.types';
+import type { StockCardProps } from 'features/types/types';
 import {
   TrendingUpIcon,
   TrendingDownIcon,
