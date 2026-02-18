@@ -3,7 +3,7 @@ import { SectionWrapper } from 'features/shared/layout/SectionWrapper/SectionWra
 import { SectionHeader } from 'features/shared/layout/SectionHeader/SectionHeader';
 import { IssueCard } from 'features/Issues/IssueCard/IssueCard';
 import { IssueListWrapper } from './IssueSection.styles';
-
+styled;
 const IssueSection = () => {
   useEffect(() => {
     fetch('http://localhost:3001/issues?_limit=3')

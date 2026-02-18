@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
     background: var(--bg-color);
   }
   body, * {
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: var(--gray-900);
