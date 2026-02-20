@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { SectionWrapper, SectionHeader } from 'features/layout';
 import { IssueCard } from 'features/Issues';
-import { IssueListWrapper } from './IssueSection.styles';
 
 const IssueSection = () => {
   useEffect(() => {
@@ -18,7 +17,7 @@ const IssueSection = () => {
     <SectionWrapper>
       <SectionHeader title={'Top Trending Issues'} updateTime={'Just now'} />
 
-      <IssueListWrapper>
+      <ul className="flex flex-col gap-4">
         <IssueCard
           type="ai"
           title="AI 반도체 수요 급증, 국내 공급망 주목"
@@ -32,7 +31,7 @@ const IssueSection = () => {
           mention={true}
           effect="high"
         />
-      </IssueListWrapper>
+      </ul>
     </SectionWrapper>
   );
 };

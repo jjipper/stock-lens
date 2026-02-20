@@ -3,7 +3,7 @@ import { IssueCard } from 'features/Issues';
 
 const IssuePage: FunctionComponent = () => {
   return (
-    <>
+    <ul className="flex flex-col gap-4">
       <IssueCard
         type="ai"
         title="AI 반도체 수요 급증, 국내 공급망 주목"
@@ -17,7 +17,7 @@ const IssuePage: FunctionComponent = () => {
         mention={true}
         effect="high"
       />
-    </>
+    </ul>
   );
 };
 
