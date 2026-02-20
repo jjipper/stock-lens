@@ -1,4 +1,5 @@
 import { IconWrapper } from './TypeIcon.styles';
+import type { SvgIconComponent } from '@mui/icons-material';
 import {
   MemoryIcon,
   BatterySaverIcon,
@@ -12,7 +13,7 @@ interface TypeIconProps {
   fontSize?: number;
 }
 
-const IconType = {
+const IconType: Record<TypeIconProps['type'], SvgIconComponent> = {
   memory: MemoryIcon,
   battery: BatterySaverIcon,
   ai: AutoAwesomeIcon,
