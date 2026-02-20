@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { IssueCard } from 'features/Issues/IssueCard/IssueCard';
+import { IssueCard } from 'features/Issues';
 
 const IssuePage: FunctionComponent = () => {
   return (

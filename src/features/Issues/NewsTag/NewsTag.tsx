@@ -1,5 +1,5 @@
 import { Tag } from './NewsTag.styles';
-import { TrendingUpIcon } from 'features/shared/ui/Icons/Icons';
+import { TrendingUpIcon } from 'features/shared';
 
 interface NewsTagProps {
   newsCount: number;

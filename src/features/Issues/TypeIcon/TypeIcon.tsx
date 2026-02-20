@@ -5,7 +5,7 @@ import {
   AutoAwesomeIcon,
   ShowChartIcon,
   AttachMoneyIcon,
-} from 'features/shared/ui/Icons/Icons';
+} from 'features/shared';
 
 interface TypeIconProps {
   type: 'memory' | 'battery' | 'ai' | 'chart' | 'money';

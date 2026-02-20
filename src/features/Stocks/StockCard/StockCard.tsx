@@ -1,9 +1,6 @@
 import { Card } from './StockCard.styles';
 import type { StockCardProps } from 'features/types/types';
-import {
-  TrendingUpIcon,
-  TrendingDownIcon,
-} from 'features/shared/ui/Icons/Icons';
+import { TrendingUpIcon, TrendingDownIcon } from 'features/shared';
 import { useNavigate } from 'react-router-dom';
 
 export const StockCard = ({
