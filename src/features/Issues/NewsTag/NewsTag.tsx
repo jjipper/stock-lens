@@ -10,10 +10,11 @@ const NewsTag = ({ newsCount, mention }: NewsTagProps) => {
   return (
     <Tag>
       <TrendingUpIcon sx={{ fontSize: 12 }} />
-      <span className="tag-text">
-        {newsCount} related news items
-        {mention && ', surge in mentions'}
-      </span>
+      <div className="tag-text">
+        {newsCount}
+        <span>related news items</span>
+        {mention && <span>', surge in mentions'</span>}
+      </div>
     </Tag>
   );
 };
