@@ -5,7 +5,7 @@ const MainLayout = () => {
   return (
     <>
       <Header />
-      <div className="content-wrapper">
+      <div className="flex flex-col gap-5 px-6 pt-5 pb-16">
         <Outlet />
       </div>
     </>

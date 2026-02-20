@@ -1,5 +1,3 @@
-import { Wrapper, Title, SubTitle } from './SectionHeader.styles';
-
 const SectionHeader = ({
   title,
   updateTime,
@@ -8,10 +6,12 @@ const SectionHeader = ({
   updateTime?: string;
 }) => {
   return (
-    <Wrapper>
-      <Title>{title}</Title>
-      {updateTime && <SubTitle>Last update: {updateTime}</SubTitle>}
-    </Wrapper>
+    <div className="flex w-full items-end justify-between">
+      <h4 className="text-2xl font-semibold">{title}</h4>
+      {updateTime && (
+        <p className="text-sm text-gray-400">Last update: {updateTime}</p>
+      )}
+    </div>
   );
 };
 
