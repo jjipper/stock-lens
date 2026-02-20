@@ -1,12 +1,5 @@
 import type { ReactNode } from 'react';
-import styled from 'styled-components';
-
-const List = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 16px;
-`;
 
 export const StockList = ({ children }: { children: ReactNode }) => {
-  return <List>{children}</List>;
+  return <div className="grid grid-cols-1 gap-4 md:grid-cols-2">{children}</div>;
 };
