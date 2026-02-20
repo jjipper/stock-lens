@@ -6,7 +6,7 @@ import { Card, CardContent } from './IssueCard.styles';
 import type { IssueCardProps } from 'features/types/types';
 import { useNavigate } from 'react-router-dom';
 
-function IssueCard({
+const IssueCard = ({
   type,
   title,
   description,
@@ -14,11 +14,11 @@ function IssueCard({
   effect,
   newsCount,
   mention,
-}: IssueCardProps) {
+}: IssueCardProps) => {
   const navigate = useNavigate();
-  function goToIssueDetail() {
+  const goToIssueDetail = () => {
     navigate('/issue');
-  }
+  };
 
   return (
     <Card onClick={goToIssueDetail}>
@@ -37,6 +37,6 @@ function IssueCard({
       </CardContent>
     </Card>
   );
-}
+};
 
 export { IssueCard };

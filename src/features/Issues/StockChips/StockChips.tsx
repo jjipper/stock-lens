@@ -6,9 +6,9 @@ interface StockChipsProps {
 }
 
 const StockChips = ({ stocks, showTicker }: StockChipsProps) => {
-  function StockType(percentage: number) {
+  const StockType = (percentage: number) => {
     return percentage > 0 ? 'up' : 'down';
-  }
+  };
 
   return (
     <Chips>

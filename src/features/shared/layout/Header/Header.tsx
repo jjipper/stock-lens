@@ -5,12 +5,12 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  function goToMain() {
+  const goToMain = () => {
     if (location.pathname !== '/') {
       navigate('/');
     }
     return;
-  }
+  };
 
   return (
     <Wrapper>

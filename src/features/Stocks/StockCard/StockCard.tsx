@@ -11,9 +11,9 @@ export const StockCard = ({
   percentage,
 }: StockCardProps) => {
   const navigate = useNavigate();
-  function goToStockDetail() {
+  const goToStockDetail = () => {
     navigate('/stock');
-  }
+  };
 
   return (
     <Card onClick={goToStockDetail}>

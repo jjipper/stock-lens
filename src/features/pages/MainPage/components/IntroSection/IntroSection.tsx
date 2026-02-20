@@ -1,7 +1,7 @@
 import { Wrapper, Subtitle, Title, Description } from './IntroSection.styles';
 import { MovingIcon } from 'features/shared';
 
-export function IntroSection() {
+export const IntroSection = () => {
   return (
     <Wrapper>
       <Subtitle>
@@ -14,4 +14,4 @@ export function IntroSection() {
       </Description>
     </Wrapper>
   );
-}
+};
