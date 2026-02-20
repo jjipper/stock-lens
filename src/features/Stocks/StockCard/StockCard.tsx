@@ -11,12 +11,12 @@ export const StockCard = ({
   percentage,
 }: StockCardProps) => {
   const navigate = useNavigate();
-  const goToStockDetail = () => {
+  const handleStockCardClick = () => {
     navigate('/stock');
   };
 
   return (
-    <Card onClick={goToStockDetail}>
+    <Card onClick={handleStockCardClick}>
       <dl className="stock-info">
         <dt>
           <span className="name">{name}</span>

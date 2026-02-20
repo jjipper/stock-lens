@@ -4,14 +4,14 @@ import { Button } from 'features/shared';
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
-  const goToMain = () => {
+  const handleMainClick = () => {
     navigate('/');
   };
 
   return (
     <Wrapper>
       <Message>The page does not exist</Message>
-      <Button variant="primary" size="lg" onClick={goToMain}>
+      <Button variant="primary" size="lg" onClick={handleMainClick}>
         Go To Main
       </Button>
     </Wrapper>

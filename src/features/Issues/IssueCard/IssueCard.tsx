@@ -16,12 +16,12 @@ const IssueCard = ({
   mention,
 }: IssueCardProps) => {
   const navigate = useNavigate();
-  const goToIssueDetail = () => {
+  const handleIssueCardClick = () => {
     navigate('/issue');
   };
 
   return (
-    <Card onClick={goToIssueDetail}>
+    <Card onClick={handleIssueCardClick}>
       <TypeIcon type={type} />
 
       <CardContent>

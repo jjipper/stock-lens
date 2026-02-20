@@ -5,16 +5,15 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const goToMain = () => {
+  const handleLogoClick = () => {
     if (location.pathname !== '/') {
       navigate('/');
     }
-    return;
   };
 
   return (
     <Wrapper>
-      <Logo onClick={goToMain}>Stock News Timeline</Logo>
+      <Logo onClick={handleLogoClick}>Stock News Timeline</Logo>
     </Wrapper>
   );
 };
