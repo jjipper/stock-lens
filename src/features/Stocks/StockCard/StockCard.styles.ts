@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
-const Card = styled.div`
+const Card = styled.button`
   background: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  width: 100%;
   padding: 16px 20px 12px;
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid transparent;
   transition: border-color 0.3s ease;
+  text-align: left;
+  user-select: none;
 
   &:hover {
     border: 1px solid var(--gray-300);
