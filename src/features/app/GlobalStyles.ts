@@ -12,6 +12,28 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+  button,
+  [role='button'],
+  a {
+    user-select: none;
+  }
+
+  :where(a, button, [role='button'], input, select, textarea):focus-visible {
+    outline: 3px solid var(--primary);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   ul, ol, li {
     list-style: none;
   }
