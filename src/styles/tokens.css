@@ -1,0 +1,23 @@
+@theme {
+  --color-primary: #2f6fff;
+  --color-primary-hover: #2462f4;
+  --color-primary-dark: #0d4eda;
+
+  --color-memory-icon: #2f6fff;
+  --color-memory-bg: #e6f0ff;
+  --color-battery-icon: #25c771;
+  --color-battery-bg: #e6faf1;
+  --color-ai-icon: #ff66df;
+  --color-ai-bg: #fff0fc;
+  --color-chart-icon: #ff4d4f;
+  --color-chart-bg: #ffeaea;
+  --color-money-icon: #fe9a00;
+  --color-money-bg: #fff4e2;
+
+  --color-effect-high: #e12226;
+  --color-effect-high-bg: #ffebeb;
+  --color-effect-middle: #f6a205;
+  --color-effect-middle-bg: #fff4e2;
+  --color-effect-low: #60a75a;
+  --color-effect-low-bg: #e8f9e7;
+}
