@@ -12,13 +12,19 @@ const ChipButton = styled.button`
   gap: 4px;
   align-items: center;
   background: var(--gray-50);
+  border: 1px solid transparent;
   border-radius: 20px;
   padding: 6px 12px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  user-select: none;
 
   &:hover {
     background: var(--gray-100);
+  }
+
+  &:focus-visible {
+    border-color: var(--primary);
   }
 
   .name-ticker,
@@ -38,4 +44,4 @@ const ChipButton = styled.button`
   }
 `;
 
-export { Chips, Chip };
+export { Chips, Chip, ChipButton };
