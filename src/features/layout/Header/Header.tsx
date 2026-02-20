@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Wrapper, Logo } from './Header.styles';
+import { Wrapper, LogoButton } from './Header.styles';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -13,7 +13,13 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <Logo onClick={handleLogoClick}>Stock News Timeline</Logo>
+      <LogoButton
+        type="button"
+        onClick={handleLogoClick}
+        aria-label="메인 페이지로 이동"
+      >
+        Stock News Timeline
+      </LogoButton>
     </Wrapper>
   );
 };

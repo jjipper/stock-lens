@@ -9,9 +9,13 @@ const Wrapper = styled.header`
   padding: 0 24px;
 `;
 
-const Logo = styled.h1`
+const LogoButton = styled.button`
   font-size: 24px;
+  font-weight: 700;
+  border: none;
+  background: transparent;
   cursor: pointer;
+  border-radius: 6px;
 `;
 
-export { Wrapper, Logo };
+export { Wrapper, LogoButton };
