@@ -12,30 +12,25 @@ interface TypeIconProps {
   fontSize?: number;
 }
 
-const IconType: Record<TypeIconProps['type'], SvgIconComponent> = {
-  memory: MemoryIcon,
-  battery: BatterySaverIcon,
-  ai: AutoAwesomeIcon,
-  chart: ShowChartIcon,
-  money: AttachMoneyIcon,
-};
+type Type = TypeIconProps['type'];
 
-const iconWrapperClassMap: Record<TypeIconProps['type'], string> = {
-  memory: 'bg-memory-bg text-memory-icon',
-  battery: 'bg-battery-bg text-battery-icon',
-  ai: 'bg-ai-bg text-ai-icon',
-  chart: 'bg-chart-bg text-chart-icon',
-  money: 'bg-money-bg text-money-icon',
+const TYPE_META: Record<Type, { Icon: SvgIconComponent; wrapperClass: string }> = {
+  memory: { Icon: MemoryIcon, wrapperClass: 'bg-memory-bg text-memory-icon' },
+  battery: {
+    Icon: BatterySaverIcon,
+    wrapperClass: 'bg-battery-bg text-battery-icon',
+  },
+  ai: { Icon: AutoAwesomeIcon, wrapperClass: 'bg-ai-bg text-ai-icon' },
+  chart: { Icon: ShowChartIcon, wrapperClass: 'bg-chart-bg text-chart-icon' },
+  money: { Icon: AttachMoneyIcon, wrapperClass: 'bg-money-bg text-money-icon' },
 };
 
 const TypeIcon = ({ type, fontSize = 28 }: TypeIconProps) => {
-  const IconComponent = IconType[type];
+  const { Icon, wrapperClass } = TYPE_META[type];
 
   return (
-    <div
-      className={`inline-flex items-center justify-center rounded-xl p-3 ${iconWrapperClassMap[type]}`}
-    >
-      <IconComponent sx={{ fontSize, color: 'currentColor' }} />
+    <div className={`inline-flex items-center justify-center rounded-xl p-3 ${wrapperClass}`}>
+      <Icon sx={{ fontSize, color: 'currentColor' }} />
     </div>
   );
 };
