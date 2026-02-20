@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { SectionWrapper, SectionHeader } from 'features/shared';
+import { SectionWrapper, SectionHeader } from 'features/layout';
 import { StockCard, StockList } from 'features/Stocks';
 
 const HotStockSection: FunctionComponent = () => {

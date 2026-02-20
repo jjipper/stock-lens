@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { ProtectedRoute } from './ProtectedRoute';
-import { MainLayout } from 'features/shared';
+import { MainLayout } from 'features/layout';
 import MainPage from 'features/pages/MainPage/MainPage';
 import IssuePage from 'features/pages/IssuePage/IssuePage';
 import NotFoundPage from 'features/pages/NotFoundPage/NotFoundPage';

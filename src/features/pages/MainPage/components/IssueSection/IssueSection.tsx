@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { SectionWrapper, SectionHeader } from 'features/shared';
+import { SectionWrapper, SectionHeader } from 'features/layout';
 import { IssueCard } from 'features/Issues';
 import { IssueListWrapper } from './IssueSection.styles';
 
