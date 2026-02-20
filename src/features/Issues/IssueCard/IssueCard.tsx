@@ -20,8 +20,21 @@ const IssueCard = ({
     navigate('/issue');
   };
 
+  const handleIssueCardKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      navigate('/issue');
+    }
+  };
+
   return (
-    <Card onClick={handleIssueCardClick}>
+    <CardItem
+      role="button"
+      tabIndex={0}
+onClick={handleIssueCardClick}
+      onKeyDown={handleIssueCardKeyDown}
+      aria-label={`이슈 상세 보기: ${title}`}
+>
       <TypeIcon type={type} />
 
       <CardContent>
@@ -35,7 +48,7 @@ const IssueCard = ({
           <EffectTag effect={effect} />
         </div>
       </CardContent>
-    </Card>
+    </CardItem>
   );
 };
 
