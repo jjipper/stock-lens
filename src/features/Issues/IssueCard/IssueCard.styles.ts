@@ -1,20 +1,28 @@
 import styled from 'styled-components';
 
-const Card = styled.li`
+const CardItem = styled.li`
   background: var(--white);
   display: flex;
   align-items: flex-start;
   gap: 18px;
   padding: 18px 20px 14px;
   border-radius: 12px;
-  cursor: pointer;
   border: 1px solid transparent;
   transition: border-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
 
-  &:hover {
+  &:hover,
+  &:has(button:focus-visible) {
     border: 1px solid var(--gray-300);
   }
 
+  &:focus-visible {
+    border: 1px solid var(--gray-300);
+  }
+`;
+
+const CardContent = styled.div`
   .title {
     font-size: 20px;
     font-weight: 700;
@@ -36,6 +44,4 @@ const Card = styled.li`
   }
 `;
 
-const CardContent = styled.div``;
-
-export { Card, CardContent };
+export { CardItem, CardContent };

@@ -5,7 +5,9 @@ const Chips = styled.ul`
   gap: 8px;
 `;
 
-const Chip = styled.li`
+const Chip = styled.li``;
+
+const ChipButton = styled.button`
   display: flex;
   gap: 4px;
   align-items: center;
