@@ -7,9 +7,6 @@ interface StockChipsProps {
 }
 
 const StockChips = ({ stocks, showTicker, onChipClick }: StockChipsProps) => {
-  const StockType = (percentage: number) => {
-    return percentage > 0 ? 'up' : 'down';
-  };
   const preventCardNavigation = (event: KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
@@ -20,7 +17,10 @@ const StockChips = ({ stocks, showTicker, onChipClick }: StockChipsProps) => {
   return (
     <ul className="flex gap-2">
       {stocks.map((stock) => {
-        const isUp = StockType(stock.percentage) === 'up';
+        const isUp = stock.percentage > 0;
+        const directionText = isUp ? '상승' : '하락';
+        const absPercentage = Math.abs(stock.percentage);
+
         return (
           <li key={stock.ticker}>
             <button
@@ -37,14 +37,10 @@ const StockChips = ({ stocks, showTicker, onChipClick }: StockChipsProps) => {
                 <span>{stock.name}</span>
                 {showTicker && <span className="ml-1">{stock.ticker}</span>}
               </div>
-              <span
-                className={`text-sm font-semibold ${
-                  isUp ? 'text-red-500' : 'text-blue-500'
-                }`}
-              >
+              <span className={`text-sm font-semibold ${isUp ? 'text-red-500' : 'text-blue-500'}`}>
                 <span aria-hidden>{isUp ? '+' : '-'}</span>
-                <span className="sr-only">{isUp ? '상승' : '하락'}</span>
-                <span>{Math.abs(stock.percentage)}%</span>
+                <span>{absPercentage}%</span>
+                <span className="sr-only">{directionText}</span>
               </span>
             </button>
           </li>
