@@ -1,4 +1,3 @@
-import { Tag } from './NewsTag.styles';
 import { TrendingUpIcon } from 'features/shared';
 
 interface NewsTagProps {
@@ -8,14 +7,14 @@ interface NewsTagProps {
 
 const NewsTag = ({ newsCount, mention }: NewsTagProps) => {
   return (
-    <Tag>
-      <TrendingUpIcon sx={{ fontSize: 12 }} />
-      <div className="tag-text">
+    <div className="flex w-max items-center gap-1 py-1">
+      <TrendingUpIcon className="text-gray-500" sx={{ fontSize: 12 }} />
+      <div className="text-sm font-normal text-gray-500">
         {newsCount}
-        <span>related news items</span>
-        {mention && <span>', surge in mentions'</span>}
+        <span> related news items</span>
+        {mention && <span>, surge in mentions</span>}
       </div>
-    </Tag>
+    </div>
   );
 };
 

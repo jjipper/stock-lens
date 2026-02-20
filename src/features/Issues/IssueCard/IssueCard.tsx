@@ -2,7 +2,6 @@ import { TypeIcon } from '../TypeIcon/TypeIcon';
 import { StockChips } from '../StockChips/StockChips';
 import { NewsTag } from '../NewsTag/NewsTag';
 import { EffectTag } from '../EffectTag/EffectTag';
-import { CardItem, CardContent } from './IssueCard.styles';
 import type { IssueCardProps } from 'features/types/types';
 import { useNavigate } from 'react-router-dom';
 import type { KeyboardEvent } from 'react';
@@ -34,18 +33,21 @@ const IssueCard = ({
   };
 
   return (
-    <CardItem
+    <li
       role="button"
       tabIndex={0}
       onClick={handleIssueCardClick}
       onKeyDown={handleIssueCardKeyDown}
       aria-label={`이슈 상세 보기: ${title}`}
+      className="flex cursor-pointer items-start gap-4 rounded-xl border border-transparent bg-white px-5 py-4 transition-colors duration-300 hover:border-gray-300"
     >
       <TypeIcon type={type} />
 
-      <CardContent>
-        <h5 className="title">{title}</h5>
-        <p className="description">{description}</p>
+      <div>
+        <h5 className="text-xl font-bold text-gray-900">{title}</h5>
+        <p className="mt-1.5 mb-2.5 text-base text-gray-700">
+          {description}
+        </p>
 
         <StockChips
           showTicker={false}
@@ -53,12 +55,12 @@ const IssueCard = ({
           onChipClick={handleStockChipClick}
         />
 
-        <div className="EffectWrapper">
+        <div className="mt-2 flex items-center gap-2">
           <NewsTag newsCount={newsCount} mention={mention} />
           <EffectTag effect={effect} />
         </div>
-      </CardContent>
-    </CardItem>
+      </div>
+    </li>
   );
 };
 
