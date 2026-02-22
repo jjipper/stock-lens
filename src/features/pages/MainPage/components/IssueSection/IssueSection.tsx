@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { SectionWrapper, SectionHeader } from 'features/layout';
 import { IssueCard } from 'features/Issues';
 import type { IssueCardProps } from 'features/types/types';
 
 const IssueSection = () => {
   const [issues, setIssues] = useState<IssueCardProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     fetch('/issues?_limit=3')
@@ -15,7 +17,12 @@ const IssueSection = () => {
         return response.json();
       })
       .then((data) => setIssues(data))
+      .catch((err) => setError(err))
+      .finally(() => setIsLoading(false));
   }, []);
+
+  if (isLoading) return <SectionWrapper>Loading...</SectionWrapper>;
+  if (error) return <SectionWrapper>Error: {error.message}</SectionWrapper>;
 
   return (
     <SectionWrapper>
