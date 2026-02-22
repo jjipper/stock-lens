@@ -4,7 +4,7 @@ import { IssueCard } from 'features/Issues';
 
 const IssueSection = () => {
   useEffect(() => {
-    fetch('http://localhost:3001/issues?_limit=3')
+    fetch('/issues?_limit=3')
       .then((response) => {
         console.log('status:', response.status);
         return response.json();
