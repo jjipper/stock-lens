@@ -1,16 +1,20 @@
 import { useEffect } from 'react';
 import { SectionWrapper, SectionHeader } from 'features/layout';
 import { IssueCard } from 'features/Issues';
+import type { IssueCardProps } from 'features/types/types';
 
 const IssueSection = () => {
+  const [issues, setIssues] = useState<IssueCardProps[]>([]);
+
   useEffect(() => {
     fetch('/issues?_limit=3')
       .then((response) => {
-        console.log('status:', response.status);
+        if (!response.ok) {
+          throw new Error(`요청 실패: ${response.status}`);
+        }
         return response.json();
       })
-      .then((data) => console.log('data:', data))
-      .catch((error) => console.log('error:', error));
+      .then((data) => setIssues(data))
   }, []);
 
   return (
