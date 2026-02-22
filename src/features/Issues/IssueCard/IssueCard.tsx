@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import type { KeyboardEvent } from 'react';
 
 const IssueCard = ({
+  id,
   type,
   title,
   description,
@@ -16,14 +17,16 @@ const IssueCard = ({
   mention,
 }: IssueCardProps) => {
   const navigate = useNavigate();
+  const issuePath = `/issue/${id}`;
+
   const handleIssueCardClick = () => {
-    navigate('/issue');
+    navigate(issuePath);
   };
 
   const handleIssueCardKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      navigate('/issue');
+      navigate(issuePath);
     }
   };
 
