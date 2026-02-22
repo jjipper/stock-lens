@@ -1,22 +1,40 @@
-import type { FunctionComponent } from 'react';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState, type FunctionComponent } from 'react';
 import { IssueCard } from 'features/Issues';
+import { NotFoundPage } from 'features/layout';
+import type { IssueCardProps } from 'features/types/types';
 
 const IssuePage: FunctionComponent = () => {
+  const { id } = useParams();
+  const [issue, setIssue] = useState<IssueCardProps | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('/issues')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`요청 실패: ${res.status}`);
+        }
+        return res.json() as Promise<IssueCardProps[]>;
+      })
+      .then((data) => {
+        const found = data.find((item) => String(item.id) === id);
+        setIssue(found ?? null);
+      })
+      .catch((err: unknown) => {
+        setError(err instanceof Error ? err.message : '알 수 없는 오류가 발생했습니다.');
+      })
+      .finally(() => setIsLoading(false));
+  }, [id]);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!issue) return <NotFoundPage />;
+
   return (
     <ul className="flex flex-col gap-4">
-      <IssueCard
-        type="ai"
-        title="AI 반도체 수요 급증, 국내 공급망 주목"
-        description="NVIDIA 실적 호조에 따른 국내 HBM 및 패키징 업체 수혜 전망"
-        stocks={[
-          { name: 'SK하이닉스', ticker: '000660', percentage: 4.12 },
-          { name: '리노공업', ticker: '051910', percentage: 2.34 },
-          { name: '솔브레인', ticker: '028260', percentage: -3.21 },
-        ]}
-        newsCount={12}
-        mention={true}
-        effect="high"
-      />
+      <IssueCard {...issue} />
     </ul>
   );
 };
