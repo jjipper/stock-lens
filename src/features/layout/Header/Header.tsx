@@ -6,10 +6,10 @@ const Header = () => {
       <h1>
         <Link
           to="/"
-        aria-label="메인 페이지로 이동"
-        className="cursor-pointer rounded-md border-none bg-transparent text-2xl font-bold"
-      >
-        Stock News Timeline
+          aria-label="Stock News Timeline, go to main page"
+          className="cursor-pointer rounded-md border-none bg-transparent text-2xl font-bold"
+        >
+          Stock News Timeline
         </Link>
       </h1>
     </header>
