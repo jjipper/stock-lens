@@ -1,5 +1,5 @@
 export interface IssueCardProps {
-  id: number;
+  id: string;
   type: 'memory' | 'battery' | 'ai' | 'chart' | 'money';
   title: string;
   description: string;

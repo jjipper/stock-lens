@@ -45,7 +45,7 @@ const issues = [
   },
   {
     id: '4',
-    type: 'auto',
+    type: 'battery',
     title: '전기차 배터리 수요 확대, 관련주 강세',
     description: '글로벌 전기차 시장 성장에 따라 국내 배터리 업체 및 소재주 급등',
     stocks: [
@@ -59,7 +59,7 @@ const issues = [
   },
   {
     id: '5',
-    type: 'bio',
+    type: 'money',
     title: '바이오주, 신약 개발 진전 소식에 급등',
     description: '주요 바이오 기업의 신약 임상 성공 소식으로 투자 심리 개선',
     stocks: [
