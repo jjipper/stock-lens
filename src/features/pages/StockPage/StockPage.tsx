@@ -1,5 +1,6 @@
 import { useEffect, useState, type FunctionComponent } from 'react';
-import type { StockCardProps } from 'features/types/types';
+import { useOutletContext } from 'react-router-dom';
+import type { StockCardProps, AppBarOutletContext } from 'features/types/types';
 import { SectionEmpty } from 'features/layout';
 import { StockList, StockCard } from 'features/Stocks';
 
@@ -24,6 +25,13 @@ const StockPage: FunctionComponent = () => {
       })
       .finally(() => setIsLoading(false));
   }, []);
+
+  // app bar Layout 타이틀 설정
+  const { setAppBarTitle } = useOutletContext<AppBarOutletContext>();
+
+  useEffect(() => {
+    setAppBarTitle('주식 목록');
+  }, [setAppBarTitle]);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
