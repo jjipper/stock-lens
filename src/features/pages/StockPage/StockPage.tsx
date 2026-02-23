@@ -5,6 +5,7 @@ import { SectionEmpty } from 'features/layout';
 import { StockList, StockCard } from 'features/Stocks';
 
 const StockPage: FunctionComponent = () => {
+  // 주식 목록 렌더링
   const [stocks, setStocks] = useState<StockCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -33,6 +34,7 @@ const StockPage: FunctionComponent = () => {
     setAppBarTitle('주식 목록');
   }, [setAppBarTitle]);
 
+  // 로딩, 에러, 404 분기
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (setStocks.length === 0) return <SectionEmpty />;

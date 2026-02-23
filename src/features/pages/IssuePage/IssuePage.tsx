@@ -5,7 +5,7 @@ import { NotFoundPage } from 'features/layout';
 import type { IssueCardProps, AppBarOutletContext } from 'features/types/types';
 
 const IssuePage: FunctionComponent = () => {
-  // 이슈 렌더링
+  // 이슈 목록 렌더링
   const [issues, setIssues] = useState<IssueCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
