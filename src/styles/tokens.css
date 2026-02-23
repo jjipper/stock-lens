@@ -3,16 +3,22 @@
   --color-primary-hover: #2462f4;
   --color-primary-dark: #0d4eda;
 
-  --color-memory-icon: #2f6fff;
-  --color-memory-bg: #e6f0ff;
+  --color-semiconductor-icon: #2f6fff;
+  --color-semiconductor-bg: #e6f0ff;
   --color-battery-icon: #25c771;
   --color-battery-bg: #e6faf1;
-  --color-ai-icon: #ff66df;
-  --color-ai-bg: #fff0fc;
-  --color-chart-icon: #ff4d4f;
-  --color-chart-bg: #ffeaea;
-  --color-money-icon: #fe9a00;
-  --color-money-bg: #fff4e2;
+  --color-biotech-icon: #00a884;
+  --color-biotech-bg: #e6fbf6;
+  --color-mobility-icon: #1d4ed8;
+  --color-mobility-bg: #e8f0ff;
+  --color-internet-icon: #7c3aed;
+  --color-internet-bg: #f2ebff;
+  --color-energy-icon: #f59e0b;
+  --color-energy-bg: #fff4dd;
+  --color-defense-icon: #0f766e;
+  --color-defense-bg: #e4f7f5;
+  --color-finance-icon: #166534;
+  --color-finance-bg: #e8f5e9;
 
   --color-effect-high: #e12226;
   --color-effect-high-bg: #ffebeb;
