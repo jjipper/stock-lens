@@ -11,7 +11,7 @@ export interface IssueCardProps {
 
 export interface StockCardProps {
   name: string;
-  ticker: string | number;
+  ticker: string;
   mainIssue?: string;
   price: number;
   percentage: number;
