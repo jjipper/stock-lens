@@ -1,6 +1,16 @@
+export type IssueType =
+  | 'semiconductor'
+  | 'battery'
+  | 'biotech'
+  | 'mobility'
+  | 'internet'
+  | 'energy'
+  | 'defense'
+  | 'finance';
+
 export interface IssueCardProps {
   id: string;
-  type: 'memory' | 'battery' | 'ai' | 'chart' | 'money';
+  type: IssueType;
   title: string;
   description: string;
   stocks: { name: string; ticker: string; percentage: number }[];
