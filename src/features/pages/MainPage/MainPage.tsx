@@ -8,8 +8,8 @@ const MainPage = () => {
     <>
       <IntroSection />
       <IssueSection />
-      <MyStockSection />
       <HotStockSection />
+      <MyStockSection />
     </>
   );
 };
