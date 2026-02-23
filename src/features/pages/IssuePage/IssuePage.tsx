@@ -4,8 +4,6 @@ import { NotFoundPage } from 'features/layout';
 import type { IssueCardProps } from 'features/types/types';
 
 const IssuePage: FunctionComponent = () => {
-  console.log('issue page');
-
   const [issues, setIssues] = useState<IssueCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

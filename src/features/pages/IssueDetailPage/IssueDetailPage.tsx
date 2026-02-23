@@ -5,8 +5,6 @@ import { NotFoundPage } from 'features/layout';
 import type { IssueCardProps } from 'features/types/types';
 
 const IssueDetailPage: FunctionComponent = () => {
-  console.log('issue detail page');
-
   const { id } = useParams();
   const [issue, setIssue] = useState<IssueCardProps | null>(null);
   const [isLoading, setIsLoading] = useState(true);
