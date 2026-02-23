@@ -47,16 +47,10 @@ const IssueCard = ({
       <TypeIcon type={type} />
 
       <div>
-        <h5 className="text-xl font-bold text-gray-900">{title}</h5>
-        <p className="mt-1.5 mb-2.5 text-base text-gray-700">
-          {description}
-        </p>
+        <h5 className="text-lg font-bold text-gray-900">{title}</h5>
+        <p className="mt-1.5 mb-2.5 text-base text-gray-700">{description}</p>
 
-        <StockChips
-          showTicker={false}
-          stocks={stocks}
-          onChipClick={handleStockChipClick}
-        />
+        <StockChips showTicker={false} stocks={stocks} onChipClick={handleStockChipClick} />
 
         <div className="mt-2 flex items-center gap-2">
           <NewsTag newsCount={newsCount} mention={mention} />

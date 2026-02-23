@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="flex h-16 items-center border-b border-gray-300 bg-white px-6">
+    <header className="flex h-16 items-center border-b border-gray-200 bg-white px-6">
       <h1>
         <Link
           to="/"
@@ -15,13 +15,13 @@ const Header = () => {
       <nav className="ml-auto flex gap-1">
         <Link
           to="/issue"
-          className="text-base font-medium px-4 py-2 rounded-md cursor-pointer transition-all hover:bg-gray-50"
+          className="text-base font-semibold px-4 py-2 rounded-md cursor-pointer transition-all hover:bg-gray-50"
         >
           Issues
         </Link>
         <Link
           to="/stock"
-          className="text-base font-medium px-4 py-2 rounded-md cursor-pointer transition-all hover:bg-gray-50"
+          className="text-base font-semibold px-4 py-2 rounded-md cursor-pointer transition-all hover:bg-gray-50"
         >
           {' '}
           Stocks
