@@ -8,4 +8,5 @@ export {
   ShowChartIcon,
   AttachMoneyIcon,
   MovingIcon,
+  ArrowBackIcon,
 } from './ui/Icons/Icons';

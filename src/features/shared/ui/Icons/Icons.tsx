@@ -6,6 +6,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MovingIcon from '@mui/icons-material/Moving';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export {
   TrendingUpIcon,
@@ -16,4 +17,5 @@ export {
   ShowChartIcon,
   AttachMoneyIcon,
   MovingIcon,
+  ArrowBackIcon,
 };
