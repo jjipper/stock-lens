@@ -1,7 +1,8 @@
 import { useEffect, useState, type FunctionComponent } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { IssueCard } from 'features/Issues';
 import { NotFoundPage } from 'features/layout';
-import type { IssueCardProps } from 'features/types/types';
+import type { IssueCardProps, AppBarOutletContext } from 'features/types/types';
 
 const IssuePage: FunctionComponent = () => {
   const [issues, setIssues] = useState<IssueCardProps[]>([]);
@@ -24,6 +25,14 @@ const IssuePage: FunctionComponent = () => {
       })
       .finally(() => setIsLoading(false));
   }, []);
+
+
+  // app bar Layout 타이틀 설정
+  const { setAppBarTitle } = useOutletContext<AppBarOutletContext>();
+
+  useEffect(() => {
+    setAppBarTitle('이슈 목록');
+  }, [setAppBarTitle]);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
