@@ -4,7 +4,7 @@ import type { StockCardProps } from 'features/types/types';
 import { SectionWrapper, SectionHeader } from 'features/layout';
 import { StockCard, StockList } from 'features/Stocks';
 
-const HotStockSection: FunctionComponent = () => {
+const PopularStocksSection: FunctionComponent = () => {
   const [stocks, setStocks] = useState<StockCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -18,8 +18,8 @@ const HotStockSection: FunctionComponent = () => {
         return res.json() as Promise<StockCardProps[]>;
       })
       .then((data) => {
-        const hotStocks = data.filter((item) => item.popular).slice(0, 6);
-        setStocks(hotStocks);
+        const popularStocks = data.filter((item) => item.popular).slice(0, 6);
+        setStocks(popularStocks);
       })
       .catch((err) => setError(err))
       .finally(() => setIsLoading(false));
@@ -41,4 +41,4 @@ const HotStockSection: FunctionComponent = () => {
   );
 };
 
-export { HotStockSection };
+export { PopularStocksSection };
