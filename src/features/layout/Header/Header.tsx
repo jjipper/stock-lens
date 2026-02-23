@@ -12,6 +12,21 @@ const Header = () => {
           Stock News Timeline
         </Link>
       </h1>
+      <nav className="ml-auto flex gap-1">
+        <Link
+          to="/issue"
+          className="text-base font-medium px-4 py-2 rounded-md cursor-pointer transition-all hover:bg-gray-50"
+        >
+          Issues
+        </Link>
+        <Link
+          to="/stock"
+          className="text-base font-medium px-4 py-2 rounded-md cursor-pointer transition-all hover:bg-gray-50"
+        >
+          {' '}
+          Stocks
+        </Link>
+      </nav>
     </header>
   );
 };
