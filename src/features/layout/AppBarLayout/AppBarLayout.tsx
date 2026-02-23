@@ -1,8 +1,11 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Header } from '../Header/Header';
 import { ArrowBackIcon } from 'features/shared';
+import { useState } from 'react';
 
 const AppBarLayout = () => {
+  const [appBarTitle, setAppBarTitle] = useState('App Bar Title');
+
   const navigate = useNavigate();
   const handleBackButtonClick = () => {
     navigate(-1);
@@ -18,10 +21,10 @@ const AppBarLayout = () => {
         >
           <ArrowBackIcon sx={{ fontSize: 20 }} className="text-gray-600" />
         </button>
-        <h1 className="text-lg font-bold">이슈 상세</h1>
+        <h1 className="text-lg font-bold">{appBarTitle}</h1>
       </nav>
       <div className="flex flex-col gap-5 px-6 pt-5 pb-16">
-        <Outlet />
+        <Outlet context={{ setAppBarTitle }} />
       </div>
     </>
   );
