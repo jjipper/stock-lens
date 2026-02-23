@@ -37,8 +37,15 @@ const IssuePage: FunctionComponent = () => {
     setAppBarTitle('이슈 목록');
   }, [setAppBarTitle]);
 
+  // 로딩, 에러, 404 분기
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error)
+    return (
+      <div>
+        <span>Error: {error}</span>
+        <button onClick={loadIssues}>다시 시도</button>
+      </div>
+    );
   if (issues.length === 0) return <NotFoundPage />;
 
   return (
