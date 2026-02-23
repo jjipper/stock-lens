@@ -75,37 +75,33 @@ const issues = [
 
 const stocks = [
   {
-    id: '1',
     name: '삼성전자',
     ticker: '005930',
     mainIssue: '갤럭시 S25 출시 임박, 사전예약 시작',
     price: 73000,
     percentage: 1.39,
-    myStock: false,
+    myStock: true,
     popular: true,
   },
   {
-    id: '2',
     name: 'SK하이닉스',
     ticker: '000660',
     mainIssue: 'NVIDIA AI칩 HBM 독점 공급 계약 체결',
     price: 215000,
     percentage: 4.12,
-    myStock: false,
+    myStock: true,
     popular: true,
   },
   {
-    id: '3',
     name: 'LG에너지솔루션',
     ticker: '373220',
     mainIssue: '',
     price: 420000,
     percentage: -1.18,
-    myStock: false,
+    myStock: true,
     popular: true,
   },
   {
-    id: '4',
     name: '삼성바이오로직스',
     ticker: '328790',
     mainIssue: '',
@@ -115,7 +111,6 @@ const stocks = [
     popular: true,
   },
   {
-    id: '5',
     name: 'POSCO홀딩스',
     ticker: '005490',
     mainIssue: '',
@@ -125,7 +120,6 @@ const stocks = [
     popular: true,
   },
   {
-    id: '6',
     name: 'NAVER',
     ticker: '035420',
     mainIssue: '네이버, AI 번역 서비스 글로벌 진출',
@@ -135,7 +129,6 @@ const stocks = [
     popular: true,
   },
   {
-    id: '7',
     name: '카카오',
     ticker: '035720',
     mainIssue: '카카오페이 일본 간편결제 시장 진출',
@@ -145,7 +138,6 @@ const stocks = [
     popular: true,
   },
   {
-    id: '8',
     name: '현대자동차',
     ticker: '005380',
     mainIssue: '전기차 수출량 사상 최대 기록',
@@ -155,13 +147,12 @@ const stocks = [
     popular: true,
   },
   {
-    id: '9',
     name: 'LG화학',
     ticker: '051910',
     mainIssue: '유럽 배터리 공장 신설 발표',
     price: 395000,
     percentage: 0.83,
-    myStock: false,
+    myStock: true,
     popular: false,
   },
 ];
@@ -174,7 +165,11 @@ export const handlers = [
 
     return HttpResponse.json(data);
   }),
-  http.get('/stocks', () => {
-    return HttpResponse.json(stocks);
+  http.get('/stocks', ({ request }) => {
+    const url = new URL(request.url);
+    const limit = Number(url.searchParams.get('_limit'));
+    const data = Number.isFinite(limit) && limit > 0 ? stocks.slice(0, limit) : stocks;
+
+    return HttpResponse.json(data);
   }),
 ];
