@@ -35,3 +35,7 @@ export interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
 }
+
+export interface AppBarOutletContext {
+  setAppBarTitle: (v: string) => void;
+}
