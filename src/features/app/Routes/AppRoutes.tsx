@@ -15,13 +15,13 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
-          <Route path="issue" element={<IssuePage />} />
-          <Route path="stock" element={<StockPage />}></Route>
           <Route path="*" element={<NotFoundPage />} />
         </Route>
 
         <Route path="/" element={<AppBarLayout />}>
+          <Route path="issue" element={<IssuePage />} />
           <Route path="issue/:id" element={<IssueDetailPage />} />
+          <Route path="stock" element={<StockPage />} />
           <Route path=":ticker" element={<StockDetailPage />} />
         </Route>
 
