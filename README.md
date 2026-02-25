@@ -77,17 +77,19 @@ pnpm run preview
 ```
 
 ## 7. 기록 (velog) - 연재 중, 작성 후 링크 연결 예정
-1. 삐약 개발자의 첫 개인 프로젝트 만들기 (문제 정의, 스코프, 목표)
-2. Figma로 설계하고 React + Vite + TypeScript로 프로젝트 착수하기
-3. 무에서 유를 만들 땐 폴더 구조부터 정하자 (FSD)
-4. 스타일링 선택 기록: CSS, SCSS, styled-components, Tailwind 비교
-5. 내 노트북에선 멀쩡한 게 왜 거기선 깨지지? 폰트 FOUT 현상 추적기
-6. 진짜 어려운 TypeScript 돌파하기: 프로젝트에서 바로 쓰는 타입 기초
-7. React Router로 레이아웃 잡기: 중첩 라우트와 Outlet
-8. History API로 이해하는 라우팅: 뒤로가기/딥링크가 꼬이는 이유
-9. MSW로 서버 흉내 내기: JSON Server와 비교하며 목데이터 파이프라인 만들기
-10. fetch로 시작해서 구조화로 넘어가기: 에러/로딩/중복 요청/취소(Abort)
-11. ...
+#### 왕초보 프론트의 프로젝트 제작기 (React + TS)
+
+1. [삐약 개발자의 첫 개인 프로젝트 만들기 (React + TS)
+](https://velog.io/@jjipper/stock-lens-1)
+2. 무에서 유를 만들 땐 폴더 구조부터 정하자 (FSD)
+3. 스타일링 선택 기록: CSS, SCSS, styled-components, Tailwind 비교
+4. 내 노트북에선 멀쩡한 게 왜 거기선 깨지지? 폰트 FOUT 현상 추적기
+5. 진짜 어려운 TypeScript 돌파하기: 프로젝트에서 바로 쓰는 타입 기초
+6. React Router로 레이아웃 잡기: 중첩 라우트와 Outlet
+7. History API로 이해하는 라우팅: 뒤로가기/딥링크가 꼬이는 이유
+8. MSW로 서버 흉내 내기: JSON Server와 비교하며 목데이터 파이프라인 만들기
+9. fetch로 시작해서 구조화로 넘어가기: 에러/로딩/중복 요청/취소(Abort)
+10. ...
 <!-- 11. “Fallback”을 어디에 둘까: 로딩/에러/빈 상태 UI를 일관되게 만들기
 1.  입력 UX 디테일: isComposing으로 한글 입력 버그 피하기
 2.  전역 상태를 어디까지 둘까: Context API와 서버 상태(캐시) 분리 기준
