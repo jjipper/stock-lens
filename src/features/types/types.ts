@@ -29,6 +29,14 @@ export interface StockCardProps {
   popular: boolean;
 }
 
+export interface StockDetailCardProps extends StockCardProps {
+  priceRange: number;
+  lowPrice: number;
+  highPrice: number;
+  weekReturn: number;
+  monthReturn: number;
+}
+
 export interface ButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'line' | 'default';

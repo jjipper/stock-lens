@@ -2,11 +2,14 @@ import { useParams, useOutletContext } from 'react-router-dom';
 import { useEffect, useState, type FunctionComponent } from 'react';
 import { StockDetailCard } from 'features/Stocks';
 import { NotFoundPage } from 'features/layout';
-import type { StockCardProps, AppBarOutletContext } from 'features/types/types';
+import type {
+  StockDetailCardProps,
+  AppBarOutletContext,
+} from 'features/types/types';
 
 export const StockDetailPage: FunctionComponent = () => {
   const { ticker } = useParams();
-  const [stock, setStock] = useState<StockCardProps | null>(null);
+  const [stock, setStock] = useState<StockDetailCardProps | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -18,7 +21,7 @@ export const StockDetailPage: FunctionComponent = () => {
         if (!res.ok) {
           throw new Error(`요청 실패: ${res.status}`);
         }
-        return res.json() as Promise<StockCardProps>;
+        return res.json() as Promise<StockDetailCardProps>;
       })
       .then((data) => {
         setStock(data);
