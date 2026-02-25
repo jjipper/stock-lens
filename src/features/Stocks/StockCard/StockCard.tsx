@@ -2,14 +2,22 @@ import type { StockCardProps } from 'features/types/types';
 import { TrendingUpIcon, TrendingDownIcon } from 'features/shared';
 import { useNavigate } from 'react-router-dom';
 
-export const StockCard = ({ name, ticker, mainIssue, price, percentage }: StockCardProps) => {
+export const StockCard = ({
+  name,
+  ticker,
+  mainIssue,
+  price,
+  percentage,
+}: StockCardProps) => {
   const navigate = useNavigate();
+  const STOCK_PATH = `/stock/${ticker}`;
+
   const isUp = percentage > 0;
   const directionText = isUp ? '상승' : '하락';
   const absPercentage = Math.abs(percentage);
 
   const handleStockCardClick = () => {
-    navigate('/stock');
+    navigate(STOCK_PATH);
   };
 
   return (
@@ -35,14 +43,20 @@ export const StockCard = ({ name, ticker, mainIssue, price, percentage }: StockC
         >
           {isUp ? (
             <>
-              <TrendingUpIcon sx={{ fontSize: 14, color: 'currentColor' }} aria-hidden />
+              <TrendingUpIcon
+                sx={{ fontSize: 14, color: 'currentColor' }}
+                aria-hidden
+              />
               <span className="ml-1" aria-hidden>
                 +
               </span>
             </>
           ) : (
             <>
-              <TrendingDownIcon sx={{ fontSize: 14, color: 'currentColor' }} aria-hidden />
+              <TrendingDownIcon
+                sx={{ fontSize: 14, color: 'currentColor' }}
+                aria-hidden
+              />
               <span className="ml-1" aria-hidden>
                 -
               </span>
