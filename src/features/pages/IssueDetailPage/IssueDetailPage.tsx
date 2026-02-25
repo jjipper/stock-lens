@@ -11,19 +11,20 @@ const IssueDetailPage: FunctionComponent = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/issues')
+    fetch(`/issues/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`요청 실패: ${res.status}`);
         }
-        return res.json() as Promise<IssueCardProps[]>;
+        return res.json() as Promise<IssueCardProps>;
       })
       .then((data) => {
-        const found = data.find((item) => String(item.id) === id);
-        setIssue(found ?? null);
+        setIssue(data);
       })
       .catch((err: unknown) => {
-        setError(err instanceof Error ? err.message : '알 수 없는 오류가 발생했습니다.');
+        setError(
+          err instanceof Error ? err.message : '알 수 없는 오류가 발생했습니다.'
+        );
       })
       .finally(() => setIsLoading(false));
   }, [id]);
