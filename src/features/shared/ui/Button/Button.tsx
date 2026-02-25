@@ -12,7 +12,7 @@ const variantClassMap = {
   default: 'border border-gray-300 bg-white text-gray-700',
 };
 
-const Button = ({ children, variant, size, onClick }: ButtonProps) => {
+const Button = ({ children, variant, size, onClick, className }: ButtonProps) => {
   const sizeClass = sizeClassMap[size ?? 'md'];
   const variantClass = variantClassMap[variant ?? 'default'];
 
@@ -20,7 +20,7 @@ const Button = ({ children, variant, size, onClick }: ButtonProps) => {
     <button
       type="button"
       onClick={onClick}
-      className={`cursor-pointer rounded-md transition-all duration-300 hover:brightness-[0.98] ${sizeClass} ${variantClass}`}
+      className={`cursor-pointer rounded-md transition-all duration-300 hover:brightness-[0.98] ${sizeClass} ${variantClass} ${className ?? ''}`}
     >
       {children}
     </button>
