@@ -17,16 +17,16 @@ const IssueCard = ({
   mention,
 }: IssueCardProps) => {
   const navigate = useNavigate();
-  const issuePath = `/issue/${id}`;
+  const ISSUE_PATH = `/issue/${id}`;
 
   const handleIssueCardClick = () => {
-    navigate(issuePath);
+    navigate(ISSUE_PATH);
   };
 
   const handleIssueCardKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      navigate(issuePath);
+      navigate(ISSUE_PATH);
     }
   };
 
@@ -50,7 +50,11 @@ const IssueCard = ({
         <h5 className="text-lg font-bold text-gray-900">{title}</h5>
         <p className="mt-1.5 mb-2.5 text-base text-gray-700">{description}</p>
 
-        <StockChips showTicker={false} stocks={stocks} onChipClick={handleStockChipClick} />
+        <StockChips
+          showTicker={false}
+          stocks={stocks}
+          onChipClick={handleStockChipClick}
+        />
 
         <div className="mt-2 flex items-center gap-2">
           <NewsTag newsCount={newsCount} mention={mention} />
