@@ -1,6 +1,6 @@
 import { useParams, useOutletContext } from 'react-router-dom';
 import { useEffect, useState, type FunctionComponent } from 'react';
-import { StockCard } from 'features/Stocks';
+import { StockDetailCard } from 'features/Stocks';
 import { NotFoundPage } from 'features/layout';
 import type { StockCardProps, AppBarOutletContext } from 'features/types/types';
 
@@ -43,9 +43,9 @@ export const StockDetailPage: FunctionComponent = () => {
   if (!stock) return <NotFoundPage />;
 
   return (
-    <ul className="flex flex-col gap-4">
-      <StockCard {...stock} />
-    </ul>
+    <div className="w-full">
+      <StockDetailCard {...stock} />
+    </div>
   );
 };
 
