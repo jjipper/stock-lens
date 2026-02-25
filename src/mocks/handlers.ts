@@ -32,7 +32,7 @@ export const handlers = [
     return HttpResponse.json(data);
   }),
   http.get('/stocks/:ticker', ({ params }) => {
-    const stock = stocks.find((item) => item.ticker === String(params.id));
+    const stock = stocks.find((item) => item.ticker === String(params.ticker));
     if (!stock) {
       return HttpResponse.json(
         { message: '해당 종목을 찾을 수 없습니다.' },
