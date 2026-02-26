@@ -1,15 +1,15 @@
 export { Button } from './ui/Button/Button';
 export {
-  TrendingUpIcon,
-  TrendingDownIcon,
-  MemoryIcon,
+  AccountBalanceIcon,
+  ArrowBackIcon,
   BatterySaverIcon,
   BiotechIcon,
-  DirectionsCarFilledIcon,
-  LanguageIcon,
   BoltIcon,
+  DirectionsCarFilledIcon,
   GppGoodIcon,
-  AccountBalanceIcon,
+  LanguageIcon,
+  MemoryIcon,
   MovingIcon,
-  ArrowBackIcon,
+  TrendingDownIcon,
+  TrendingUpIcon,
 } from './ui/Icons/Icons';

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import type { FunctionComponent } from 'react';
-import type { StockCardProps } from 'features/types/types';
-import { SectionWrapper, SectionHeader } from 'features/layout';
+import { SectionHeader,SectionWrapper } from 'features/layout';
 import { StockCard, StockList } from 'features/Stocks';
+import type { StockCardProps } from 'features/types/types';
+import type { FunctionComponent } from 'react';
+import { useEffect,useState } from 'react';
 
 const PopularStocksSection: FunctionComponent = () => {
   const [stocks, setStocks] = useState<StockCardProps[]>([]);

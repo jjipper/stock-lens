@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { ProtectedRoute } from './ProtectedRoute';
 import { MainLayout } from 'features/layout';
 import { AppBarLayout } from 'features/layout';
-import MainPage from 'features/pages/MainPage/MainPage';
-import IssuePage from 'features/pages/IssuePage/IssuePage';
-import IssueDetailPage from 'features/pages/IssueDetailPage/IssueDetailPage';
-import StockPage from 'features/pages/StockPage/StockPage';
-import StockDetailPage from 'features/pages/StockDetailPage/StockDetailPage';
 import { NotFoundPage } from 'features/layout/';
+import IssueDetailPage from 'features/pages/IssueDetailPage/IssueDetailPage';
+import IssuePage from 'features/pages/IssuePage/IssuePage';
+import MainPage from 'features/pages/MainPage/MainPage';
+import StockDetailPage from 'features/pages/StockDetailPage/StockDetailPage';
+import StockPage from 'features/pages/StockPage/StockPage';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
 
 export const AppRoutes = () => {
   return (

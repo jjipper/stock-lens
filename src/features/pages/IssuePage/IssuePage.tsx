@@ -1,8 +1,8 @@
-import { useEffect, useState, useCallback, type FunctionComponent } from 'react';
-import { useOutletContext } from 'react-router-dom';
 import { IssueCard } from 'features/Issues';
 import { NotFoundPage } from 'features/layout';
-import type { IssueCardProps, AppBarOutletContext } from 'features/types/types';
+import type { AppBarOutletContext,IssueCardProps } from 'features/types/types';
+import { type FunctionComponent,useCallback, useEffect, useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 const IssuePage: FunctionComponent = () => {
   // 이슈 목록 렌더링

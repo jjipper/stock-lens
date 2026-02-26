@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import { Button } from 'features/shared';
+import { useNavigate } from 'react-router-dom';
 
 const NotFoundPage = () => {
   const navigate = useNavigate();

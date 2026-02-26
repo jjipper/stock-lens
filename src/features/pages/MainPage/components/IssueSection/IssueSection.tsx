@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { SectionWrapper, SectionHeader } from 'features/layout';
 import { IssueCard } from 'features/Issues';
+import { SectionHeader,SectionWrapper } from 'features/layout';
 import type { IssueCardProps } from 'features/types/types';
+import { useEffect, useState } from 'react';
 
 const IssueSection = () => {
   const [issues, setIssues] = useState<IssueCardProps[]>([]);

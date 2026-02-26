@@ -1,8 +1,8 @@
-import { useEffect, useState, type FunctionComponent } from 'react';
-import { useOutletContext } from 'react-router-dom';
-import type { StockCardProps, AppBarOutletContext } from 'features/types/types';
 import { SectionEmpty } from 'features/layout';
-import { StockList, StockCard } from 'features/Stocks';
+import { StockCard,StockList } from 'features/Stocks';
+import type { AppBarOutletContext,StockCardProps } from 'features/types/types';
+import { type FunctionComponent,useEffect, useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 const StockPage: FunctionComponent = () => {
   // 주식 목록 렌더링

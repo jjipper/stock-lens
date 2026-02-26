@@ -1,13 +1,13 @@
 import type { SvgIconComponent } from '@mui/icons-material';
 import {
-  MemoryIcon,
+  AccountBalanceIcon,
   BatterySaverIcon,
   BiotechIcon,
-  DirectionsCarFilledIcon,
-  LanguageIcon,
   BoltIcon,
+  DirectionsCarFilledIcon,
   GppGoodIcon,
-  AccountBalanceIcon,
+  LanguageIcon,
+  MemoryIcon,
 } from 'features/shared';
 import type { IssueType } from 'features/types/types';
 

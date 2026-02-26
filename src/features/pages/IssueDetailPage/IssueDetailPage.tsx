@@ -1,8 +1,8 @@
-import { useParams, useOutletContext } from 'react-router-dom';
-import { useEffect, useState, type FunctionComponent } from 'react';
 import { IssueCard } from 'features/Issues';
 import { NotFoundPage } from 'features/layout';
-import type { IssueCardProps, AppBarOutletContext } from 'features/types/types';
+import type { AppBarOutletContext,IssueCardProps } from 'features/types/types';
+import { type FunctionComponent,useEffect, useState } from 'react';
+import { useOutletContext,useParams } from 'react-router-dom';
 
 const IssueDetailPage: FunctionComponent = () => {
   const { id } = useParams();

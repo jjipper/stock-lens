@@ -1,10 +1,11 @@
-import { TypeIcon } from '../TypeIcon/TypeIcon';
-import { StockChips } from '../StockChips/StockChips';
-import { NewsTag } from '../NewsTag/NewsTag';
-import { EffectTag } from '../EffectTag/EffectTag';
 import type { IssueCardProps } from 'features/types/types';
-import { useNavigate } from 'react-router-dom';
 import type { KeyboardEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { EffectTag } from '../EffectTag/EffectTag';
+import { NewsTag } from '../NewsTag/NewsTag';
+import { StockChips } from '../StockChips/StockChips';
+import { TypeIcon } from '../TypeIcon/TypeIcon';
 
 const IssueCard = ({
   id,

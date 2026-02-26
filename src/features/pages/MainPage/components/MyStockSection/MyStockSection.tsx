@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import type { FunctionComponent } from 'react';
+import { SectionHeader,SectionWrapper } from 'features/layout';
+import { StockCard,StockList } from 'features/Stocks';
 import type { StockCardProps } from 'features/types/types';
-import { SectionWrapper, SectionHeader } from 'features/layout';
-import { StockList, StockCard } from 'features/Stocks';
+import type { FunctionComponent } from 'react';
+import { useEffect,useState } from 'react';
 
 const MyStockSection: FunctionComponent = () => {
   const [stocks, setStocks] = useState<StockCardProps[]>([]);
