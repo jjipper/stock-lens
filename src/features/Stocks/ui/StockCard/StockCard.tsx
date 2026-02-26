@@ -1,4 +1,8 @@
-import { TrendingDownIcon,TrendingUpIcon } from 'features/shared';
+import {
+	formatNumber,
+	TrendingDownIcon,
+	TrendingUpIcon,
+} from 'features/shared';
 import type { StockCardProps } from 'features/types/types';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,6 +24,8 @@ export const StockCard = ({
 		navigate(STOCK_PATH);
 	};
 
+	const formattedPrice = formatNumber(price);
+
 	return (
 		<button
 			type="button"
@@ -35,7 +41,9 @@ export const StockCard = ({
 				<dd className="text-sm font-normal text-gray-600">{mainIssue}</dd>
 			</dl>
 			<div className="flex flex-col text-right">
-				<span className="text-lg font-semibold text-gray-800">{price}원</span>
+				<span className="text-lg font-semibold text-gray-800">
+					{formattedPrice}원
+				</span>
 				<span
 					className={`flex items-center justify-end text-sm font-semibold ${
 						isUp ? 'text-red-500' : 'text-blue-500'

@@ -1,4 +1,9 @@
-import { Button, TrendingDownIcon, TrendingUpIcon } from 'features/shared';
+import {
+	Button,
+	formatNumber,
+	TrendingDownIcon,
+	TrendingUpIcon,
+} from 'features/shared';
 import type { StockCardProps } from 'features/types/types';
 import { useState } from 'react';
 
@@ -16,7 +21,7 @@ export const StockDetailCard = ({
 	const isUp = percentage > 0;
 	const directionText = isUp ? '상승' : '하락';
 	const absPercentage = Math.abs(percentage);
-	const formattedPrice = `${price.toLocaleString('ko-KR')}원`;
+	const formattedPrice = formatNumber(price);
 
 	return (
 		<article className="w-full rounded-xl border border-gray-200 bg-white p-6">
@@ -26,7 +31,7 @@ export const StockDetailCard = ({
 					<p className="text-sm font-medium text-gray-500">{ticker}</p>
 				</div>
 				<div className="flex flex-col justify-end gap-0.5">
-					<p className="text-xl font-bold text-gray-900">{formattedPrice}</p>
+					<p className="text-xl font-bold text-gray-900">{formattedPrice}원</p>
 					<p
 						className={`flex items-center justify-end text-sm font-bold ${
 							isUp ? 'text-red-600' : 'text-blue-600'
