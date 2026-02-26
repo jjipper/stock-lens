@@ -22,7 +22,7 @@ export const StockDetailPage: FunctionComponent = () => {
 		setIsLoading(true);
 		setError(null);
 
-		(async () => {
+		const fetchData = async () => {
 			try {
 				// 주식 정보 받아오기
 				const stockRes = await fetch(`/stocks/${ticker}`);
@@ -30,18 +30,7 @@ export const StockDetailPage: FunctionComponent = () => {
 				const stockData = (await stockRes.json()) as StockCardProps;
 				setStock(stockData);
 
-				// 주식에 맞는 뉴스 id 배열 받아오기
-				const idsRes = await fetch(`/stocks/${ticker}/news`);
-				if (!idsRes.ok)
-					throw new Error(`뉴스 ID 목록 요청 실패: ${idsRes.status}`);
-				const ids = (await idsRes.json()) as string[];
-
-				if (ids.length === 0) {
-					setNewsList([]);
-					return;
-				}
-
-				const query = encodeURIComponent(ids.join(','));
+				const query = encodeURIComponent(stockData.newsList.join(','));
 
 				// ids로 해당하는 뉴스 목록 받아오기
 				const newsRes = await fetch(`/news?ids=${query}`);
@@ -57,7 +46,9 @@ export const StockDetailPage: FunctionComponent = () => {
 			} finally {
 				setIsLoading(false);
 			}
-		})();
+		};
+
+		fetchData();
 	}, [ticker]);
 
 	// app bar Layout 타이틀 설정

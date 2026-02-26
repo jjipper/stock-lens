@@ -24,17 +24,6 @@ export const handlers = [
 		}
 		return HttpResponse.json(issue);
 	}),
-	// 이슈 관련 뉴스 목록
-	http.get('/issues/:id/news', ({ params }) => {
-		const issue = issues.find((item) => item.id === String(params.id));
-		if (!issue) {
-			return HttpResponse.json(
-				{ message: '해당 이슈를 찾을 수 없습니다.' },
-				{ status: 404 },
-			);
-		}
-		return HttpResponse.json(issue.newsList ?? []);
-	}),
 
 	// 주식 목록
 	http.get('/stocks', ({ request }) => {
@@ -54,17 +43,6 @@ export const handlers = [
 			);
 		}
 		return HttpResponse.json(stock);
-	}),
-	// 주식 관련 뉴스 목록
-	http.get('/stocks/:ticker/news', ({ params }) => {
-		const stock = stocks.find((item) => item.ticker === String(params.ticker));
-		if (!stock) {
-			return HttpResponse.json(
-				{ message: '해당 종목을 찾을 수 없습니다.' },
-				{ status: 404 },
-			);
-		}
-		return HttpResponse.json(stock.newsList ?? []);
 	}),
 
 	// 뉴스 목록
