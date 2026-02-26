@@ -1,5 +1,6 @@
 import { NotFoundPage, SectionHeader, TwoColumnGrid } from 'features/layout';
 import { NewsCard } from 'features/News/NewsCard/NewsCard';
+import { Loading } from 'features/shared';
 import { StockDetailCard } from 'features/Stocks';
 import type {
 	AppBarOutletContext,
@@ -18,9 +19,6 @@ export const StockDetailPage: FunctionComponent = () => {
 
 	useEffect(() => {
 		if (!ticker) return;
-
-		setIsLoading(true);
-		setError(null);
 
 		const fetchData = async () => {
 			try {
@@ -58,7 +56,7 @@ export const StockDetailPage: FunctionComponent = () => {
 		setAppBarTitle(`${stock?.name}`);
 	}, [stock, setAppBarTitle]);
 
-	if (isLoading) return <div>Loading...</div>;
+	if (isLoading) return <Loading />;
 	if (error) return <div>Error: {error}</div>;
 	if (!stock) return <NotFoundPage />;
 
