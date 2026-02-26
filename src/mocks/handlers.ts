@@ -1,6 +1,7 @@
 import { http, HttpResponse } from 'msw';
 
 import { issues } from './data/issues';
+import { news } from './data/news';
 import { stocks } from './data/stocks';
 
 export const handlers = [
