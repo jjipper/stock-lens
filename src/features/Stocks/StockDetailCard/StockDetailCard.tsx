@@ -5,25 +5,12 @@ import { useState } from 'react';
 import { PeriodReturnStats } from '../PeriodReturnStats/PeriodReturnStats';
 import { PriceRangeStats } from '../PriceRangeStats/PriceRangeStats';
 
-const TEMP_DETAIL_METRICS = {
-	priceRange: 20000,
-	lowPrice: 195000,
-	highPrice: 215000,
-	weekReturn: 8.5,
-	monthReturn: 15.3,
-};
-
 export const StockDetailCard = ({
 	name,
 	ticker,
 	mainIssue,
 	price,
 	percentage,
-	priceRange = TEMP_DETAIL_METRICS.priceRange,
-	lowPrice = TEMP_DETAIL_METRICS.lowPrice,
-	highPrice = TEMP_DETAIL_METRICS.highPrice,
-	weekReturn = TEMP_DETAIL_METRICS.weekReturn,
-	monthReturn = TEMP_DETAIL_METRICS.monthReturn,
 }: StockDetailCardProps) => {
 	const [period, setPeriod] = useState<'week' | 'month'>('week');
 	const isUp = percentage > 0;
@@ -117,7 +104,7 @@ export const StockDetailCard = ({
 					<PriceRangeStats title={'최고'} price={215000} color={'red'} />
 				</div>
 
-				<PeriodReturnStats weekReturn={weekReturn} monthReturn={monthReturn} />
+				<PeriodReturnStats title={'1주'} percentage={8.5} color={'red'} />
 			</section>
 
 			<section className="mt-4 rounded-md bg-gray-100 p-4 px-5">
