@@ -15,6 +15,7 @@ export interface IssueCardProps {
 	description: string;
 	stocks: { name: string; ticker: string; percentage: number }[];
 	newsCount: number;
+	newsList: string[];
 	mention: boolean;
 	effect: 'high' | 'middle' | 'low';
 }
@@ -27,6 +28,7 @@ export interface StockCardProps {
 	percentage: number;
 	myStock: boolean;
 	popular: boolean;
+	newsList: string[];
 }
 
 export interface ButtonProps {
