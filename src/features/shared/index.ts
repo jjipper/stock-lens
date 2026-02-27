@@ -1,5 +1,6 @@
 export { formatNumber } from './function/formatNumber';
 export { Button } from './ui/Button/Button';
+export { EffectTag } from './ui/EffectTag/EffectTag';
 export {
 	AccountBalanceIcon,
 	ArrowBackIcon,
