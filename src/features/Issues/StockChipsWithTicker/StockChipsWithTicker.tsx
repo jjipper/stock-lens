@@ -1,11 +1,14 @@
 import type { KeyboardEvent } from 'react';
 
-interface StockChipsProps {
+interface StockChipsWithTickerProps {
 	stocks: { name: string; ticker: string; percentage: number }[];
 	onChipClick?: (ticker: string) => void;
 }
 
-export const StockChips = ({ stocks, onChipClick }: StockChipsProps) => {
+export const StockChipsWithTicker = ({
+	stocks,
+	onChipClick,
+}: StockChipsWithTickerProps) => {
 	const preventCardNavigation = (event: KeyboardEvent<HTMLButtonElement>) => {
 		if (event.key === 'Enter' || event.key === ' ') {
 			event.preventDefault();
@@ -30,10 +33,13 @@ export const StockChips = ({ stocks, onChipClick }: StockChipsProps) => {
 							}}
 							onKeyDown={preventCardNavigation}
 							aria-label={`${stock.name} 종목 상세 보기`}
-							className="flex cursor-pointer items-center gap-1.5 rounded-full border border-transparent bg-gray-50 px-3 py-1.5 transition-[background,border-color] duration-300 hover:bg-gray-100"
+							className="flex cursor-pointer items-center gap-2 rounded-lg border border-transparent bg-gray-50 px-3 py-1.5 transition-[background,border-color] duration-300 hover:bg-gray-100"
 						>
-							<div className="flex flex-col text-sm font-medium">
-								<span>{stock.name}</span>
+							<div className="flex flex-col gap-0.5">
+								<span className="text-sm font-medium">{stock.name}</span>
+								<span className="text-xs font-normal text-gray-400">
+									{stock.ticker}
+								</span>
 							</div>
 							<span
 								className={`text-sm font-semibold ${isUp ? 'text-red-500' : 'text-blue-500'}`}
