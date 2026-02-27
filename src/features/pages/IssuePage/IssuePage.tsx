@@ -1,60 +1,66 @@
 import { IssueCard } from 'features/Issues';
-import { NotFoundPage } from 'features/layout';
-import type { AppBarOutletContext,IssueCardProps } from 'features/types/types';
-import { type FunctionComponent,useCallback, useEffect, useState } from 'react';
+import type { AppBarOutletContext, IssueCardProps } from 'features/types/types';
+import {
+	type FunctionComponent,
+	useCallback,
+	useEffect,
+	useState,
+} from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 const IssuePage: FunctionComponent = () => {
-  // 이슈 목록 렌더링
-  const [issues, setIssues] = useState<IssueCardProps[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+	// 이슈 목록 렌더링
+	const [issues, setIssues] = useState<IssueCardProps[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
 
-  const loadIssues = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
+	const loadIssues = useCallback(async () => {
+		setIsLoading(true);
+		setError(null);
 
-    try {
-      const res = await fetch('/issues');
-      if (!res.ok) throw new Error(`요청 실패: ${res.status}`);
-      const data = await res.json();
-      setIssues(data);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : '알 수 없는 오류가 발생했습니다.');
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+		try {
+			const res = await fetch('/issues');
+			if (!res.ok) throw new Error(`요청 실패: ${res.status}`);
+			const data = await res.json();
+			setIssues(data);
+		} catch (e) {
+			setError(
+				e instanceof Error ? e.message : '알 수 없는 오류가 발생했습니다.',
+			);
+		} finally {
+			setIsLoading(false);
+		}
+	}, []);
 
-  useEffect(() => {
-    loadIssues();
-  }, [loadIssues]);
+	useEffect(() => {
+		loadIssues();
+	}, [loadIssues]);
 
-  // app bar Layout 타이틀 설정
-  const { setAppBarTitle } = useOutletContext<AppBarOutletContext>();
+	// app bar Layout 타이틀 설정
+	const { setAppBarTitle } = useOutletContext<AppBarOutletContext>();
 
-  useEffect(() => {
-    setAppBarTitle('이슈 목록');
-  }, [setAppBarTitle]);
+	useEffect(() => {
+		setAppBarTitle('이슈 목록');
+	}, [setAppBarTitle]);
 
-  // 로딩, 에러, 404 분기
-  if (isLoading) return <div>Loading...</div>;
-  if (error)
-    return (
-      <div>
-        <span>Error: {error}</span>
-        <button onClick={loadIssues}>다시 시도</button>
-      </div>
-    );
-  if (issues.length === 0) return <NotFoundPage />;
+	// 로딩, 에러, 404 분기
+	if (isLoading) return <div>Loading...</div>;
+	if (error)
+		return (
+			<div>
+				<span>Error: {error}</span>
+				<button onClick={loadIssues}>다시 시도</button>
+			</div>
+		);
+	if (issues.length === 0) return <div>No Issue</div>;
 
-  return (
-    <ul className="flex flex-col gap-4">
-      {issues.map((issue) => (
-        <IssueCard key={issue.id} {...issue} />
-      ))}
-    </ul>
-  );
+	return (
+		<ul className="flex flex-col gap-4">
+			{issues.map((issue) => (
+				<IssueCard key={issue.id} {...issue} />
+			))}
+		</ul>
+	);
 };
 
 export default IssuePage;

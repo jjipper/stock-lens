@@ -7,28 +7,28 @@ import MainPage from 'features/pages/MainPage/MainPage';
 import NotFoundPage from 'features/pages/NotFoundPage/NotFoundPage';
 import StockDetailPage from 'features/pages/StockDetailPage/StockDetailPage';
 import StockPage from 'features/pages/StockPage/StockPage';
-import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export const AppRoutes = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<MainPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<MainLayout />}>
+					<Route index element={<MainPage />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Route>
 
-        <Route path="/issue" element={<AppBarLayout />}>
-          <Route index element={<IssuePage />} />
-          <Route path=":id" element={<IssueDetailPage />} />
-        </Route>
+				<Route path="/issue" element={<AppBarLayout />}>
+					<Route index element={<IssuePage />} />
+					<Route path=":id" element={<IssueDetailPage />} />
+				</Route>
 
-        <Route path="/stock" element={<AppBarLayout />}>
-          <Route index element={<StockPage />} />
-          <Route path=":ticker" element={<StockDetailPage />} />
-        </Route>
+				<Route path="/stock" element={<AppBarLayout />}>
+					<Route index element={<StockPage />} />
+					<Route path=":ticker" element={<StockDetailPage />} />
+				</Route>
 
-        {/* <Route
+				{/* <Route
           path="/admin"
           element={
             <ProtectedRoute>
@@ -36,7 +36,7 @@ export const AppRoutes = () => {
             </ProtectedRoute>
           }
         /> */}
-      </Routes>
-    </BrowserRouter>
-  );
+			</Routes>
+		</BrowserRouter>
+	);
 };
