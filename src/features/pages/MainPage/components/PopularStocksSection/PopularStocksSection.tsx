@@ -4,7 +4,7 @@ import type { StockCardProps } from 'features/types/types';
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
-const PopularStocksSection: FunctionComponent = () => {
+export const PopularStocksSection: FunctionComponent = () => {
 	const [stocks, setStocks] = useState<StockCardProps[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState<Error | null>(null);
@@ -40,5 +40,3 @@ const PopularStocksSection: FunctionComponent = () => {
 		</SectionWrapper>
 	);
 };
-
-export { PopularStocksSection };

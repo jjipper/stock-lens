@@ -1,4 +1,4 @@
-const SectionHeader = ({ title, updateTime }: { title: string; updateTime?: string }) => {
+export const SectionHeader = ({ title, updateTime }: { title: string; updateTime?: string }) => {
   return (
     <div className="flex w-full items-end justify-between">
       <h4 className="text-xl font-semibold">{title}</h4>
@@ -6,5 +6,3 @@ const SectionHeader = ({ title, updateTime }: { title: string; updateTime?: stri
     </div>
   );
 };
-
-export { SectionHeader };

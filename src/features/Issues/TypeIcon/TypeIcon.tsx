@@ -63,16 +63,14 @@ const TYPE_META = {
   { Icon: SvgIconComponent; wrapperClass: string; iconSize: number }
 >;
 
-const TypeIcon = ({ type }: TypeIconProps) => {
+export const TypeIcon = ({ type }: TypeIconProps) => {
   const { Icon, wrapperClass, iconSize } = TYPE_META[type];
 
   return (
     <div
-      className={`inline-flex items-center justify-center rounded-xl p-3 w-12 h-12 ${wrapperClass}`}
+			className={`inline-flex h-12 w-12 items-center justify-center rounded-xl p-3 ${wrapperClass}`}
     >
       <Icon sx={{ fontSize: iconSize, color: 'currentColor' }} />
     </div>
   );
 };
-
-export { TypeIcon };

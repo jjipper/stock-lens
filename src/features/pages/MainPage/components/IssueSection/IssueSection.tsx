@@ -3,7 +3,7 @@ import { SectionHeader,SectionWrapper } from 'features/layout';
 import type { IssueCardProps } from 'features/types/types';
 import { useEffect, useState } from 'react';
 
-const IssueSection = () => {
+export const IssueSection = () => {
   const [issues, setIssues] = useState<IssueCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -36,5 +36,3 @@ const IssueSection = () => {
     </SectionWrapper>
   );
 };
-
-export { IssueSection };

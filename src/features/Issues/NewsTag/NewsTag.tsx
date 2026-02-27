@@ -5,7 +5,7 @@ interface NewsTagProps {
   mention: boolean;
 }
 
-const NewsTag = ({ newsCount, mention }: NewsTagProps) => {
+export const NewsTag = ({ newsCount, mention }: NewsTagProps) => {
   return (
     <div className="flex w-max items-center gap-1 py-1">
       <TrendingUpIcon className="text-gray-500" sx={{ fontSize: 12 }} />
@@ -17,5 +17,3 @@ const NewsTag = ({ newsCount, mention }: NewsTagProps) => {
     </div>
   );
 };
-
-export { NewsTag };

@@ -7,7 +7,7 @@ import { NewsTag } from '../NewsTag/NewsTag';
 import { StockChips } from '../StockChips/StockChips';
 import { TypeIcon } from '../TypeIcon/TypeIcon';
 
-const IssueCard = ({
+export const IssueCard = ({
   id,
   type,
   title,
@@ -65,5 +65,3 @@ const IssueCard = ({
     </li>
   );
 };
-
-export { IssueCard };

@@ -4,7 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 import { Header } from '../Header/Header';
 
-const AppBarLayout = () => {
+export const AppBarLayout = () => {
 	const [appBarTitle, setAppBarTitle] = useState('App Bar Title');
 
 	const navigate = useNavigate();
@@ -33,5 +33,3 @@ const AppBarLayout = () => {
 		</>
 	);
 };
-
-export { AppBarLayout };

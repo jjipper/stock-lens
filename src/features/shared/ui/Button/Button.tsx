@@ -12,7 +12,7 @@ const variantClassMap = {
   default: 'border border-gray-300 bg-white text-gray-700',
 };
 
-const Button = ({ children, variant, size, onClick, className }: ButtonProps) => {
+export const Button = ({ children, variant, size, onClick, className }: ButtonProps) => {
   const sizeClass = sizeClassMap[size ?? 'md'];
   const variantClass = variantClassMap[variant ?? 'default'];
 
@@ -26,5 +26,3 @@ const Button = ({ children, variant, size, onClick, className }: ButtonProps) =>
     </button>
   );
 };
-
-export { Button };

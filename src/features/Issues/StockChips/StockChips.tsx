@@ -6,7 +6,7 @@ interface StockChipsProps {
   onChipClick?: (ticker: string) => void;
 }
 
-const StockChips = ({ stocks, showTicker, onChipClick }: StockChipsProps) => {
+export const StockChips = ({ stocks, onChipClick }: StockChipsProps) => {
   const preventCardNavigation = (event: KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
@@ -49,5 +49,3 @@ const StockChips = ({ stocks, showTicker, onChipClick }: StockChipsProps) => {
     </ul>
   );
 };
-
-export { StockChips };

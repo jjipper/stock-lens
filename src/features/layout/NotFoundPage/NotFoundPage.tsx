@@ -1,7 +1,7 @@
 import { Button } from 'features/shared';
 import { useNavigate } from 'react-router-dom';
 
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
   const navigate = useNavigate();
   const handleMainClick = () => {
     navigate('/');
@@ -16,5 +16,3 @@ const NotFoundPage = () => {
     </div>
   );
 };
-
-export { NotFoundPage };

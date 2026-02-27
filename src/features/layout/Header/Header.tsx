@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+export const Header = () => {
 	return (
 		<header className="sticky top-0 z-10 h-16 w-full border-b border-gray-200 bg-white">
 			<div className="mx-auto flex h-16 max-w-5xl items-center px-6">
@@ -30,5 +30,3 @@ const Header = () => {
 		</header>
 	);
 };
-
-export { Header };
