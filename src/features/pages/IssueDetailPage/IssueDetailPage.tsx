@@ -1,4 +1,4 @@
-import { IssueCard } from 'features/Issues';
+import { IssueDetailCard } from 'features/Issues';
 import { NotFoundPage, SectionHeader, TwoColumnGrid } from 'features/layout';
 import { NewsCard } from 'features/News/NewsCard/NewsCard';
 import { Loading } from 'features/shared';
@@ -63,24 +63,24 @@ const IssueDetailPage: FunctionComponent = () => {
 	return (
 		<div className="w-full">
 			<ul className="flex flex-col gap-4">
-				<IssueCard {...issue} />
+				<IssueDetailCard {...issue} />
 			</ul>
 
 			<div className="mt-6 flex flex-col gap-3">
 				<SectionHeader title="최신 뉴스" updateTime="2시간 전" />
-					<TwoColumnGrid>
-						{newsList.map((news) => {
-							return (
-								<NewsCard
-									key={news.id}
-									imageUrl={news.imageUrl}
-									title={news.title}
-									source={news.source}
-									publishedAt={news.publishedAt}
-								/>
-							);
-						})}
-					</TwoColumnGrid>
+				<TwoColumnGrid>
+					{newsList.map((news) => {
+						return (
+							<NewsCard
+								key={news.id}
+								imageUrl={news.imageUrl}
+								title={news.title}
+								source={news.source}
+								publishedAt={news.publishedAt}
+							/>
+						);
+					})}
+				</TwoColumnGrid>
 			</div>
 		</div>
 	);
