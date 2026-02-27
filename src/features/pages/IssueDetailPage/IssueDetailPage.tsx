@@ -66,9 +66,8 @@ const IssueDetailPage: FunctionComponent = () => {
 				<IssueCard {...issue} />
 			</ul>
 
-			<div className="mt-6">
+			<div className="mt-6 flex flex-col gap-3">
 				<SectionHeader title="최신 뉴스" updateTime="2시간 전" />
-				<div className="mt-2">
 					<TwoColumnGrid>
 						{newsList.map((news) => {
 							return (
@@ -82,7 +81,6 @@ const IssueDetailPage: FunctionComponent = () => {
 							);
 						})}
 					</TwoColumnGrid>
-				</div>
 			</div>
 		</div>
 	);

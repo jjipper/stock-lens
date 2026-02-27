@@ -63,23 +63,21 @@ export const StockDetailPage: FunctionComponent = () => {
 	return (
 		<div className="w-full">
 			<StockDetailCard {...stock} />
-			<div className="mt-6">
+			<div className="mt-6 flex flex-col gap-3">
 				<SectionHeader title="최신 뉴스" updateTime="2시간 전" />
-				<div className="mt-2">
-					<TwoColumnGrid>
-						{newsList.map((news) => {
-							return (
-								<NewsCard
-									key={news.id}
-									imageUrl={news.imageUrl}
-									title={news.title}
-									source={news.source}
-									publishedAt={news.publishedAt}
-								/>
-							);
-						})}
-					</TwoColumnGrid>
-				</div>
+				<TwoColumnGrid>
+					{newsList.map((news) => {
+						return (
+							<NewsCard
+								key={news.id}
+								imageUrl={news.imageUrl}
+								title={news.title}
+								source={news.source}
+								publishedAt={news.publishedAt}
+							/>
+						);
+					})}
+				</TwoColumnGrid>
 			</div>
 		</div>
 	);
