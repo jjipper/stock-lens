@@ -28,7 +28,7 @@ export const AppBarLayout = () => {
 				</div>
 			</nav>
 			<div className="mx-auto flex max-w-5xl flex-col gap-5 px-6 pt-5 pb-16">
-				<Outlet context={{ setAppBarTitle }} />
+				<Outlet />
 			</div>
 		</>
 	);

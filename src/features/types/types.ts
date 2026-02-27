@@ -45,10 +45,6 @@ export interface ButtonProps {
 	children: React.ReactNode;
 }
 
-export interface AppBarOutletContext {
-	setAppBarTitle: (v: string) => void;
-}
-
 export interface NewsListItem {
 	id?: string;
 	title: string;

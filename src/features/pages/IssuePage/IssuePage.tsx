@@ -1,12 +1,11 @@
 import { IssueCard } from 'features/Issues';
-import type { AppBarOutletContext, IssueCardProps } from 'features/types/types';
+import type { IssueCardProps } from 'features/types/types';
 import {
 	type FunctionComponent,
 	useCallback,
 	useEffect,
 	useState,
 } from 'react';
-import { useOutletContext } from 'react-router-dom';
 
 const IssuePage: FunctionComponent = () => {
 	// 이슈 목록 렌더링
@@ -35,13 +34,6 @@ const IssuePage: FunctionComponent = () => {
 	useEffect(() => {
 		loadIssues();
 	}, [loadIssues]);
-
-	// app bar Layout 타이틀 설정
-	const { setAppBarTitle } = useOutletContext<AppBarOutletContext>();
-
-	useEffect(() => {
-		setAppBarTitle('이슈 목록');
-	}, [setAppBarTitle]);
 
 	// 로딩, 에러, 404 분기
 	if (isLoading) return <div>Loading...</div>;

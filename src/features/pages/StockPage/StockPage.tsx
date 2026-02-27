@@ -1,8 +1,7 @@
 import { SectionEmpty, TwoColumnGrid } from 'features/layout';
 import { StockCard } from 'features/Stocks';
-import type { AppBarOutletContext, StockCardProps } from 'features/types/types';
+import type { StockCardProps } from 'features/types/types';
 import { type FunctionComponent, useEffect, useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
 
 const StockPage: FunctionComponent = () => {
 	// 주식 목록 렌더링
@@ -30,13 +29,6 @@ const StockPage: FunctionComponent = () => {
 			})
 			.finally(() => setIsLoading(false));
 	}, []);
-
-	// app bar Layout 타이틀 설정
-	const { setAppBarTitle } = useOutletContext<AppBarOutletContext>();
-
-	useEffect(() => {
-		setAppBarTitle('주식 목록');
-	}, [setAppBarTitle]);
 
 	// 로딩, 에러, 404 분기
 	if (isLoading) return <div>Loading...</div>;

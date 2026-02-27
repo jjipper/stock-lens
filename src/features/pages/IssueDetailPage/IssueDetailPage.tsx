@@ -2,13 +2,9 @@ import { IssueDetailCard } from 'features/Issues';
 import { SectionHeader, TwoColumnGrid } from 'features/layout';
 import { NewsCard } from 'features/News/NewsCard/NewsCard';
 import { Loading } from 'features/shared';
-import type {
-	AppBarOutletContext,
-	IssueCardProps,
-	NewsListItem,
-} from 'features/types/types';
+import type { IssueCardProps, NewsListItem } from 'features/types/types';
 import { type FunctionComponent, useEffect, useState } from 'react';
-import { useOutletContext, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const IssueDetailPage: FunctionComponent = () => {
 	const { id } = useParams();
@@ -48,13 +44,6 @@ const IssueDetailPage: FunctionComponent = () => {
 
 		fetchData();
 	}, [id]);
-
-	// app bar Layout 타이틀 설정
-	const { setAppBarTitle } = useOutletContext<AppBarOutletContext>();
-
-	useEffect(() => {
-		setAppBarTitle(`${issue?.title}`);
-	}, [issue, setAppBarTitle]);
 
 	if (isLoading) return <Loading />;
 	if (error) return <div>Error: {error}</div>;
