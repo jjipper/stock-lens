@@ -32,11 +32,11 @@ export interface StockCardProps {
 }
 
 export interface ButtonProps {
-	children: React.ReactNode;
-	variant?: 'primary' | 'line' | 'default';
-	size?: 'sm' | 'md' | 'lg';
+	variant: 'primary' | 'primaryLine' | 'gray' | 'grayLine' | 'black';
+	size: 'sm' | 'md' | 'lg';
+	width?: 'full' | '';
 	onClick?: () => void;
-	className?: string;
+	children: React.ReactNode;
 }
 
 export interface AppBarOutletContext {
