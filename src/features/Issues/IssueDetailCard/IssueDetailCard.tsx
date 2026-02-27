@@ -34,7 +34,9 @@ export const IssueDetailCard = ({
 			</div>
 
 			<div className="mt-4 flex flex-col gap-2">
-				<span className="text-xs font-normal text-gray-500">관련 종목</span>
+				<span className="text-xs font-normal text-gray-500">
+					Related Stocks
+				</span>
 				<StockChipsWithTicker
 					stocks={stocks}
 					onChipClick={handleStockChipClick}
