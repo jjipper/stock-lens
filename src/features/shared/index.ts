@@ -1,4 +1,4 @@
-export { formatNumber } from './function/formatNumber';
+export { formatNumber } from './lib/format/formatNumber';
 export { Button } from './ui/Button/Button';
 export { EffectTag } from './ui/EffectTag/EffectTag';
 export {
