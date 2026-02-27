@@ -8,12 +8,18 @@ export type IssueType =
 	| 'defense'
 	| 'finance';
 
+export interface StockSummary {
+	name: string;
+	ticker: string;
+	percentage: number;
+}
+
 export interface IssueCardProps {
 	id: string;
 	type: IssueType;
 	title: string;
 	description: string;
-	stocks: { name: string; ticker: string; percentage: number }[];
+	stocks: StockSummary[];
 	newsCount: number;
 	newsList: string[];
 	mention: boolean;
