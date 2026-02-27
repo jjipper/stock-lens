@@ -1,5 +1,5 @@
 import { IssueDetailCard } from 'features/Issues';
-import { NotFoundPage, SectionHeader, TwoColumnGrid } from 'features/layout';
+import { SectionHeader, TwoColumnGrid } from 'features/layout';
 import { NewsCard } from 'features/News/NewsCard/NewsCard';
 import { Loading } from 'features/shared';
 import type {
@@ -58,7 +58,7 @@ const IssueDetailPage: FunctionComponent = () => {
 
 	if (isLoading) return <Loading />;
 	if (error) return <div>Error: {error}</div>;
-	if (!issue) return <NotFoundPage />;
+	if (!issue) return <div>No Issue</div>;
 
 	return (
 		<div className="w-full">

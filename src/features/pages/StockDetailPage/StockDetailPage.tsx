@@ -1,4 +1,4 @@
-import { NotFoundPage, SectionHeader, TwoColumnGrid } from 'features/layout';
+import { SectionHeader, TwoColumnGrid } from 'features/layout';
 import { NewsCard } from 'features/News/NewsCard/NewsCard';
 import { Loading } from 'features/shared';
 import { StockDetailCard } from 'features/Stocks';
@@ -58,7 +58,7 @@ export const StockDetailPage: FunctionComponent = () => {
 
 	if (isLoading) return <Loading />;
 	if (error) return <div>Error: {error}</div>;
-	if (!stock) return <NotFoundPage />;
+	if (!stock) return <div>No Stock</div>;
 
 	return (
 		<div className="w-full">

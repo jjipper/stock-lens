@@ -1,10 +1,10 @@
 // import { ProtectedRoute } from './ProtectedRoute';
 import { MainLayout } from 'features/layout';
 import { AppBarLayout } from 'features/layout';
-import { NotFoundPage } from 'features/layout/';
 import IssueDetailPage from 'features/pages/IssueDetailPage/IssueDetailPage';
 import IssuePage from 'features/pages/IssuePage/IssuePage';
 import MainPage from 'features/pages/MainPage/MainPage';
+import NotFoundPage from 'features/pages/NotFoundPage/NotFoundPage';
 import StockDetailPage from 'features/pages/StockDetailPage/StockDetailPage';
 import StockPage from 'features/pages/StockPage/StockPage';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
