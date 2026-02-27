@@ -1,2 +1,2 @@
-export { IssueCard } from './IssueCard/IssueCard';
-export { IssueDetailCard } from './IssueDetailCard/IssueDetailCard';
+export { IssueCard } from './ui/IssueCard/IssueCard';
+export { IssueDetailCard } from './ui/IssueDetailCard/IssueDetailCard';
