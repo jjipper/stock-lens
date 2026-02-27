@@ -1,16 +1,30 @@
 import { ArrowBackIcon } from 'features/shared';
-import { useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import { Header } from '../Header/Header';
 
-export const AppBarLayout = () => {
-	const [appBarTitle, setAppBarTitle] = useState('App Bar Title');
+const titleMap: Record<string, string> = {
+	'/issue': 'Issue List',
+	'/stock': 'Stock List',
+} as const;
 
+export const AppBarLayout = () => {
 	const navigate = useNavigate();
 	const handleBackButtonClick = () => {
 		navigate(-1);
 	};
+
+	const location = useLocation();
+	const pathname = location.pathname;
+
+	const getTitle = (pathname: string) => {
+		if (titleMap[pathname]) return titleMap[pathname];
+		if (pathname.startsWith('/issue/')) return 'Issue Detail';
+		if (pathname.startsWith('/stock/')) return 'Stock Detail';
+		return 'Page';
+	};
+
+	const title = getTitle(pathname);
 
 	return (
 		<>
@@ -24,7 +38,7 @@ export const AppBarLayout = () => {
 					>
 						<ArrowBackIcon sx={{ fontSize: 20 }} className="text-gray-600" />
 					</button>
-					<h1 className="text-lg font-bold">{appBarTitle}</h1>
+					<h1 className="text-lg font-bold">{title}</h1>
 				</div>
 			</nav>
 			<div className="mx-auto flex max-w-5xl flex-col gap-5 px-6 pt-5 pb-16">
