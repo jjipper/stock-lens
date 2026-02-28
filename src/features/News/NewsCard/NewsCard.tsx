@@ -5,9 +5,14 @@ export const NewsCard = ({
 	title,
 	source,
 	publishedAt,
+onClick,
 }: NewsListItem) => {
 	return (
-		<div className="cursor-pointer overflow-hidden rounded-xl border border-gray-100 bg-white">
+		<button
+			type="button"
+			onClick={onClick}
+className="w-full cursor-pointer overflow-hidden rounded-xl border border-gray-100 bg-white text-left"
+>
 			<div className="h-60 overflow-hidden">
 				<img src={imageUrl} />
 			</div>
@@ -18,6 +23,6 @@ export const NewsCard = ({
 					<p className="text-xs text-gray-500">{publishedAt}</p>
 				</div>
 			</div>
-		</div>
+		</button>
 	);
 };

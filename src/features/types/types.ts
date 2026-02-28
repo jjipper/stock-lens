@@ -51,6 +51,7 @@ export interface NewsListItem {
 	publishedAt: string;
 	source: string;
 	imageUrl: string;
+	onClick?: () => void;
 }
 
 export interface NewsItem {
