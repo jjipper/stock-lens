@@ -1,5 +1,6 @@
 import { Button, CloseIcon, EffectTag } from 'features/shared';
 import type { NewsItem } from 'features/types/types';
+import { useEffect } from 'react';
 
 interface NewsModalProps {
 	news: NewsItem;
@@ -7,6 +8,14 @@ interface NewsModalProps {
 }
 
 export const NewsModal = ({ news, onClose }: NewsModalProps) => {
+	useEffect(() => {
+		const originalOverflow = document.body.style.overflow;
+		document.body.style.overflow = 'hidden';
+		return () => {
+			document.body.style.overflow = originalOverflow;
+		};
+	}, []);
+
 	return (
 		<div
 			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
