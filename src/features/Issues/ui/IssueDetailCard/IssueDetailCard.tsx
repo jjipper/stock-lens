@@ -23,7 +23,7 @@ export const IssueDetailCard = ({
 	};
 
 	return (
-		<article className="w-full rounded-xl border border-gray-200 bg-white p-5">
+		<article className="w-full rounded-xl border border-gray-200 bg-white p-5 pb-3">
 			<div className="flex items-start gap-4">
 				<TypeIcon type={type} />
 
