@@ -10,7 +10,7 @@ const variantClassMap = {
 
 const sizeClassMap = {
 	sm: 'px-4 py-2 text-sm rounded-lg',
-	md: 'px-4.5 py-3 text-base rounded-xl ',
+	md: 'px-4.5 py-3 text-base rounded-lg',
 	lg: 'px-5 py-3 text-lg rounded-xl',
 } as const;
 
