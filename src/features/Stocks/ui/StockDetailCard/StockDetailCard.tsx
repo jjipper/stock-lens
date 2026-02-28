@@ -1,9 +1,4 @@
-import {
-	Button,
-	formatNumber,
-	TrendingDownIcon,
-	TrendingUpIcon,
-} from 'features/shared';
+import { Button, formatNumber, formatPercentage } from 'features/shared';
 import type { StockCardProps } from 'features/types/types';
 import { useState } from 'react';
 
@@ -18,9 +13,6 @@ export const StockDetailCard = ({
 	percentage,
 }: StockCardProps) => {
 	const [period, setPeriod] = useState<'week' | 'month'>('week');
-	const isUp = percentage > 0;
-	const directionText = isUp ? '상승' : '하락';
-	const absPercentage = Math.abs(percentage);
 	const formattedPrice = formatNumber(price);
 
 	return (
@@ -32,28 +24,7 @@ export const StockDetailCard = ({
 				</div>
 				<div className="flex flex-col justify-end gap-0.5">
 					<p className="text-xl font-bold text-gray-900">{formattedPrice}원</p>
-					<p
-						className={`flex items-center justify-end text-sm font-bold ${
-							isUp ? 'text-red-600' : 'text-blue-600'
-						}`}
-					>
-						{isUp ? (
-							<TrendingUpIcon
-								sx={{ fontSize: 16, color: 'currentColor' }}
-								aria-hidden
-							/>
-						) : (
-							<TrendingDownIcon
-								sx={{ fontSize: 16, color: 'currentColor' }}
-								aria-hidden
-							/>
-						)}
-						<span className="ml-1" aria-hidden>
-							{isUp ? '+' : '-'}
-						</span>
-						<span>{absPercentage}%</span>
-						<span className="sr-only">{directionText}</span>
-					</p>
+					{formatPercentage(percentage)}
 				</div>
 			</div>
 

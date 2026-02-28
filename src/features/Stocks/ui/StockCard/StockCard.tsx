@@ -1,8 +1,4 @@
-import {
-	formatNumber,
-	TrendingDownIcon,
-	TrendingUpIcon,
-} from 'features/shared';
+import { formatNumber, formatPercentage } from 'features/shared';
 import type { StockCardProps } from 'features/types/types';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,10 +12,6 @@ export const StockCard = ({
 	const navigate = useNavigate();
 	const STOCK_PATH = `/stock/${ticker}`;
 
-	const isUp = percentage > 0;
-	const directionText = isUp ? '상승' : '하락';
-	const absPercentage = Math.abs(percentage);
-
 	const handleStockCardClick = () => {
 		navigate(STOCK_PATH);
 	};
@@ -30,7 +22,7 @@ export const StockCard = ({
 		<button
 			type="button"
 			onClick={handleStockCardClick}
-			aria-label={`${name} ${ticker} 상세 보기. 현재가 ${price}원, ${directionText} ${absPercentage}%`}
+			aria-label={`${name} ${ticker} 상세 보기. 현재가 ${price}원`}
 			className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl border border-transparent bg-white px-5 py-4 text-left transition-colors duration-300 hover:border-gray-300"
 		>
 			<dl className="flex flex-col gap-0.5">
@@ -44,35 +36,7 @@ export const StockCard = ({
 				<span className="text-lg font-semibold text-gray-800">
 					{formattedPrice}원
 				</span>
-				<span
-					className={`flex items-center justify-end text-sm font-semibold ${
-						isUp ? 'text-red-500' : 'text-blue-500'
-					}`}
-				>
-					{isUp ? (
-						<>
-							<TrendingUpIcon
-								sx={{ fontSize: 14, color: 'currentColor' }}
-								aria-hidden
-							/>
-							<span className="ml-1" aria-hidden>
-								+
-							</span>
-						</>
-					) : (
-						<>
-							<TrendingDownIcon
-								sx={{ fontSize: 14, color: 'currentColor' }}
-								aria-hidden
-							/>
-							<span className="ml-1" aria-hidden>
-								-
-							</span>
-						</>
-					)}
-					<span>{absPercentage}%</span>
-					<span className="sr-only">{directionText}</span>
-				</span>
+				{formatPercentage(percentage)}
 			</div>
 		</button>
 	);
