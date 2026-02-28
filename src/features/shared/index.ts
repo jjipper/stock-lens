@@ -8,6 +8,7 @@ export {
 	BatterySaverIcon,
 	BiotechIcon,
 	BoltIcon,
+	CloseIcon,
 	DirectionsCarFilledIcon,
 	GppGoodIcon,
 	LanguageIcon,
