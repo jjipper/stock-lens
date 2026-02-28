@@ -1,4 +1,5 @@
 export { formatNumber } from './lib/format/formatNumber';
+export { formatPercentage } from './lib/format/formatPercentage';
 export { Button } from './ui/Button/Button';
 export { EffectTag } from './ui/EffectTag/EffectTag';
 export {
