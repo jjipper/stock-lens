@@ -18,3 +18,4 @@ export {
 	TrendingUpIcon,
 } from './ui/Icons/Icons';
 export { Loading } from './ui/Loading/Loading';
+export { Portal } from './ui/Portal/Portal';
