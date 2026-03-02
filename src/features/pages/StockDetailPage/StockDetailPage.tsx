@@ -73,16 +73,16 @@ export const StockDetailPage: FunctionComponent = () => {
 							/>
 						);
 					})}
-					{selectedNews && (
-						<NewsModal
-							news={selectedNews}
-							onClose={() => {
-								setSelectedNews(null);
-							}}
-						/>
-					)}
 				</TwoColumnGrid>
 			</div>
+			{selectedNews && (
+				<NewsModal
+					news={selectedNews}
+					onClose={() => {
+						setSelectedNews(null);
+					}}
+				/>
+			)}
 		</div>
 	);
 };

@@ -77,17 +77,17 @@ const IssueDetailPage: FunctionComponent = () => {
 								/>
 							);
 						})}
-						{selectedNews && (
-							<NewsModal
-								news={selectedNews}
-								onClose={() => {
-									setSelectedNews(null);
-								}}
-							/>
-						)}
 					</TwoColumnGrid>
 				</div>
 			</div>
+			{selectedNews && (
+				<NewsModal
+					news={selectedNews}
+					onClose={() => {
+						setSelectedNews(null);
+					}}
+				/>
+			)}
 		</>
 	);
 };
