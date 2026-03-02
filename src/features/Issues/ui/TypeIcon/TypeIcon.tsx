@@ -1,18 +1,18 @@
 import type { SvgIconComponent } from '@mui/icons-material';
 import {
-  AccountBalanceIcon,
-  BatterySaverIcon,
-  BiotechIcon,
-  BoltIcon,
-  DirectionsCarFilledIcon,
-  GppGoodIcon,
-  LanguageIcon,
-  MemoryIcon,
+	AccountBalanceIcon,
+	BatterySaverIcon,
+	BiotechIcon,
+	BoltIcon,
+	DirectionsCarFilledIcon,
+	GppGoodIcon,
+	LanguageIcon,
+	MemoryIcon,
 } from 'features/shared';
 import type { IssueType } from 'features/types/types';
 
 interface TypeIconProps {
-  type: IssueType;
+	type: IssueType;
 }
 
 const DEFAULT_ICON_SIZE = 28;
@@ -59,18 +59,18 @@ const typeMeta = {
 		iconSize: 22,
 	},
 } as const satisfies Record<
-  IssueType,
-  { Icon: SvgIconComponent; wrapperClass: string; iconSize: number }
+	IssueType,
+	{ Icon: SvgIconComponent; wrapperClass: string; iconSize: number }
 >;
 
 export const TypeIcon = ({ type }: TypeIconProps) => {
 	const { Icon, wrapperClass, iconSize } = typeMeta[type];
 
-  return (
-    <div
+	return (
+		<div
 			className={`inline-flex h-12 w-12 items-center justify-center rounded-xl p-3 ${wrapperClass}`}
-    >
-      <Icon sx={{ fontSize: iconSize, color: 'currentColor' }} />
-    </div>
-  );
+		>
+			<Icon sx={{ fontSize: iconSize, color: 'currentColor' }} />
+		</div>
+	);
 };

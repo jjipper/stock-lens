@@ -4,14 +4,14 @@ import { MyStockSection } from './components/MyStockSection/MyStockSection';
 import { PopularStocksSection } from './components/PopularStocksSection/PopularStocksSection';
 
 const MainPage = () => {
-  return (
-    <>
-      <IntroSection />
-      <IssueSection />
-      <PopularStocksSection />
-      <MyStockSection />
-    </>
-  );
+	return (
+		<>
+			<IntroSection />
+			<IssueSection />
+			<PopularStocksSection />
+			<MyStockSection />
+		</>
+	);
 };
 
 export default MainPage;

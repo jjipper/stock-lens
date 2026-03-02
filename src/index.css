@@ -1,4 +1,4 @@
-@import "tailwindcss";
-@import "features/shared/styles/fonts.css";
-@import "features/shared/styles/tokens.css";
-@import "features/shared/styles/base.css";
+@import 'tailwindcss';
+@import 'features/shared/styles/fonts.css';
+@import 'features/shared/styles/tokens.css';
+@import 'features/shared/styles/base.css';
