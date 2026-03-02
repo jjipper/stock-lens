@@ -7,7 +7,7 @@ import {
 	useState,
 } from 'react';
 
-const IssuePage: FunctionComponent = () => {
+export const IssuePage: FunctionComponent = () => {
 	// 이슈 목록 렌더링
 	const [issues, setIssues] = useState<IssueCardProps[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -54,5 +54,3 @@ const IssuePage: FunctionComponent = () => {
 		</ul>
 	);
 };
-
-export default IssuePage;

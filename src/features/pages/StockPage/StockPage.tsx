@@ -3,7 +3,7 @@ import { StockCard } from 'features/Stocks';
 import type { StockCardProps } from 'features/types/types';
 import { type FunctionComponent, useEffect, useState } from 'react';
 
-const StockPage: FunctionComponent = () => {
+export const StockPage: FunctionComponent = () => {
 	// 주식 목록 렌더링
 	const [stocks, setStocks] = useState<StockCardProps[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -43,5 +43,3 @@ const StockPage: FunctionComponent = () => {
 		</TwoColumnGrid>
 	);
 };
-
-export default StockPage;

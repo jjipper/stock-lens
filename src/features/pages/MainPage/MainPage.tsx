@@ -3,7 +3,7 @@ import { IssueSection } from './components/IssueSection/IssueSection';
 import { MyStockSection } from './components/MyStockSection/MyStockSection';
 import { PopularStocksSection } from './components/PopularStocksSection/PopularStocksSection';
 
-const MainPage = () => {
+export const MainPage = () => {
 	return (
 		<>
 			<IntroSection />
@@ -13,5 +13,3 @@ const MainPage = () => {
 		</>
 	);
 };
-
-export default MainPage;

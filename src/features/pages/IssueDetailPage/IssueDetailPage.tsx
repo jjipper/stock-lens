@@ -7,7 +7,7 @@ import type { IssueCardProps, NewsItem } from 'features/types/types';
 import { type FunctionComponent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const IssueDetailPage: FunctionComponent = () => {
+export const IssueDetailPage: FunctionComponent = () => {
 	const { id } = useParams();
 	const [newsList, setNewsList] = useState<NewsItem[]>([]);
 	const [issue, setIssue] = useState<IssueCardProps | null>(null);
@@ -91,5 +91,3 @@ const IssueDetailPage: FunctionComponent = () => {
 		</>
 	);
 };
-
-export default IssueDetailPage;
