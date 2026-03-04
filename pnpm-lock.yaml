@@ -11,6 +11,9 @@ importers:
       '@mui/icons-material':
         specifier: ^7.3.7
         version: 7.3.7(@mui/material@7.3.7(@emotion/react@11.14.0(@types/react@19.2.10)(react@19.2.4))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.10)(react@19.2.4))(@types/react@19.2.10)(react@19.2.4))(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(@types/react@19.2.10)(react@19.2.4)
+      axios:
+        specifier: ^1.13.6
+        version: 1.13.6
       knip:
         specifier: ^5.85.0
         version: 5.85.0(@types/node@24.10.9)(typescript@5.9.3)
