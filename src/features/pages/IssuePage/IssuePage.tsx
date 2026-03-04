@@ -1,50 +1,18 @@
-import { IssueCard } from 'features/Issues';
+import { IssueCard, issuesAPI } from 'features/Issues';
 import type { IssueCardProps } from 'features/types/types';
-import {
-	type FunctionComponent,
-	useCallback,
-	useEffect,
-	useState,
-} from 'react';
+import { type FunctionComponent, useEffect, useState } from 'react';
 
 export const IssuePage: FunctionComponent = () => {
-	// 이슈 목록 렌더링
 	const [issues, setIssues] = useState<IssueCardProps[]>([]);
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
-
-	const loadIssues = useCallback(async () => {
-		setIsLoading(true);
-		setError(null);
-
-		try {
-			const res = await fetch('/issues');
-			if (!res.ok) throw new Error(`요청 실패: ${res.status}`);
-			const data = await res.json();
-			setIssues(data);
-		} catch (e) {
-			setError(
-				e instanceof Error ? e.message : '알 수 없는 오류가 발생했습니다.',
-			);
-		} finally {
-			setIsLoading(false);
-		}
-	}, []);
 
 	useEffect(() => {
-		loadIssues();
-	}, [loadIssues]);
+		const fetchData = async () => {
+			const issuesList = (await issuesAPI('/')).data;
+			setIssues(issuesList);
+		};
 
-	// 로딩, 에러, 404 분기
-	if (isLoading) return <div>Loading...</div>;
-	if (error)
-		return (
-			<div>
-				<span>Error: {error}</span>
-				<button onClick={loadIssues}>다시 시도</button>
-			</div>
-		);
-	if (issues.length === 0) return <div>No Issue</div>;
+		fetchData();
+	}, []);
 
 	return (
 		<ul className="flex flex-col gap-4">
