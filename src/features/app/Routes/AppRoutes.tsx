@@ -6,6 +6,8 @@ import { lazy, Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { ScrollToTop } from './ScrollToTop';
+
 const MainPage = lazy(() => import('features/pages/MainPage/MainPage'));
 const IssuePage = lazy(() => import('features/pages/IssuePage/IssuePage'));
 const IssueDetailPage = lazy(
@@ -19,6 +21,7 @@ const StockDetailPage = lazy(
 export const AppRoutes = () => {
 	return (
 		<BrowserRouter>
+			<ScrollToTop />
 			<ErrorBoundary fallback={<div>Error 발생!</div>}>
 				<Suspense fallback={<Loading />}>
 					<Routes>
