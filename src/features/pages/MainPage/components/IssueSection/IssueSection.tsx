@@ -1,28 +1,8 @@
-import { IssueCard } from 'features/Issues';
+import { IssueCard, useIssuesQuery } from 'features/Issues';
 import { SectionHeader, SectionWrapper } from 'features/layout';
-import type { IssueCardProps } from 'features/types/types';
-import { useEffect, useState } from 'react';
 
 export const IssueSection = () => {
-	const [issues, setIssues] = useState<IssueCardProps[]>([]);
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<Error | null>(null);
-
-	useEffect(() => {
-		fetch('/issues?_limit=3')
-			.then((res) => {
-				if (!res.ok) {
-					throw new Error(`요청 실패: ${res.status}`);
-				}
-				return res.json();
-			})
-			.then((data) => setIssues(data))
-			.catch((err) => setError(err))
-			.finally(() => setIsLoading(false));
-	}, []);
-
-	if (isLoading) return <SectionWrapper>Loading...</SectionWrapper>;
-	if (error) return <SectionWrapper>Error: {error.message}</SectionWrapper>;
+	const { data: issues } = useIssuesQuery(3);
 
 	return (
 		<SectionWrapper>
