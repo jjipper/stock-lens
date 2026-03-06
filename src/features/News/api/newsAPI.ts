@@ -10,3 +10,8 @@ export const getNewsByIds = async (newsList: string[]) => {
 	);
 	return res.data;
 };
+
+export const getNewsById = async (id: string) => {
+	const res = await newsAPI.get(`/${id}`);
+	return res.data;
+};
