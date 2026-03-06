@@ -1,24 +1,19 @@
-import { IssueCard, issuesAPI } from 'features/Issues';
-import type { IssueCardProps } from 'features/types/types';
-import { type FunctionComponent, useEffect, useState } from 'react';
+import { IssueCard, useIssuesQuery } from 'features/Issues';
+import { type FunctionComponent } from 'react';
 
-export const IssuePage: FunctionComponent = () => {
-	const [issues, setIssues] = useState<IssueCardProps[]>([]);
+const IssuePage: FunctionComponent = () => {
+	const query = useIssuesQuery();
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const issuesList = (await issuesAPI('/')).data;
-			setIssues(issuesList);
-		};
-
-		fetchData();
-	}, []);
+	if (query.isError) return <div>Error: {query.error.message}</div>;
+	if (query.data?.length === 0) return <div>No Issues</div>;
 
 	return (
 		<ul className="flex flex-col gap-4">
-			{issues.map((issue) => (
+			{query.data?.map((issue) => (
 				<IssueCard key={issue.id} {...issue} />
 			))}
 		</ul>
 	);
 };
+
+export default IssuePage;
