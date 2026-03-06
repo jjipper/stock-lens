@@ -4,8 +4,10 @@ export const issuesAPI = axios.create({
 	baseURL: '/issues',
 });
 
-export const getIssues = async () => {
-	const res = await issuesAPI.get('/');
+export const getIssues = async (limit?: number) => {
+	const res = await issuesAPI.get('/', {
+		params: { _limit: limit },
+	});
 	return res.data;
 };
 
