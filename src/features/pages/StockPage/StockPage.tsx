@@ -1,23 +1,16 @@
 import { TwoColumnGrid } from 'features/layout';
-import { StockCard, stocksAPI } from 'features/Stocks';
-import type { StockCardProps } from 'features/types/types';
-import { type FunctionComponent, useEffect, useState } from 'react';
+import { StockCard, useStocksQuery } from 'features/Stocks';
+import { type FunctionComponent } from 'react';
 
 export const StockPage: FunctionComponent = () => {
-	const [stocks, setStocks] = useState<StockCardProps[]>([]);
+	const query = useStocksQuery();
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const stocksList = (await stocksAPI('/')).data;
-			setStocks(stocksList);
-		};
-
-		fetchData();
-	}, []);
+	if (query.isError) return <div>Error: {query.error.message}</div>;
+	if (query.data?.length === 0) return <div>No Issues</div>;
 
 	return (
 		<TwoColumnGrid>
-			{stocks.map((stock) => (
+			{query.data?.map((stock) => (
 				<StockCard key={stock.ticker} {...stock} />
 			))}
 		</TwoColumnGrid>
