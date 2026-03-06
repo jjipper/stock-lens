@@ -45,13 +45,16 @@ export interface ButtonProps {
 	children: React.ReactNode;
 }
 
-export interface NewsListItem {
-	id?: string;
+export interface NewsCardProps {
 	title: string;
 	publishedAt: string;
 	source: string;
 	imageUrl: string;
 	onClick?: () => void;
+}
+
+export interface NewsListItem extends NewsCardProps {
+	id: string;
 }
 
 export interface NewsItem {

@@ -1,4 +1,4 @@
-import type { NewsListItem } from 'features/types/types';
+import type { NewsCardProps } from 'features/types/types';
 
 export const NewsCard = ({
 	imageUrl,
@@ -6,7 +6,7 @@ export const NewsCard = ({
 	source,
 	publishedAt,
 	onClick,
-}: NewsListItem) => {
+}: NewsCardProps) => {
 	return (
 		<button
 			type="button"
