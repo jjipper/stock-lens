@@ -23,3 +23,5 @@ export const StockPage: FunctionComponent = () => {
 		</TwoColumnGrid>
 	);
 };
+
+export default StockPage;

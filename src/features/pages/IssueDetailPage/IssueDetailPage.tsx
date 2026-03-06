@@ -70,3 +70,5 @@ export const IssueDetailPage: FunctionComponent = () => {
 		</>
 	);
 };
+
+export default IssueDetailPage;

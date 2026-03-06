@@ -65,3 +65,5 @@ export const StockDetailPage: FunctionComponent = () => {
 		</div>
 	);
 };
+
+export default StockDetailPage;
