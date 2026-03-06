@@ -8,3 +8,8 @@ export const getIssues = async () => {
 	const res = await issuesAPI.get('/');
 	return res.data;
 };
+
+export const getIssueDetail = async (id: string) => {
+	const res = await issuesAPI.get(`/${id}`);
+	return res.data;
+};
