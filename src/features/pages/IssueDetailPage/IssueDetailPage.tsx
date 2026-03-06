@@ -1,44 +1,26 @@
-import { IssueDetailCard, issuesAPI } from 'features/Issues';
+import { IssueDetailCard, useIssueDetailQuery } from 'features/Issues';
 import { SectionHeader, TwoColumnGrid } from 'features/layout';
-import { newsAPI } from 'features/News';
+import { useNewsQuery } from 'features/News';
+import { useNewsDetailQuery } from 'features/News/hooks/useNewsDetailQuery';
 import { NewsCard } from 'features/News/NewsCard/NewsCard';
 import { NewsModal } from 'features/News/NewsModal/NewsModal';
-import type { IssueCardProps, NewsItem } from 'features/types/types';
-import { type FunctionComponent, useEffect, useState } from 'react';
+import { type FunctionComponent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 export const IssueDetailPage: FunctionComponent = () => {
 	const { id } = useParams();
-	const [newsList, setNewsList] = useState<NewsItem[]>([]);
-	const [issue, setIssue] = useState<IssueCardProps | null>(null);
-	const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+	const [selectedNews, setSelectedNews] = useState('');
+	const { data: issue } = useIssueDetailQuery(id ?? '');
+	const { data: newsList } = useNewsQuery(issue.newsList);
+	const { data: newsItem } = useNewsDetailQuery(selectedNews);
 
-	useEffect(() => {
-		if (!id) return;
-
-		const fetchData = async () => {
-			const issueData: IssueCardProps = (await issuesAPI(`/${id}`)).data;
-			setIssue(issueData);
-
-			const query = encodeURIComponent(issueData.newsList.join(','));
-
-			// ids로 해당하는 뉴스 목록 받아오기
-			const newsData = (await newsAPI(`?ids=${query}`)).data;
-			setNewsList(newsData);
-		};
-
-		fetchData();
-	}, [id]);
-
-	const handleNewsClick = (news: NewsItem) => {
-		setSelectedNews(news);
-	};
+	if (!id) return <div>No Issue</div>;
 
 	return (
 		<>
 			<div className="w-full">
 				<ul className="flex flex-col gap-4">
-					{issue && <IssueDetailCard {...issue} />}
+					<IssueDetailCard {...issue} />
 				</ul>
 
 				<div className="mt-6 flex flex-col gap-3">
@@ -52,18 +34,18 @@ export const IssueDetailPage: FunctionComponent = () => {
 									title={news.title}
 									source={news.source}
 									publishedAt={news.publishedAt}
-									onClick={() => handleNewsClick(news)}
+									onClick={() => setSelectedNews(news.id)}
 								/>
 							);
 						})}
 					</TwoColumnGrid>
 				</div>
 			</div>
-			{selectedNews && (
+			{newsItem && (
 				<NewsModal
-					news={selectedNews}
+					news={newsItem}
 					onClose={() => {
-						setSelectedNews(null);
+						setSelectedNews('');
 					}}
 				/>
 			)}
