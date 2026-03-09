@@ -1,10 +1,11 @@
 import { SectionHeader, TwoColumnGrid } from 'features/layout';
-import { useNewsQuery } from 'features/News';
-import { useNewsDetailQuery } from 'features/News/hooks/useNewsDetailQuery';
-import { NewsCard } from 'features/News/NewsCard/NewsCard';
-import { NewsModal } from 'features/News/NewsModal/NewsModal';
-import { StockDetailCard } from 'features/Stocks';
-import { useStocksDetailQuery } from 'features/Stocks/hooks/useStocksDetailQuery';
+import {
+	NewsCard,
+	NewsModal,
+	useNewsDetailQuery,
+	useNewsQuery,
+} from 'features/News';
+import { StockDetailCard, useStocksDetailQuery } from 'features/Stocks';
 import { type FunctionComponent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
