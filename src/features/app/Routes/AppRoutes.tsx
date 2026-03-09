@@ -1,9 +1,7 @@
 // import { ProtectedRoute } from './ProtectedRoute';
 import { AppBarLayout, MainLayout } from 'features/layout';
 import { NotFoundPage } from 'features/pages/NotFoundPage/NotFoundPage';
-import { Loading } from 'features/shared';
-import { lazy, Suspense } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
+import { lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { ScrollToTop } from './ScrollToTop';
@@ -22,25 +20,23 @@ export const AppRoutes = () => {
 	return (
 		<BrowserRouter>
 			<ScrollToTop />
-			<ErrorBoundary fallback={<div>Error 발생!</div>}>
-				<Suspense fallback={<Loading />}>
-					<Routes>
-						<Route path="/" element={<MainLayout />}>
-							<Route index element={<MainPage />} />
-							<Route path="*" element={<NotFoundPage />} />
-						</Route>
+			<Routes>
+				<Route path="/" element={<MainLayout />}>
+					<Route index element={<MainPage />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Route>
 
-						<Route path="/issue" element={<AppBarLayout />}>
-							<Route index element={<IssuePage />} />
-							<Route path=":id" element={<IssueDetailPage />} />
-						</Route>
+				<Route path="/issue" element={<AppBarLayout />}>
+					<Route index element={<IssuePage />} />
+					<Route path=":id" element={<IssueDetailPage />} />
+				</Route>
 
-						<Route path="/stock" element={<AppBarLayout />}>
-							<Route index element={<StockPage />} />
-							<Route path=":ticker" element={<StockDetailPage />} />
-						</Route>
+				<Route path="/stock" element={<AppBarLayout />}>
+					<Route index element={<StockPage />} />
+					<Route path=":ticker" element={<StockDetailPage />} />
+				</Route>
 
-						{/* <Route
+				{/* <Route
           path="/admin"
           element={
             <ProtectedRoute>
@@ -48,9 +44,7 @@ export const AppRoutes = () => {
             </ProtectedRoute>
           }
         /> */}
-					</Routes>
-				</Suspense>
-			</ErrorBoundary>
+			</Routes>
 		</BrowserRouter>
 	);
 };
