@@ -1,15 +1,21 @@
+import { ErrorProvider } from 'features/app/provider/ErrorProvider';
+import { Loading } from 'features/shared';
+import { Suspense } from 'react';
+
 import { IntroSection } from './components/IntroSection/IntroSection';
 import { IssueSection } from './components/IssueSection/IssueSection';
-import { MyStockSection } from './components/MyStockSection/MyStockSection';
 import { PopularStocksSection } from './components/PopularStocksSection/PopularStocksSection';
 
 export const MainPage = () => {
 	return (
 		<>
 			<IntroSection />
-			<IssueSection />
-			<PopularStocksSection />
-			<MyStockSection />
+			<ErrorProvider>
+				<Suspense fallback={<Loading />}>
+					<IssueSection />
+					<PopularStocksSection />
+				</Suspense>
+			</ErrorProvider>
 		</>
 	);
 };
