@@ -11,9 +11,9 @@ export const IssueDetailPage: FunctionComponent = () => {
 				<ErrorProvider>
 					<Suspense fallback={<Loading />}>
 						<IssueDetailWrapper />
-					</Suspense>
-					<Suspense fallback={<Loading />}>
-						<NewsListWrapper />
+						<Suspense fallback={<Loading />}>
+							<NewsListWrapper />
+						</Suspense>
 					</Suspense>
 				</ErrorProvider>
 			</div>
