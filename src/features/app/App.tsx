@@ -1,12 +1,12 @@
 import { AppRoutes } from 'features/app/Routes/AppRoutes';
 
-import { ReactQueryProvider } from './provider/ReactQueryProvider';
+import { AppProvider } from './provider/AppProvider';
 
 const App = () => {
 	return (
-		<ReactQueryProvider>
+		<AppProvider>
 			<AppRoutes />
-		</ReactQueryProvider>
+		</AppProvider>
 	);
 };
 
