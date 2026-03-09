@@ -1,18 +1,15 @@
-import { TwoColumnGrid } from 'features/layout';
-import { StockCard, useStocksQuery } from 'features/Stocks';
-import { type FunctionComponent } from 'react';
+import { ErrorProvider } from 'features/app/provider/ErrorProvider';
+import { Loading } from 'features/shared';
+import { StockList } from 'features/Stocks';
+import { type FunctionComponent, Suspense } from 'react';
 
 export const StockPage: FunctionComponent = () => {
-	const { data } = useStocksQuery();
-
-	if (data.length === 0) return <div>No Issues</div>;
-
 	return (
-		<TwoColumnGrid>
-			{data.map((stock) => (
-				<StockCard key={stock.ticker} {...stock} />
-			))}
-		</TwoColumnGrid>
+		<ErrorProvider>
+			<Suspense fallback={<Loading />}>
+				<StockList />
+			</Suspense>
+		</ErrorProvider>
 	);
 };
 
