@@ -1,17 +1,15 @@
-import { IssueCard, useIssuesQuery } from 'features/Issues';
-import { type FunctionComponent } from 'react';
+import { ErrorProvider } from 'features/app/provider/ErrorProvider';
+import { IssueList } from 'features/Issues';
+import { Loading } from 'features/shared';
+import { type FunctionComponent, Suspense } from 'react';
 
 const IssuePage: FunctionComponent = () => {
-	const { data } = useIssuesQuery();
-
-	if (data.length === 0) return <div>No Issues</div>;
-
 	return (
-		<ul className="flex flex-col gap-4">
-			{data.map((issue) => (
-				<IssueCard key={issue.id} {...issue} />
-			))}
-		</ul>
+		<ErrorProvider>
+			<Suspense fallback={<Loading />}>
+				<IssueList />
+			</Suspense>
+		</ErrorProvider>
 	);
 };
 
