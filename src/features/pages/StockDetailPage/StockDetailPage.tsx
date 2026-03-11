@@ -1,49 +1,20 @@
-import { SectionHeader, TwoColumnGrid } from 'features/layout';
-import {
-	NewsCard,
-	NewsModal,
-	useNewsDetailQuery,
-	useNewsQuery,
-} from 'features/News';
-import { StockDetailCard, useStocksDetailQuery } from 'features/Stocks';
-import { type FunctionComponent, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { ErrorProvider } from 'features/app/provider/ErrorProvider';
+import { NewsListWrapper } from 'features/News';
+import { Loading } from 'features/shared';
+import { StockDetailWrapper } from 'features/Stocks';
+import { type FunctionComponent, Suspense } from 'react';
 
 export const StockDetailPage: FunctionComponent = () => {
-	const { ticker } = useParams();
-	const [selectedNews, setSelectedNews] = useState('');
-	const { data: stock } = useStocksDetailQuery(ticker ?? '');
-	const { data: newsList } = useNewsQuery(stock.newsList);
-	const { data: newsItem } = useNewsDetailQuery(selectedNews);
-
 	return (
 		<div className="w-full">
-			<StockDetailCard {...stock} />
-			<div className="mt-6 flex flex-col gap-3">
-				<SectionHeader title="최신 뉴스" updateTime="2시간 전" />
-				<TwoColumnGrid>
-					{newsList.map((news) => {
-						return (
-							<NewsCard
-								key={news.id}
-								imageUrl={news.imageUrl}
-								title={news.title}
-								source={news.source}
-								publishedAt={news.publishedAt}
-								onClick={() => setSelectedNews(news.id)}
-							/>
-						);
-					})}
-				</TwoColumnGrid>
-			</div>
-			{newsItem && (
-				<NewsModal
-					news={newsItem}
-					onClose={() => {
-						setSelectedNews('');
-					}}
-				/>
-			)}
+			<ErrorProvider>
+				<Suspense fallback={<Loading />}>
+					<StockDetailWrapper />
+					<Suspense fallback={<Loading />}>
+						<NewsListWrapper NewsType={'stock'} />
+					</Suspense>
+				</Suspense>
+			</ErrorProvider>
 		</div>
 	);
 };
