@@ -6,18 +6,16 @@ import { type FunctionComponent, Suspense } from 'react';
 
 export const IssueDetailPage: FunctionComponent = () => {
 	return (
-		<>
-			<div className="w-full">
-				<ErrorProvider>
+		<div className="w-full">
+			<ErrorProvider>
+				<Suspense fallback={<Loading />}>
+					<IssueDetailWrapper />
 					<Suspense fallback={<Loading />}>
-						<IssueDetailWrapper />
-						<Suspense fallback={<Loading />}>
-							<NewsListWrapper />
-						</Suspense>
+						<NewsListWrapper NewsType={'issue'} />
 					</Suspense>
-				</ErrorProvider>
-			</div>
-		</>
+				</Suspense>
+			</ErrorProvider>
+		</div>
 	);
 };
 
