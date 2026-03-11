@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 
 import { IntroSection } from './components/IntroSection/IntroSection';
 import { IssueSection } from './components/IssueSection/IssueSection';
+import { MyStockSection } from './components/MyStockSection/MyStockSection';
 import { PopularStocksSection } from './components/PopularStocksSection/PopularStocksSection';
 
 export const MainPage = () => {
@@ -13,6 +14,7 @@ export const MainPage = () => {
 			<ErrorProvider>
 				<Suspense fallback={<Loading />}>
 					<IssueSection />
+					<MyStockSection />
 					<PopularStocksSection />
 				</Suspense>
 			</ErrorProvider>
