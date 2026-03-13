@@ -93,11 +93,8 @@ export const StockDetailCard = ({
 				</p>
 			</section>
 
-			<div className="mt-6 grid grid-cols-2 gap-3">
-				<Button variant="gray" size="md">
-					나중에 보기
-				</Button>
-				<Button variant="primary" size="md">
+			<div className="mt-6">
+				<Button variant="primary" size="md" width="full">
 					+ 관심 종목 추가
 				</Button>
 			</div>
