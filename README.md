@@ -10,7 +10,7 @@
    ](https://velog.io/@jjipper/stock-lens-1)
 2. [눈앞이 막막할 땐 폴더부터 만들자: 10번 갈아엎은 FSD 적용기
    ](https://velog.io/@jjipper/stock-lens-2)
-3. 스타일링 선택 기록: CSS, SCSS, styled-components, Tailwind 비교
+3. [스타일링 선택 기록: CSS, SCSS, styled-components, Tailwind CSS 비교](https://velog.io/@jjipper/stock-lens-3)
 4. 내 노트북에선 멀쩡한 게 왜 거기선 깨지지? 폰트 FOUT 현상 추적기
 5. 진짜 어려운 TypeScript 돌파하기: 프로젝트에서 바로 쓰는 타입 기초
 6. React Router로 레이아웃 잡기: 중첩 라우트와 Outlet
