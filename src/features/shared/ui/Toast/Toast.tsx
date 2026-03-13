@@ -27,7 +27,7 @@ export const Toast = ({ type }: { type: toastType }) => {
 		<Portal>
 			{/* TODO: 케이스별 z-index 고민 (모달 앞, 모달 뒤) */}
 			<div
-				className={`fixed bottom-8 left-8 z-[40] rounded-lg border px-6 py-3 transition-opacity ${toastType.styles} `}
+				className={`fixed bottom-8 left-8 z-[60] rounded-lg border px-6 py-3 transition-opacity ${toastType.styles} `}
 			>
 				<p>{toastType.message}</p>
 			</div>
