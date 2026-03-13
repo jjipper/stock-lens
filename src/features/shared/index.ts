@@ -19,3 +19,4 @@ export {
 } from './ui/Icons/Icons';
 export { Loading } from './ui/Loading/Loading';
 export { Portal } from './ui/Portal/Portal';
+export { Toast } from './ui/Toast/Toast';
