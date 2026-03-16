@@ -1,12 +1,16 @@
 import axios from 'axios';
-import type { InfinityProps, IssueInfinityProps } from 'features/types/types';
+import type {
+	InfinityProps,
+	IssueCardProps,
+	IssueInfinityProps,
+} from 'features/types/types';
 
 export const issuesAPI = axios.create({
 	baseURL: '/issues',
 });
 
 export const getIssues = async (limit?: number) => {
-	const res = await issuesAPI.get('/', {
+	const res = await issuesAPI.get<IssueCardProps[]>('/', {
 		params: { _limit: limit },
 	});
 	return res.data;
@@ -28,6 +32,6 @@ export const getIssuesInfinity = async ({
 };
 
 export const getIssueDetail = async (id: string) => {
-	const res = await issuesAPI.get(`/${id}`);
+	const res = await issuesAPI.get<IssueCardProps>(`/${id}`);
 	return res.data;
 };
