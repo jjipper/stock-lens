@@ -24,6 +24,23 @@ export const handlers = [
 		}
 		return HttpResponse.json(issue);
 	}),
+	// 이슈 무한 스크롤 조회
+	http.get('/issues', ({ request }) => {
+		const url = new URL(request.url);
+		const size = Number(url.searchParams.get('_limit'));
+		const page = Number(url.searchParams.get('_page'));
+		const start = size * (page - 1);
+		const end = start + size;
+		const data = {
+			list: [
+				...(Number.isFinite(size) && size > 0
+					? issues.slice(start, end)
+					: issues),
+			],
+			hasNextPage: end < issues.length,
+		};
+		return HttpResponse.json(data);
+	}),
 
 	// 주식 목록
 	http.get('/stocks', ({ request }) => {
