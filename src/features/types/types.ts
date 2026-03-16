@@ -1,3 +1,8 @@
+export interface InfinityProps {
+	page: number;
+	size: number;
+}
+
 export type IssueType =
 	| 'semiconductor'
 	| 'battery'
@@ -24,6 +29,11 @@ export interface IssueCardProps {
 	newsList: string[];
 	mention: boolean;
 	effect: 'high' | 'middle' | 'low';
+}
+
+export interface IssueInfinityProps {
+	list: IssueCardProps[];
+	hasNextPage: boolean;
 }
 
 export interface StockCardProps {
