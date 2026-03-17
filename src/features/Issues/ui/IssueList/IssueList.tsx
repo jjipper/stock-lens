@@ -24,7 +24,7 @@ export const IssueList: FunctionComponent = () => {
 		return () => {
 			observer.disconnect();
 		};
-	}, [observerRef]);
+	}, [fetchNextPage, hasNextPage]);
 
 	return (
 		<ul className="flex flex-col gap-4">
