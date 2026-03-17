@@ -3,7 +3,7 @@ import { http, HttpResponse } from 'msw';
 import { news } from '../data/news';
 
 export const newsHandlers = [
-	// 뉴스 목록
+	// 뉴스 목록 조회
 	http.get('/news', ({ request }) => {
 		const url = new URL(request.url);
 
@@ -21,6 +21,32 @@ export const newsHandlers = [
 
 		return HttpResponse.json(data);
 	}),
+
+	// 뉴스 무한 스크롤 목록 조회
+	http.get('/news/infinity', ({ request }) => {
+		const url = new URL(request.url);
+		const idsParams = url.searchParams.get('ids');
+		const size = Number(url.searchParams.get('_limit')); // 4
+		const page = Number(url.searchParams.get('_page')); // 2
+		const start = size * (page - 1);
+		const end = start + size;
+		const ids = idsParams
+			? idsParams
+					.split(',')
+					.map((v) => v.trim())
+					.filter(Boolean)
+			: null;
+		const newsList = ids
+			? news.filter((item) => ids.includes(String(item.id)))
+			: news;
+		const data = {
+			list: [...newsList.slice(start, end)],
+			hasNextPage: end < newsList.length,
+		};
+
+		return HttpResponse.json(data);
+	}),
+
 	// 뉴스 단건 조회
 	http.get('/news/:id', ({ params }) => {
 		const newsDetail = news.find((item) => item.id === String(params.id));
