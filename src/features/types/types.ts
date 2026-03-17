@@ -79,3 +79,13 @@ export interface NewsItem {
 	nextCheckpoint: string;
 	articleUrl: string;
 }
+
+export interface NewsInfinityProps {
+	newsList: string[];
+	pageParam: InfinityProps;
+}
+
+export interface NewsListInfinityProps {
+	list: NewsListItem[];
+	hasNextPage: boolean;
+}
