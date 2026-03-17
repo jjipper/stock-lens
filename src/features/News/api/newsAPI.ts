@@ -1,7 +1,9 @@
 import axios from 'axios';
 import type {
 	NewsInfinityProps,
+	NewsItem,
 	NewsListInfinityProps,
+	NewsListItem,
 } from 'features/types/types';
 
 export const newsAPI = axios.create({
@@ -9,7 +11,7 @@ export const newsAPI = axios.create({
 });
 
 export const getNewsByIds = async (newsList: string[]) => {
-	const res = await newsAPI.get(
+	const res = await newsAPI.get<NewsListItem[]>(
 		`?ids=${encodeURIComponent(newsList.join(','))}`,
 	);
 	return res.data;
@@ -27,6 +29,6 @@ export const getNewsInfinityByIds = async ({
 };
 
 export const getNewsById = async (id: string) => {
-	const res = await newsAPI.get(`/${id}`);
+	const res = await newsAPI.get<NewsItem>(`/${id}`);
 	return res.data;
 };
