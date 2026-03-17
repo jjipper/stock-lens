@@ -30,6 +30,17 @@ export const handlers = [
 		};
 		return HttpResponse.json(data);
 	}),
+	// 이슈 단건 조회
+	http.get('/issues/:id', ({ params }) => {
+		const issue = issues.find((item) => item.id === String(params.id));
+		if (!issue) {
+			return HttpResponse.json(
+				{ message: '해당 이슈를 찾을 수 없습니다.' },
+				{ status: 404 },
+			);
+		}
+		return HttpResponse.json(issue);
+	}),
 
 	// 주식 목록
 	http.get('/stocks', ({ request }) => {
