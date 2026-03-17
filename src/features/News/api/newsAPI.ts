@@ -23,7 +23,7 @@ export const getNewsInfinityByIds = async ({
 }: NewsInfinityProps) => {
 	const { size, page } = pageParam;
 	const res = await newsAPI.get<NewsListInfinityProps>(
-		`?ids=${encodeURIComponent(newsList.join(','))}&_limit=${size}&_page=${page}`,
+		`/infinity/?ids=${encodeURIComponent(newsList.join(','))}&_limit=${size}&_page=${page}`,
 	);
 	return res.data;
 };
