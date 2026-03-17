@@ -1,5 +1,11 @@
 import { setupWorker } from 'msw/browser';
 
-import { handlers } from './handlers';
+import { issuesHandlers } from './handlers/issuesHandlers';
+import { newsHandlers } from './handlers/newsHandlers';
+import { stocksHandlers } from './handlers/stocksHandlers';
 
-export const worker = setupWorker(...handlers);
+export const worker = setupWorker(
+	...issuesHandlers,
+	...stocksHandlers,
+	...newsHandlers,
+);
