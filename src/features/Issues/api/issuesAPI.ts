@@ -22,7 +22,7 @@ export const getIssuesInfinity = async ({
 	pageParam: InfinityProps;
 }) => {
 	const { size, page } = pageParam;
-	const res = await issuesAPI.get<IssueInfinityProps>('/', {
+	const res = await issuesAPI.get<IssueInfinityProps>('/infinity', {
 		params: {
 			_limit: size,
 			_page: page,
