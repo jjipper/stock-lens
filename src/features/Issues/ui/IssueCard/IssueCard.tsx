@@ -26,7 +26,7 @@ export const IssueCard = ({
 			onClick={() => handleIssueCardClick(id)}
 			onKeyDown={(event) => handleIssueCardKeyDown(event, id)}
 			aria-label={`이슈 상세 보기: ${title}`}
-			className="flex cursor-pointer items-start gap-4 rounded-xl border border-transparent bg-white px-5 py-4 transition-colors duration-300 hover:border-gray-300"
+			className="flex cursor-pointer items-start gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 transition-colors duration-300 hover:border-gray-400"
 		>
 			<TypeIcon type={type} />
 

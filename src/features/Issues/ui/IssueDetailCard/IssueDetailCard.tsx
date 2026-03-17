@@ -43,7 +43,7 @@ export const IssueDetailCard = ({
 				/>
 			</div>
 
-			<div className="mt-3 flex items-center gap-2 border-t border-gray-100 pt-3">
+			<div className="mt-3 flex items-center gap-2 border-t border-gray-200 pt-3">
 				<NewsTag newsCount={newsCount} mention={mention} />
 				<EffectTag effect={effect} />
 			</div>
