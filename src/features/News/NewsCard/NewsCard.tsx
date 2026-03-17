@@ -11,7 +11,7 @@ export const NewsCard = ({
 		<button
 			type="button"
 			onClick={onClick}
-			className="w-full cursor-pointer overflow-hidden rounded-xl border border-gray-100 bg-white text-left"
+			className="w-full cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white text-left transition-colors duration-300 hover:border-gray-400"
 		>
 			<div className="h-60 overflow-hidden">
 				<img
