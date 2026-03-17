@@ -1,11 +1,7 @@
 import { useIssueDetailQuery } from 'features/Issues';
 import { SectionHeader, TwoColumnGrid } from 'features/layout';
-import {
-	NewsCard,
-	NewsModal,
-	useNewsDetailQuery,
-	useNewsQuery,
-} from 'features/News';
+import { NewsCard, NewsModal, useNewsDetailQuery } from 'features/News';
+import { useNewsInfinityQuery } from 'features/News/hooks/useNewsInfinityQuery';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -13,8 +9,12 @@ export const IssueNewsListWrapper = () => {
 	const { id } = useParams();
 	const [selectedNews, setSelectedNews] = useState('');
 	const { data: issue } = useIssueDetailQuery(id ?? '');
-	const { data: newsList } = useNewsQuery(issue.newsList);
+	const {
+		data: { pages },
+	} = useNewsInfinityQuery(issue.newsList);
 	const { data: newsItem } = useNewsDetailQuery(selectedNews);
+
+	const newsList = pages.flatMap((page) => page.list);
 
 	return (
 		<>
