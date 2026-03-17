@@ -1,16 +1,37 @@
-import { IssueCard, useIssuesQuery } from 'features/Issues';
-import { type FunctionComponent } from 'react';
+import { IssueCard } from 'features/Issues';
+import { useIssuesInfinityQuery } from 'features/Issues/hooks/useIssuesInfinityQuery';
+import { type FunctionComponent, useEffect, useRef } from 'react';
 
 export const IssueList: FunctionComponent = () => {
-	const { data } = useIssuesQuery();
+	const { data, fetchNextPage, hasNextPage } = useIssuesInfinityQuery();
 
-	if (data.length === 0) return <div>No Issues</div>;
+	const observerRef = useRef<HTMLDivElement>(null);
+
+	const list = data.pages.flatMap((page) => page.list);
+
+	useEffect(() => {
+		if (!observerRef.current) return;
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting && hasNextPage) {
+					fetchNextPage();
+				}
+			});
+		});
+
+		observer.observe(observerRef.current);
+		return () => {
+			observer.disconnect();
+		};
+	}, [observerRef]);
 
 	return (
 		<ul className="flex flex-col gap-4">
-			{data.map((issue) => (
+			{list.map((issue) => (
 				<IssueCard key={issue.id} {...issue} />
 			))}
+			{hasNextPage && <div ref={observerRef} />}
 		</ul>
 	);
 };
