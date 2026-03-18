@@ -11,22 +11,22 @@
 2. [눈앞이 막막할 땐 폴더부터 만들자: 10번 갈아엎은 FSD 적용기
    ](https://velog.io/@jjipper/stock-lens-2)
 3. [스타일링 선택 기록: CSS, SCSS, styled-components, Tailwind CSS 비교](https://velog.io/@jjipper/stock-lens-3)
-4. 내 노트북에선 멀쩡한 게 왜 거기선 깨지지? 폰트 FOUT 현상 추적기
-5. 진짜 어려운 TypeScript 돌파하기: 프로젝트에서 바로 쓰는 타입 기초
-6. React Router로 레이아웃 잡기: 중첩 라우트와 Outlet
-7. History API로 이해하는 라우팅: 뒤로가기/딥링크가 꼬이는 이유
-8. MSW로 서버 흉내 내기: JSON Server와 비교하며 목데이터 파이프라인 만들기
-9. fetch로 시작해서 구조화로 넘어가기: 에러/로딩/중복 요청/취소(Abort)
-10. ...
+4. [React Router를 처음 붙이며 배운 것들: 중첩 라우트, Outlet, lazy, ScrollToTop](https://velog.io/@jjipper/stock-lens-4)
+5. MSW로 서버 흉내 내기: JSON Server와 비교하며 목데이터 파이프라인 만들기
+6. fetch로 시작해서 axios + TanStack Query로 변환까지
+7. portal에서 모달과 토스트 구현하기, z-index 위계와 토스트 구현
+8. 무한 스크롤 실전: infiniteQuery와 observer를 활용한
+9. 회고
+
+<!-- 딥다이브 요소 -->
+<!-- 4. 내 노트북에선 멀쩡한 게 왜 거기선 깨지지? 폰트 FOUT 현상 추적기 -->
+<!-- 5. 진짜 어려운 TypeScript 돌파하기: 프로젝트에서 바로 쓰는 타입 기초 -->
+<!-- 7. History API로 이해하는 라우팅: 뒤로가기/딥링크가 꼬이는 이유  -->
+<!-- 11. 입력 UX 디테일: isComposing으로 한글 입력 버그 피하기 -->
+<!-- 12. 전역 상태를 어디까지 둘까: Context API와 서버 상태(캐시) 분리 기준 -->
 <!-- 11. “Fallback”을 어디에 둘까: 로딩/에러/빈 상태 UI를 일관되게 만들기
-11. 입력 UX 디테일: isComposing으로 한글 입력 버그 피하기
-12. 전역 상태를 어디까지 둘까: Context API와 서버 상태(캐시) 분리 기준
 13. axios + TanStack Query로 데이터 레이어 고정하기: queryKey 설계와 무효화 전략
-14. 가독성 좋은 파일 구성 실험: Public API, index(barrel) 사용 기준 세우기
-15. URL이 모달을 연다: ?newsId= 딥링크 모달, 뒤로가기, 스크롤 락
-16. 무한 스크롤 실전: 경계 조건, 중복 데이터, 스크롤 위치 유지
-17. 사용자 피드백을 UI로: 스낵바/에러 UX를 어디서 어떻게 보여줄까
-18. 회고 -->
+14. 가독성 좋은 파일 구성 실험: Public API, index(barrel) 사용 기준 세우기 -->
 
 ## 1. 서비스 개요
 
