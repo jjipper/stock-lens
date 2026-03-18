@@ -26,14 +26,16 @@ export const AppRoutes = () => {
 					<Route path="*" element={<NotFoundPage />} />
 				</Route>
 
-				<Route path="/issue" element={<AppBarLayout />}>
-					<Route index element={<IssuePage />} />
-					<Route path=":id" element={<IssueDetailPage />} />
-				</Route>
+				<Route element={<AppBarLayout />}>
+					<Route path="/issue">
+						<Route index element={<IssuePage />} />
+						<Route path=":id" element={<IssueDetailPage />} />
+					</Route>
 
-				<Route path="/stock" element={<AppBarLayout />}>
-					<Route index element={<StockPage />} />
-					<Route path=":ticker" element={<StockDetailPage />} />
+					<Route path="/stock">
+						<Route index element={<StockPage />} />
+						<Route path=":ticker" element={<StockDetailPage />} />
+					</Route>
 				</Route>
 
 				{/* <Route
