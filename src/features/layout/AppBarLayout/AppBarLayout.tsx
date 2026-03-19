@@ -27,23 +27,25 @@ export const AppBarLayout = () => {
 	const title = getTitle(pathname);
 
 	return (
-		<>
+		<div className="app-shell">
 			<Header />
-			<nav className="sticky top-16 z-10 border-b border-gray-200 bg-white">
-				<div className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2">
-					{' '}
+			<nav className="sticky top-[4.5rem] z-30 border-b border-white/60 bg-white/56 backdrop-blur-xl">
+				<div className="mx-auto flex w-full max-w-[1120px] items-center gap-2 px-4 py-2.5 sm:px-6 lg:px-8">
 					<button
+						type="button"
 						onClick={handleBackButtonClick}
-						className="h-10 w-10 cursor-pointer rounded-md hover:bg-gray-50"
+						className="shadow-soft flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-slate-200/80 bg-white/95 text-slate-700 transition-all hover:-translate-y-0.5 hover:bg-slate-50"
 					>
-						<ArrowBackIcon sx={{ fontSize: 20 }} className="text-gray-600" />
+						<ArrowBackIcon sx={{ fontSize: 20 }} className="text-current" />
 					</button>
-					<h1 className="text-lg font-bold">{title}</h1>
+					<h1 className="text-lg font-semibold tracking-tight text-slate-900">
+						{title}
+					</h1>
 				</div>
 			</nav>
-			<div className="mx-auto flex max-w-5xl flex-col gap-5 px-6 pt-5 pb-16">
+			<div className="content-shell flex flex-col gap-6 sm:gap-7">
 				<Outlet />
 			</div>
-		</>
+		</div>
 	);
 };
