@@ -20,8 +20,8 @@ export const PriceRangeStats = ({
 	const formattedPrice = formatNumber(price);
 
 	return (
-		<div className="inline-flex items-center gap-1.5 rounded-md bg-gray-50 px-4 py-2">
-			<span className="text-xs font-medium text-gray-500">{title}</span>
+		<div className="shadow-soft inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-4 py-2">
+			<span className="text-xs font-semibold text-slate-500">{title}</span>
 			<span className={`text-xs font-semibold ${PRICE_COLOR[color]}`}>
 				{formattedPrice}원
 			</span>

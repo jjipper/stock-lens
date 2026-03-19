@@ -16,11 +16,11 @@ export const PeriodReturnStats = ({
 	color,
 }: PeriodReturnStatsProps) => {
 	return (
-		<div className="flex items-center gap-4 text-sm font-medium">
-			<div className="flex items-center gap-2">
-				<span className="text-gray-700">{title}</span>
-				<span className={`${PRICE_COLOR[color]}`}>{percentage}</span>
-			</div>
+		<div className="shadow-soft inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/90 px-4 py-2 text-sm font-medium">
+			<span className="text-slate-700">{title}</span>
+			<span className={`font-semibold ${PRICE_COLOR[color]}`}>
+				{percentage}%
+			</span>
 		</div>
 	);
 };
