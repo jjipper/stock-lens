@@ -8,11 +8,15 @@ export const NotFoundPage = () => {
 	};
 
 	return (
-		<div className="absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 text-center">
-			<p className="text-xl text-gray-500">The page does not exist</p>
-			<Button variant="primary" size="lg" onClick={handleMainClick}>
-				Go back to the previous page
-			</Button>
-		</div>
+		<section className="flex min-h-[52vh] w-full items-center justify-center px-4 py-8">
+			<div className="rounded-panel shadow-card flex w-full max-w-md flex-col items-center justify-center gap-4 border border-white/80 bg-white/88 px-6 py-8 text-center backdrop-blur-sm">
+				<p className="text-xl font-semibold tracking-tight text-slate-700">
+					The page does not exist
+				</p>
+				<Button variant="primary" size="lg" onClick={handleMainClick}>
+					Go back to the previous page
+				</Button>
+			</div>
+		</section>
 	);
 };
