@@ -10,8 +10,8 @@ export const IssueDetailWrapper = () => {
 	if (!id) return <div>No Issue</div>;
 
 	return (
-		<ul className="flex flex-col gap-4">
+		<div className="flex flex-col gap-4">
 			<IssueDetailCard {...issue} />
-		</ul>
+		</div>
 	);
 };

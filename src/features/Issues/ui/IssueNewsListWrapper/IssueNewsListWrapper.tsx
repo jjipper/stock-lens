@@ -39,7 +39,7 @@ export const IssueNewsListWrapper = () => {
 
 	return (
 		<>
-			<div className="mt-6 flex flex-col gap-3">
+			<section className="motion-fade-up rounded-panel shadow-card mt-2 flex flex-col gap-4 border border-white/75 bg-white/78 p-5 backdrop-blur-sm sm:p-6">
 				<SectionHeader title="최신 뉴스" updateTime="2시간 전" />
 				{newsList ? (
 					<TwoColumnGrid>
@@ -57,9 +57,9 @@ export const IssueNewsListWrapper = () => {
 						})}
 					</TwoColumnGrid>
 				) : (
-					<p>'No relevant news available.'</p>
+					<p className="text-sm text-slate-500">No relevant news available.</p>
 				)}
-			</div>
+			</section>
 			{newsItem && (
 				<NewsModal
 					news={newsItem}

@@ -8,7 +8,7 @@ export const IssueSection = () => {
 		<SectionWrapper>
 			<SectionHeader title={'Top Trending Issues'} updateTime={'Just now'} />
 
-			<ul className="flex flex-col gap-4">
+			<ul className="flex flex-col gap-5">
 				{issues.map((issue) => (
 					<IssueCard key={issue.id} {...issue} />
 				))}

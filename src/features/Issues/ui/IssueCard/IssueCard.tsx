@@ -26,17 +26,25 @@ export const IssueCard = ({
 			onClick={() => handleIssueCardClick(id)}
 			onKeyDown={(event) => handleIssueCardKeyDown(event, id)}
 			aria-label={`이슈 상세 보기: ${title}`}
-			className="flex cursor-pointer items-start gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 transition-colors duration-300 hover:border-gray-400"
+			className="group rounded-card shadow-soft hover:shadow-card flex cursor-pointer items-start gap-4 overflow-hidden border border-slate-200/80 bg-white/90 px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300"
 		>
-			<TypeIcon type={type} />
+			<div className="mt-0.5">
+				<TypeIcon type={type} />
+			</div>
 
-			<div>
-				<h5 className="text-lg font-bold text-gray-900">{title}</h5>
-				<p className="mt-1.5 mb-2.5 text-base text-gray-700">{description}</p>
+			<div className="min-w-0 flex-1">
+				<h5 className="text-lg font-semibold tracking-tight text-slate-900">
+					{title}
+				</h5>
+				<p className="mt-1.5 text-sm text-slate-600 sm:text-base">
+					{description}
+				</p>
 
-				<StockChips stocks={stocks} onChipClick={handleStockChipClick} />
+				<div className="mt-2.5">
+					<StockChips stocks={stocks} onChipClick={handleStockChipClick} />
+				</div>
 
-				<div className="mt-2 flex items-center gap-2">
+				<div className="mt-3 flex flex-wrap items-center gap-2">
 					<NewsTag newsCount={newsCount} mention={mention} />
 					<EffectTag effect={effect} />
 				</div>

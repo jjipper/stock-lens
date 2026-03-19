@@ -27,7 +27,7 @@ export const IssueList: FunctionComponent = () => {
 	}, [fetchNextPage, hasNextPage]);
 
 	return (
-		<ul className="flex flex-col gap-4">
+		<ul className="motion-fade-up flex flex-col gap-5">
 			{list.map((issue) => (
 				<IssueCard key={issue.id} {...issue} />
 			))}
