@@ -14,7 +14,7 @@ export const StockChips = ({ stocks, onChipClick }: StockChipsProps) => {
 	};
 
 	return (
-		<ul className="flex gap-2">
+		<ul className="flex flex-wrap gap-2">
 			{stocks.map((stock) => {
 				const isUp = stock.percentage > 0;
 				const directionText = isUp ? '상승' : '하락';
@@ -30,9 +30,9 @@ export const StockChips = ({ stocks, onChipClick }: StockChipsProps) => {
 							}}
 							onKeyDown={preventCardNavigation}
 							aria-label={`${stock.name} 종목 상세 보기`}
-							className="flex cursor-pointer items-center gap-1.5 rounded-full border border-transparent bg-gray-50 px-3 py-1.5 transition-[background,border-color] duration-300 hover:bg-gray-100"
+							className="flex cursor-pointer items-center gap-1.5 rounded-full border border-slate-200/80 bg-slate-50/80 px-3 py-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white"
 						>
-							<div className="flex flex-col text-sm font-medium">
+							<div className="flex flex-col text-sm font-medium text-slate-700">
 								<span>{stock.name}</span>
 							</div>
 							<span
