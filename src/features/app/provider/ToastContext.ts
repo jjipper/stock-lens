@@ -1,3 +1,6 @@
 import { createContext } from 'react';
 
-export const ToastContext = createContext([]);
+export const ToastContext = createContext<{
+	toasts: { id: string; message: string }[];
+	addToast: (message: string) => void;
+} | null>(null);
