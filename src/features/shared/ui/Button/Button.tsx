@@ -1,11 +1,15 @@
 import type { ButtonProps } from 'features/types/types';
 
 const variantClassMap = {
-	primary: 'border-none bg-primary text-white hover:bg-primary-hover',
-	primaryLine: 'border border-primary bg-white text-primary hover:bg-gray-50',
-	gray: 'border-none bg-gray-100 font-semibold hover:bg-gray-200',
-	grayLine: 'border border-gray-300 bg-white font-semibold hover:bg-gray-400',
-	black: 'bg-gray-800 text-white hover:bg-black',
+	primary:
+		'border border-primary/70 bg-linear-to-r from-primary to-primary-dark text-white shadow-soft hover:-translate-y-0.5 hover:brightness-105 hover:shadow-card',
+	primaryLine:
+		'border border-primary/75 bg-white/92 text-primary shadow-soft hover:-translate-y-0.5 hover:bg-primary/5',
+	gray: 'border border-slate-200/80 bg-slate-100/85 font-semibold text-slate-700 shadow-soft hover:-translate-y-0.5 hover:bg-slate-200/85',
+	grayLine:
+		'border border-slate-300/80 bg-white/90 font-semibold text-slate-700 shadow-soft hover:-translate-y-0.5 hover:bg-slate-100',
+	black:
+		'border border-slate-900 bg-slate-900 text-white shadow-soft hover:-translate-y-0.5 hover:bg-black',
 } as const;
 
 const sizeClassMap = {
