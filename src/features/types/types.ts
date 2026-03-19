@@ -42,6 +42,7 @@ export interface StockCardProps {
 	mainIssue?: string;
 	price: number;
 	percentage: number;
+	issueTone: 'bullish' | 'bearish';
 	myStock: boolean;
 	popular: boolean;
 	newsList: string[];
