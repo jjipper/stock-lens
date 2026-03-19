@@ -1,4 +1,5 @@
-import { Button, formatNumber, formatPercentage, Toast } from 'features/shared';
+import { Button, formatNumber, formatPercentage } from 'features/shared';
+import { useToast } from 'features/shared/ui/Toast/useToast';
 import type { StockCardProps } from 'features/types/types';
 import { useState } from 'react';
 
@@ -13,8 +14,8 @@ export const StockDetailCard = ({
 	percentage,
 }: StockCardProps) => {
 	const [period, setPeriod] = useState<'week' | 'month'>('week');
-	const [showToast, setShowToast] = useState(false);
 	const formattedPrice = formatNumber(price);
+	const { addToast } = useToast();
 
 	const getPeriodButtonClass = (targetPeriod: 'week' | 'month') =>
 		`h-9 cursor-pointer rounded-xl border px-3 py-1 text-sm font-medium transition-all duration-300 ${
@@ -22,13 +23,6 @@ export const StockDetailCard = ({
 				? 'border-primary/75 bg-primary text-white shadow-soft'
 				: 'border-slate-200/80 bg-white text-slate-600 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50'
 		}`;
-
-	const handleAddMyStockButton = () => {
-		setShowToast(true);
-		setTimeout(() => setShowToast(false), 3000);
-		// TODO: 관심 종목 추가시 stock myStock 값 변경, '관심 종목 추가됨' 으로 메시지 변경
-		// setAddMyStock();
-	};
 
 	return (
 		<article className="motion-fade-up rounded-panel shadow-card w-full border border-slate-200/80 bg-white/92 p-5 sm:p-6">
@@ -111,13 +105,11 @@ export const StockDetailCard = ({
 					variant="primary"
 					size="md"
 					width="full"
-					onClick={handleAddMyStockButton}
+					onClick={() => addToast('관심 종목이 추가되었습니다.')}
 				>
 					+ 관심 종목 추가
 				</Button>
 			</div>
-
-			{showToast && <Toast type={'addMyStock'} />}
 		</article>
 	);
 };
