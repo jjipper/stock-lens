@@ -32,12 +32,14 @@ export const StockCard = ({
 			type="button"
 			onClick={handleStockCardClick}
 			aria-label={`${name} ${ticker} 상세 보기. 현재가 ${price}원`}
-			className="flex w-full cursor-pointer flex-col items-center justify-between gap-2 rounded-xl border border-gray-200 bg-white px-5 py-4 text-left transition-colors duration-300 hover:border-gray-400"
+			className="group rounded-card shadow-soft hover:shadow-card flex w-full cursor-pointer flex-col justify-between gap-3 border border-slate-200/80 bg-white/90 px-5 py-4 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300"
 		>
-			<dl className="flex w-full flex-col justify-start gap-0.5">
+			<dl className="flex w-full flex-col gap-1">
 				<dt className="flex items-center gap-1.5">
-					<span className="text-lg font-semibold text-gray-900">{name}</span>
-					<span className="text-sm text-gray-400">{ticker}</span>
+					<span className="text-lg font-semibold tracking-tight text-slate-900">
+						{name}
+					</span>
+					<span className="text-xs font-medium text-slate-400">{ticker}</span>
 				</dt>
 				<dd className="flex flex-wrap items-center gap-2">
 					<span
@@ -50,11 +52,16 @@ export const StockCard = ({
 					</span>
 				</dd>
 			</dl>
-			<div className="flex w-full justify-end gap-2">
-				{formatPercentage(percentage)}
-				<span className="text-lg font-semibold text-gray-800">
-					{formattedPrice}원
-				</span>
+
+			<div className="h-px w-full bg-linear-to-r from-transparent via-slate-200 to-transparent" />
+
+			<div className="flex w-full items-center justify-end rounded-xl">
+				<div className="flex items-center gap-3">
+					{formatPercentage(percentage)}
+					<span className="text-xl font-semibold tracking-tight text-slate-900">
+						{formattedPrice}원
+					</span>
+				</div>
 			</div>
 		</button>
 	);
