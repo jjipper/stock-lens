@@ -1,35 +1,31 @@
 import { Portal } from '../Portal/Portal';
+import { useToast } from './useToast';
 
-type toastType = 'addMyStock' | 'removeMyStock';
+export const Toast = () => {
+	const { toasts } = useToast();
 
-interface toastTypeProps {
-	styles: string;
-	message: string;
-}
-
-const toastTypeMeta = {
-	addMyStock: {
-		styles: 'bg-blue-100 border-primary text-primary',
-		message: '관심 종목에 추가되었습니다.',
-	},
-	removeMyStock: {
-		styles: 'bg-red-100 border-red-600 text-red-600',
-		message: '관심 종목에서 삭제되었습니다.',
-	},
-} as const satisfies Record<toastType, toastTypeProps>;
-
-export const Toast = ({ type }: { type: toastType }) => {
-	const toastType = toastTypeMeta[type];
-	// TODO: toast 애니메이션 추가
-	// const [showToast, setShowToast] = useState(false);
+	if (toasts.length === 0) {
+		return null;
+	}
 
 	return (
 		<Portal>
-			{/* TODO: 케이스별 z-index 고민 (모달 앞, 모달 뒤) */}
 			<div
-				className={`fixed bottom-8 left-8 z-[60] rounded-lg border px-6 py-3 transition-opacity ${toastType.styles} `}
+				aria-live="polite"
+				aria-atomic="true"
+				className="pointer-events-none fixed inset-x-0 right-5 bottom-5 z-50 mx-auto flex flex-col items-end gap-2 px-4 sm:px-6 lg:px-8"
 			>
-				<p>{toastType.message}</p>
+				{toasts.map((toast) => {
+					return (
+						<div
+							key={toast.id}
+							role="status"
+							className="toast-enter border-primary/18 pointer-events-auto flex min-w-64 items-start gap-3 rounded-2xl border bg-white/78 px-4 py-3 text-sm font-medium text-slate-800 backdrop-blur-xl"
+						>
+							<p className="leading-5">{toast.message}</p>
+						</div>
+					);
+				})}
 			</div>
 		</Portal>
 	);
