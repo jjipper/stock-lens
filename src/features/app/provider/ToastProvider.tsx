@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 import { ToastContext } from './ToastContext';
 
@@ -16,8 +16,22 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
 		]);
 	};
 
+	const removeToast = (id: string) => {
+		setToasts((prev) => prev.filter((toast) => toast.id !== id));
+	};
+
+	useEffect(() => {
+		if (!toasts) return;
+
+		const timer = setTimeout(() => {
+			removeToast(toasts[0].id);
+		}, 1000);
+
+		return () => clearTimeout(timer);
+	}, [toasts]);
+
 	return (
-		<ToastContext.Provider value={{ toasts, addToast }}>
+		<ToastContext.Provider value={{ toasts, addToast, removeToast }}>
 			{children}
 		</ToastContext.Provider>
 	);
