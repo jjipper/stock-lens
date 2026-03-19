@@ -1,7 +1,26 @@
 @theme {
-	--color-primary: #2f6fff;
-	--color-primary-hover: #2462f4;
-	--color-primary-dark: #0d4eda;
+	--color-primary: #0b63f6;
+	--color-primary-hover: #0055de;
+	--color-primary-dark: #0037a5;
+
+	--color-accent-cyan: #0ea5a5;
+	--color-accent-cyan-soft: #d9f5f2;
+	--color-accent-amber: #f59e0b;
+	--color-accent-amber-soft: #fff4da;
+
+	--color-surface: #ffffff;
+	--color-surface-muted: #f3f7fc;
+	--color-surface-subtle: #ecf2fa;
+	--color-line: #dbe4f0;
+	--color-text-strong: #0f172a;
+	--color-text-muted: #475569;
+
+	--shadow-soft: 0 12px 36px -24px rgba(15, 23, 42, 0.35);
+	--shadow-card: 0 24px 50px -30px rgba(15, 23, 42, 0.35);
+	--shadow-float: 0 30px 70px -40px rgba(2, 6, 23, 0.5);
+
+	--radius-panel: 1.5rem;
+	--radius-card: 1.15rem;
 
 	--color-semiconductor-icon: #2f6fff;
 	--color-semiconductor-bg: #e6f0ff;
