@@ -1,76 +1,36 @@
-import type { SvgIconComponent } from '@mui/icons-material';
-import {
-	AccountBalanceIcon,
-	BatterySaverIcon,
-	BiotechIcon,
-	BoltIcon,
-	DirectionsCarFilledIcon,
-	GppGoodIcon,
-	LanguageIcon,
-	MemoryIcon,
-} from 'features/shared';
 import type { IssueType } from 'features/types/types';
+import type { CSSProperties } from 'react';
+
+import { typeMeta } from './typeMeta';
 
 interface TypeIconProps {
 	type: IssueType;
 }
 
-const DEFAULT_ICON_SIZE = 28;
-
-const typeMeta = {
-	semiconductor: {
-		Icon: MemoryIcon,
-		wrapperClass: 'bg-semiconductor-bg text-semiconductor-icon',
-		iconSize: DEFAULT_ICON_SIZE,
-	},
-	battery: {
-		Icon: BatterySaverIcon,
-		wrapperClass: 'bg-battery-bg text-battery-icon',
-		iconSize: DEFAULT_ICON_SIZE,
-	},
-	biotech: {
-		Icon: BiotechIcon,
-		wrapperClass: 'bg-biotech-bg text-biotech-icon',
-		iconSize: DEFAULT_ICON_SIZE,
-	},
-	mobility: {
-		Icon: DirectionsCarFilledIcon,
-		wrapperClass: 'bg-mobility-bg text-mobility-icon',
-		iconSize: DEFAULT_ICON_SIZE,
-	},
-	internet: {
-		Icon: LanguageIcon,
-		wrapperClass: 'bg-internet-bg text-internet-icon',
-		iconSize: 26,
-	},
-	energy: {
-		Icon: BoltIcon,
-		wrapperClass: 'bg-energy-bg text-energy-icon',
-		iconSize: 30,
-	},
-	defense: {
-		Icon: GppGoodIcon,
-		wrapperClass: 'bg-defense-bg text-defense-icon',
-		iconSize: DEFAULT_ICON_SIZE,
-	},
-	finance: {
-		Icon: AccountBalanceIcon,
-		wrapperClass: 'bg-finance-bg text-finance-icon',
-		iconSize: 22,
-	},
-} as const satisfies Record<
-	IssueType,
-	{ Icon: SvgIconComponent; wrapperClass: string; iconSize: number }
->;
+const iconPalette = {
+	'--icon-base': '#171717',
+	'--icon-point': 'var(--color-primary)',
+} as CSSProperties;
 
 export const TypeIcon = ({ type }: TypeIconProps) => {
-	const { Icon, wrapperClass, iconSize } = typeMeta[type];
+	const { Glyph, glyphSizeClass } = typeMeta[type];
 
 	return (
 		<div
-			className={`inline-flex h-12 w-12 items-center justify-center rounded-xl p-3 ${wrapperClass}`}
+			style={iconPalette}
+			className="shadow-soft group-hover:border-primary/30 group-hover:shadow-card relative inline-flex h-[3.35rem] w-[3.35rem] shrink-0 items-center justify-center rounded-[1.08rem] border border-slate-200/85 bg-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5"
 		>
-			<Icon sx={{ fontSize: iconSize, color: 'currentColor' }} />
+			<span
+				aria-hidden
+				className="from-primary/20 absolute inset-0 rounded-[1.08rem] bg-linear-to-br to-transparent opacity-40 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] group-hover:opacity-75"
+			/>
+			<span
+				aria-hidden
+				className="absolute inset-[1.5px] rounded-[0.98rem] border border-white/55 transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-75"
+			/>
+			<Glyph
+				className={`relative z-10 ${glyphSizeClass} transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]`}
+			/>
 		</div>
 	);
 };
