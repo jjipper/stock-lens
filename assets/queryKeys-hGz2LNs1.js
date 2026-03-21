@@ -1,0 +1,1 @@
+import{j as s}from"./index-CDYBpKzP.js";import{u as e,Q as o,h as t}from"./stocksAPI-Ci1tWKA_.js";const i=({children:r})=>s.jsx("div",{className:"grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2",children:r});function d(r,a){return e({...r,enabled:!0,suspense:!0,throwOnError:t,placeholderData:void 0},o)}const l={list:["stocks"],detail:r=>["stock",r]};export{l as S,i as T,d as u};
