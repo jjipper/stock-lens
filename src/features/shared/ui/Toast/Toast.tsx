@@ -13,7 +13,7 @@ export const Toast = () => {
 			<div
 				aria-live="polite"
 				aria-atomic="true"
-				className="pointer-events-none fixed inset-x-0 right-5 bottom-5 z-50 mx-auto flex flex-col items-end gap-2 px-4 sm:px-6 lg:px-8"
+				className="pointer-events-none fixed inset-x-0 right-5 bottom-5 z-100 mx-auto flex flex-col items-end gap-2 px-4 sm:px-6 lg:px-8"
 			>
 				{toasts.map((toast) => {
 					return (
