@@ -1,4 +1,5 @@
 import { Button, CloseIcon, EffectTag, Portal } from 'features/shared';
+import { useToast } from 'features/shared/ui/Toast/useToast';
 import type { NewsItem } from 'features/types/types';
 
 interface NewsModalProps {
@@ -7,6 +8,7 @@ interface NewsModalProps {
 }
 
 export const NewsModal = ({ news, onClose }: NewsModalProps) => {
+	const { addToast } = useToast();
 	// TODO(a11y): 모달 띄워진 후 키보드 focus 모달 내로 오도록 작업 필요
 
 	return (
@@ -103,14 +105,21 @@ export const NewsModal = ({ news, onClose }: NewsModalProps) => {
 						</section>
 
 						<div className="grid grid-cols-2 gap-3 border-t border-slate-200/80 pt-6">
-							<a
+							<Button
+								variant={'black'}
+								size={'md'}
+								onClick={() => addToast('관심 뉴스에 저장되었습니다.')}
+							>
+								+ 관심 뉴스 저장
+							</Button>
+							{/* <a
 								href={news.articleUrl}
 								target="_blank"
 								rel="noreferrer noopener"
 								className="shadow-soft cursor-pointer rounded-xl border border-slate-900 bg-slate-900 px-4.5 py-3 text-center text-base text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black"
 							>
 								Go to Article
-							</a>
+							</a> */}
 							<Button variant={'gray'} size={'md'} onClick={onClose}>
 								Close
 							</Button>
