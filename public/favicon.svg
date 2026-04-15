@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Stock Lens favicon">
+  <defs>
+    <radialGradient id="outer-shell" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#2f3339" />
+      <stop offset="62%" stop-color="#15181d" />
+      <stop offset="100%" stop-color="#0b0d10" />
+    </radialGradient>
+    <radialGradient id="glass-core" cx="35%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#f0f2f5" />
+      <stop offset="42%" stop-color="#bcc1c8" />
+      <stop offset="100%" stop-color="#3a3f46" />
+    </radialGradient>
+    <radialGradient id="iris-core" cx="34%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#9ea4ac" />
+      <stop offset="100%" stop-color="#1d2127" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="32" cy="32" r="29" fill="#090b0e" />
+  <circle cx="32" cy="32" r="25.5" fill="url(#outer-shell)" />
+  <circle cx="32" cy="32" r="18.5" fill="#151920" />
+  <circle cx="32" cy="32" r="13.5" fill="url(#glass-core)" />
+  <circle cx="32" cy="32" r="6.8" fill="url(#iris-core)" />
+</svg>
