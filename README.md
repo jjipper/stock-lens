@@ -12,11 +12,10 @@
    ](https://velog.io/@jjipper/stock-lens-2)
 3. [스타일링 선택 기록: CSS, SCSS, styled-components, Tailwind CSS 비교](https://velog.io/@jjipper/stock-lens-3)
 4. [React Router를 처음 붙이며 배운 것들: 중첩 라우트, Outlet, lazy, ScrollToTop](https://velog.io/@jjipper/stock-lens-4)
-5. MSW로 서버 흉내 내기: JSON Server와 비교하며 목데이터 파이프라인 만들기
-6. fetch로 시작해서 axios + TanStack Query로 변환까지
+5. [fetch로 시작해서 axios + TanStack Query로 변환까지](https://velog.io/@jjipper/stock-lens-5)
+6. 무한 스크롤 실전: infiniteQuery와 observer를 활용한
 7. portal에서 모달과 토스트 구현하기, z-index 위계와 토스트 구현
-8. 무한 스크롤 실전: infiniteQuery와 observer를 활용한
-9. 회고
+8. 회고
 
 <!-- 딥다이브 요소 -->
 <!-- 4. 내 노트북에선 멀쩡한 게 왜 거기선 깨지지? 폰트 FOUT 현상 추적기 -->
